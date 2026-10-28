@@ -30,26 +30,27 @@ Cloudflare Pages veröffentlicht den Ordner site/ direkt aus dem Repo
 
 ## Das musst du einmal selbst tun
 
-1. **Pull Request mergen.** Der Zeitplan der Action läuft nur auf dem Standardzweig (`main`).
-2. **Secret prüfen oder anlegen:** GitHub → Repo → Settings → Secrets and variables → Actions →
-   *New repository secret*, Name `GARMIN_PERSONAL_API_KEY`, Wert = dein Garmin-Personal-API-Key.
+1. **Pull Request mergen** ([Pull Requests](https://github.com/Ro83r7/Garmin/pulls)).
+   Der Zeitplan der Action läuft nur auf dem Standardzweig (`main`).
+2. **Secret prüfen oder anlegen:** [Actions-Secrets des Repos](https://github.com/Ro83r7/Garmin/settings/secrets/actions)
+   → *New repository secret*, Name `GARMIN_PERSONAL_API_KEY`, Wert = dein Garmin-Personal-API-Key.
    Der Key gehört nie in Dateien, Commits oder Issues.
-3. **Cloudflare Pages mit dem Repo verbinden:** Workers & Pages → Create → Pages → Connect to Git →
-   dieses Repo wählen. *Build command* leer lassen, *Build output directory* = `site`.
-4. **Zugriffsschutz aktivieren:** Cloudflare Zero Trust → Access → Applications → Self-hosted, die
-   Pages-Domain eintragen, Richtlinie „Allow“ nur für deine E-Mail-Adresse (Einmal-PIN).
-   (Alternativ in den Pages-Einstellungen „Enable access policy“.) Die Web-App-Manifest-Datei wird mit
-   Anmeldedaten geladen (`crossorigin="use-credentials"`), damit die Installation hinter Access funktioniert.
-5. **Workflow einmal manuell starten:** Actions → „Tägliches Update“ → *Run workflow*.
-   Beim ersten Lauf werden die Beispieldaten verworfen und die echte Historie geladen.
-6. Falls in den Repo-Einstellungen (Settings → Actions → General → Workflow permissions) oder durch einen
-   Branch-Schutz das Pushen der Action blockiert wird: *Read and write permissions* erlauben bzw. der Action
-   das Pushen auf `main` gestatten.
+3. **Cloudflare Pages mit dem Repo verbinden:** [Cloudflare Dashboard → Workers & Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages)
+   → Create → Pages → Connect to Git → dieses Repo wählen. *Build command* leer lassen,
+   *Build output directory* = `site`. ([Anleitung](https://developers.cloudflare.com/pages/get-started/git-integration/))
+4. **Zugriffsschutz aktivieren:** [Cloudflare Zero Trust](https://one.dash.cloudflare.com/) → Access → Applications →
+   Self-hosted, die Pages-Domain eintragen, Richtlinie „Allow“ nur für deine E-Mail-Adresse (Einmal-PIN).
+   ([Anleitung](https://developers.cloudflare.com/pages/configuration/preview-deployments/#customize-preview-deployments-access))
+   Das Web-App-Manifest wird mit Anmeldedaten geladen (`crossorigin="use-credentials"`), damit die Installation hinter Access funktioniert.
+5. **Workflow einmal manuell starten:** [Actions → Tägliches Update](https://github.com/Ro83r7/Garmin/actions/workflows/daily.yml)
+   → *Run workflow*. Beim ersten Lauf werden die Beispieldaten verworfen und die echte Historie geladen.
+6. Blockiert das Pushen der Action: [Workflow-Berechtigungen](https://github.com/Ro83r7/Garmin/settings/actions)
+   (*Read and write permissions*) bzw. einen Branch-Schutz für `main` prüfen.
 
 ### Optional: Deploy-Hook
 
 Veröffentlicht Cloudflare nach dem Action-Commit nicht von selbst neu (normalerweise tut es das, weil der
-Push ein Git-Ereignis ist), lege in Cloudflare Pages → Settings → Builds → *Deploy hooks* einen Hook an,
+Push ein Git-Ereignis ist), lege in Cloudflare Pages → Settings → Builds → *Deploy hooks* ([Doku](https://developers.cloudflare.com/pages/configuration/deploy-hooks/)) einen Hook an,
 speichere die URL als Secret `CLOUDFLARE_DEPLOY_HOOK` und entferne die Kommentarzeichen beim letzten Schritt in
 `.github/workflows/daily.yml`.
 
