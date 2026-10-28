@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Garmin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3f5fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1220" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/icon-192.png" type="image/png">
+<script>
+/* Telefone zur mobilen Ansicht, außer die Wahl "Desktop" ist gespeichert oder per ?view=desktop gesetzt. */
+(function () {
+  try {
+    var pref = null, q = location.search;
+    try { pref = localStorage.getItem('garmin-view'); } catch (e) {}
+    if (/[?&]view=desktop/.test(q)) { try { localStorage.setItem('garmin-view', 'desktop'); } catch (e) {} return; }
+    var phone = /iPhone/.test(navigator.userAgent) || Math.min(screen.width || 9999, window.innerWidth) < 700;
+    if (pref === 'mobile' || (pref !== 'desktop' && phone)) location.replace('/m/');
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="/assets/base.css">
+<link rel="stylesheet" href="/assets/desktop.css">
+</head>
+<body>
+<div class="app">
+  <aside class="side">
+    <div class="brand"><span class="chip-icon" id="brand-icon"></span>Garmin Dashboard</div>
+    <nav aria-label="Bereiche" id="nav"></nav>
+    <div class="spacer"></div>
+    <a class="switch" href="/m/" id="to-mobile"></a>
+    <p class="small">Privat · nicht indexiert</p>
+  </aside>
+  <main id="main">
+    <div class="top">
+      <div>
+        <h1 id="title">Übersicht</h1>
+        <div class="stand" id="stand">Stand: lädt …</div>
+      </div>
+      <div class="seg" role="group" aria-label="Zeitraum" id="range"></div>
+    </div>
+    <div id="banners"></div>
+    <section class="view" id="v-uebersicht" aria-label="Übersicht"></section>
+    <section class="view" id="v-herz" aria-label="Herz und Erholung"></section>
+    <section class="view" id="v-schlaf" aria-label="Schlaf"></section>
+    <section class="view" id="v-training" aria-label="Training"></section>
+    <section class="view" id="v-koerper" aria-label="Körper"></section>
+    <p class="foot"><span id="foot-icon"></span><span><b>Keine medizinische Bewertung.</b> Die Ampeln und Trends vergleichen dich nur mit deinen eigenen letzten 28 Tagen. Bei gesundheitlichen Fragen sprich mit Ärztin oder Arzt.</span></p>
+  </main>
+</div>
+<script src="/assets/lib.js"></script>
+<script src="/assets/desktop.js"></script>
+</body>
+</html>
