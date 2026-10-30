@@ -15,6 +15,10 @@
     if (v == null || isNaN(v)) return '–';
     return Number(v).toLocaleString('de-DE', { minimumFractionDigits: dg || 0, maximumFractionDigits: dg || 0 });
   };
+  G.signed = function (d, dg) {
+    var a = Math.abs(d), z = Number(a.toFixed(dg || 0)) === 0;
+    return (z ? '±' : d > 0 ? '+' : '−') + G.num(a, dg);
+  };
   G.dur = function (sec) {
     if (sec == null) return '–';
     var m = Math.round(sec / 60);

@@ -1,5 +1,8 @@
 {
  "activities_from": "2025-01-01",
- "fetched_at": "2026-10-28T07:32:55Z",
- "sample": true
+ "fetched_at": "2026-10-30T12:03:04Z",
+ "partial_failures": [
+  "Fitness-Alter"
+ ],
+ "sample": false
 }
