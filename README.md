@@ -51,6 +51,12 @@ Cloudflare Pages veröffentlicht den Ordner site/ direkt aus dem Repo
 6. Blockiert das Pushen der Action: [Workflow-Berechtigungen](https://github.com/Ro83r7/Garmin/settings/actions)
    (*Read and write permissions*) bzw. einen Branch-Schutz für `main` prüfen.
 
+## Offene Punkte (später, keine Priorität)
+
+- [ ] **Zugriffsschutz aktivieren**, solange fehlt, ist die Seite für jeden mit der Adresse erreichbar (nur `noindex`).
+  Cloudflare → Workers & Pages → dein Projekt → *Settings* → *Domains & Routes* → *Cloudflare Access* aktivieren,
+  Richtlinie „Allow“ nur für deine E-Mail-Adresse ([Anleitung](https://developers.cloudflare.com/cloudflare-one/applications/configure-apps/self-hosted-public-app/)).
+
 ### Optional: Deploy-Hook
 
 Veröffentlicht Cloudflare nach dem Action-Commit nicht von selbst neu (normalerweise tut es das, weil der
