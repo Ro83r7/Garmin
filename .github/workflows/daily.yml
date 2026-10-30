@@ -1,0 +1,51 @@
+name: Tägliches Update
+
+on:
+  schedule:
+    - cron: "30 5 * * *"   # täglich 05:30 UTC (läuft nur auf dem Standardzweig)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Garmin-Daten abrufen
+        env:
+          GARMIN_PERSONAL_API_KEY: ${{ secrets.GARMIN_PERSONAL_API_KEY }}
+        run: python scripts/fetch_garmin.py
+
+      - name: Website-Daten berechnen
+        run: python scripts/build.py
+
+      - name: Geänderte Daten committen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data site/data
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen."
+          else
+            git commit -m "Daten aktualisiert ($(date -u +%Y-%m-%d))"
+            git push
+          fi
+
+      # Optional: nur nötig, falls Cloudflare Pages nach dem Commit nicht selbst neu veröffentlicht.
+      # Lege dazu das Secret CLOUDFLARE_DEPLOY_HOOK an und entferne die Kommentarzeichen.
+      # - name: Cloudflare-Deploy-Hook auslösen
+      #   env:
+      #     HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+      #   run: curl -fsS -X POST "$HOOK" > /dev/null

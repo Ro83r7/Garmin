@@ -1,0 +1,416 @@
+{
+ "2026-07-01": {
+  "achievable": 40.4,
+  "age": 43.5,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-07-08": {
+  "achievable": 40.4,
+  "age": 43.5,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-07-15": {
+  "achievable": 40.4,
+  "age": 43.5,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-07-22": {
+  "achievable": 40.0,
+  "age": 43.1,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-07-29": {
+  "achievable": 40.0,
+  "age": 43.1,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-08-05": {
+  "achievable": 39.7,
+  "age": 42.8,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-08-12": {
+  "achievable": 39.6,
+  "age": 42.7,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-08-19": {
+  "achievable": 39.5,
+  "age": 42.6,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-08-26": {
+  "achievable": 39.8,
+  "age": 42.9,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-09-02": {
+  "achievable": 39.4,
+  "age": 42.5,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-09-09": {
+  "achievable": 39.5,
+  "age": 42.6,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-09-16": {
+  "achievable": 38.9,
+  "age": 42.0,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-09-23": {
+  "achievable": 39.3,
+  "age": 42.4,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-09-30": {
+  "achievable": 39.2,
+  "age": 42.3,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-10-07": {
+  "achievable": 39.5,
+  "age": 42.6,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-10-14": {
+  "achievable": 39.0,
+  "age": 42.1,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-10-21": {
+  "achievable": 39.0,
+  "age": 42.1,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ },
+ "2026-10-28": {
+  "achievable": 38.5,
+  "age": 41.6,
+  "chrono": 47,
+  "components": {
+   "bmi": {
+    "targetValue": 23.0,
+    "value": 23.9
+   },
+   "rhr": {
+    "targetValue": 50,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "targetValue": 3.0,
+    "value": 2.3
+   },
+   "vigorousMinutesAvg": {
+    "targetValue": 90,
+    "value": 58
+   }
+  }
+ }
+}
