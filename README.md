@@ -35,15 +35,19 @@ Cloudflare Pages veröffentlicht den Ordner site/ direkt aus dem Repo
 2. **Secret prüfen oder anlegen:** [Actions-Secrets des Repos](https://github.com/Ro83r7/Garmin/settings/secrets/actions)
    → *New repository secret*, Name `GARMIN_PERSONAL_API_KEY`, Wert = dein Garmin-Personal-API-Key.
    Der Key gehört nie in Dateien, Commits oder Issues.
-3. **Cloudflare Pages mit dem Repo verbinden:** [Cloudflare Dashboard → Workers & Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages)
-   → Create → Pages → Connect to Git → dieses Repo wählen. *Build command* leer lassen,
-   *Build output directory* = `site`. ([Anleitung](https://developers.cloudflare.com/pages/get-started/git-integration/))
+3. **Cloudflare mit dem Repo verbinden:** [Cloudflare Dashboard → Workers & Pages](https://dash.cloudflare.com/?to=/:account/workers-and-pages)
+   → Create → Connect to Git → dieses Repo wählen, Production branch `main`.
+   Die Datei `wrangler.jsonc` im Repo legt fest, dass der Ordner `site/` ausgeliefert wird.
+   Einstellungen: *Root directory* `/`, *Build command* leer, *Deploy command* `npx wrangler deploy`.
+   Der Projektname in Cloudflare muss dem `name` in `wrangler.jsonc` entsprechen (sonst dort anpassen).
+   (Bei einem klassischen Pages-Projekt stattdessen *Build output directory* = `site`.)
+   ([Anleitung](https://developers.cloudflare.com/workers/ci-cd/builds/))
 4. **Zugriffsschutz aktivieren:** [Cloudflare Zero Trust](https://one.dash.cloudflare.com/) → Access → Applications →
    Self-hosted, die Pages-Domain eintragen, Richtlinie „Allow“ nur für deine E-Mail-Adresse (Einmal-PIN).
    ([Anleitung](https://developers.cloudflare.com/pages/configuration/preview-deployments/#customize-preview-deployments-access))
    Das Web-App-Manifest wird mit Anmeldedaten geladen (`crossorigin="use-credentials"`), damit die Installation hinter Access funktioniert.
 5. **Workflow einmal manuell starten:** [Actions → Tägliches Update](https://github.com/Ro83r7/Garmin/actions/workflows/daily.yml)
-   → *Run workflow*. Beim ersten Lauf werden die Beispieldaten verworfen und die echte Historie geladen.
+   → *Run workflow* mit **Branch: main** (Haken „Komplette Historie“ nur, wenn du alles neu laden willst). Beim ersten Lauf werden die Beispieldaten verworfen und die echte Historie geladen.
 6. Blockiert das Pushen der Action: [Workflow-Berechtigungen](https://github.com/Ro83r7/Garmin/settings/actions)
    (*Read and write permissions*) bzw. einen Branch-Schutz für `main` prüfen.
 
