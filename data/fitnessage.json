@@ -1,4 +1,1516 @@
 {
+ "2026-01-01": {
+  "achievable": 51.58754691496713,
+  "age": 53.73351547921288,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 59
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.5
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 39.0
+   }
+  }
+ },
+ "2026-01-08": {
+  "achievable": 51.58754691496713,
+  "age": 53.60415928435006,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 58
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.8
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 41.0
+   }
+  }
+ },
+ "2026-01-15": {
+  "achievable": 51.58754691496713,
+  "age": 53.47480308948723,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 57
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 36.3
+   }
+  }
+ },
+ "2026-01-22": {
+  "achievable": 51.58754691496713,
+  "age": 53.47480308948723,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 57
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 32.0
+   }
+  }
+ },
+ "2026-01-29": {
+  "achievable": 51.58754691496713,
+  "age": 53.60415928435006,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 58
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.1
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 24.1
+   }
+  }
+ },
+ "2026-02-05": {
+  "achievable": 51.58754691496713,
+  "age": 53.73351547921288,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 59
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.1
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 20.5
+   }
+  }
+ },
+ "2026-02-12": {
+  "achievable": 51.58754691496713,
+  "age": 53.86287167407571,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 60
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.1
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 22.8
+   }
+  }
+ },
+ "2026-02-19": {
+  "achievable": 51.58754691496713,
+  "age": 53.73351547921288,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 59
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.5
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 22.5
+   }
+  }
+ },
+ "2026-02-26": {
+  "achievable": 51.58754691496713,
+  "age": 53.60415928435006,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 58
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 28.8
+   }
+  }
+ },
+ "2026-03-05": {
+  "achievable": 51.58754691496713,
+  "age": 53.60415928435006,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 58
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.5
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 29.0
+   }
+  }
+ },
+ "2026-03-12": {
+  "achievable": 51.58754691496713,
+  "age": 53.60415928435006,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 58
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 29.3
+   }
+  }
+ },
+ "2026-03-19": {
+  "achievable": 51.58754691496713,
+  "age": 53.86287167407571,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 60
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.5
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 27.3
+   }
+  }
+ },
+ "2026-03-26": {
+  "achievable": 51.58754691496713,
+  "age": 53.992227868938535,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 61
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 25.0
+   }
+  }
+ },
+ "2026-04-02": {
+  "achievable": 51.58754691496713,
+  "age": 54.93050833907101,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 61
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 15.8
+   }
+  }
+ },
+ "2026-04-09": {
+  "achievable": 51.58754691496713,
+  "age": 55.1647481786053,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 63
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 10.3
+   }
+  }
+ },
+ "2026-04-16": {
+  "achievable": 51.58754691496713,
+  "age": 55.049526998051086,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 62
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 6.8
+   }
+  }
+ },
+ "2026-04-23": {
+  "achievable": 51.58754691496713,
+  "age": 54.93050833907101,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2025-12-22",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 61
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 16.8
+   }
+  }
+ },
+ "2026-04-30": {
+  "achievable": 51.58754691496713,
+  "age": 54.80862675221162,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2026-04-28",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 60
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 20.0
+   }
+  }
+ },
+ "2026-05-07": {
+  "achievable": 51.58754691496713,
+  "age": 54.80862675221162,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2026-04-28",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 60
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 20.3
+   }
+  }
+ },
+ "2026-05-14": {
+  "achievable": 51.58754691496713,
+  "age": 54.93050833907101,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2026-04-28",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 61
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 20.3
+   }
+  }
+ },
+ "2026-05-21": {
+  "achievable": 51.58754691496713,
+  "age": 55.049526998051086,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2026-04-28",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 62
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.8
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 25.0
+   }
+  }
+ },
+ "2026-05-28": {
+  "achievable": 51.58754691496713,
+  "age": 54.23644014084777,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.8,
+    "lastMeasurementDate": "2026-05-27",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.8
+   },
+   "rhr": {
+    "stale": false,
+    "value": 63
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.1
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.487527377463586,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 31.6
+   }
+  }
+ },
+ "2026-06-04": {
+  "achievable": 51.58754691496713,
+  "age": 53.92709451914846,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-04",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.4
+   },
+   "rhr": {
+    "stale": false,
+    "value": 63
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.142519488367405,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.0
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.142519488367405,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 23.0
+   }
+  }
+ },
+ "2026-06-11": {
+  "achievable": 51.58754691496713,
+  "age": 53.784028936451456,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 62
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.12791424154668,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.12791424154668,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 32.1
+   }
+  }
+ },
+ "2026-06-18": {
+  "achievable": 51.58754691496713,
+  "age": 53.532205954085185,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 60
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.5
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 36.0
+   }
+  }
+ },
+ "2026-06-25": {
+  "achievable": 51.58754691496713,
+  "age": 53.40284975922236,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 59
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 41.3
+   }
+  }
+ },
+ "2026-07-02": {
+  "achievable": 51.58754691496713,
+  "age": 53.014781174633896,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 56
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 35.3
+   }
+  }
+ },
+ "2026-07-09": {
+  "achievable": 51.58754691496713,
+  "age": 53.014781174633896,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 56
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.0
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 27.6
+   }
+  }
+ },
+ "2026-07-16": {
+  "achievable": 51.58754691496713,
+  "age": 54.13142317749866,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 57
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.8
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 27.1
+   }
+  }
+ },
+ "2026-07-23": {
+  "achievable": 51.58754691496713,
+  "age": 54.00954159063927,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 56
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.8
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 21.1
+   }
+  }
+ },
+ "2026-07-30": {
+  "achievable": 51.58754691496713,
+  "age": 53.014781174633896,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 56
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.0
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 19.5
+   }
+  }
+ },
+ "2026-08-06": {
+  "achievable": 51.58754691496713,
+  "age": 52.74012876090535,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 54
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.0
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 18.0
+   }
+  }
+ },
+ "2026-08-13": {
+  "achievable": 51.58754691496713,
+  "age": 52.46451045079341,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.3,
+    "lastMeasurementDate": "2026-06-11",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.3
+   },
+   "rhr": {
+    "stale": false,
+    "value": 52
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.1
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.135253846797426,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 23.5
+   }
+  }
+ },
+ "2026-08-20": {
+  "achievable": 51.58754691496713,
+  "age": 52.602117298709885,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-08-20",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 52
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.2728606947139,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.2728606947139,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 31.0
+   }
+  }
+ },
+ "2026-08-27": {
+  "achievable": 51.58754691496713,
+  "age": 52.57459592912659,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-08-20",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 52
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 35.8
+   }
+  }
+ },
+ "2026-09-03": {
+  "achievable": 51.58754691496713,
+  "age": 52.43678677407062,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-08-28",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 51
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 33.1
+   }
+  }
+ },
+ "2026-09-10": {
+  "achievable": 51.58754691496713,
+  "age": 51.90014646997746,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-09-05",
+    "potentialAge": 53.205664595419506,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 51
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.1
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 35.5
+   }
+  }
+ },
+ "2026-09-17": {
+  "achievable": 51.58754691496713,
+  "age": 52.43678677407062,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-09-13",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 51
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.5
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 40.8
+   }
+  }
+ },
+ "2026-09-24": {
+  "achievable": 51.58754691496713,
+  "age": 52.29897761901464,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-09-13",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 50
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.5
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 36.8
+   }
+  }
+ },
+ "2026-10-01": {
+  "achievable": 51.58754691496713,
+  "age": 52.29897761901464,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-09-13",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 50
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.3
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 31.3
+   }
+  }
+ },
+ "2026-10-08": {
+  "achievable": 51.58754691496713,
+  "age": 52.57459592912659,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-09-13",
+    "potentialAge": 53.707826697409615,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 52
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 1.0
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 23.0
+   }
+  }
+ },
+ "2026-10-15": {
+  "achievable": 51.58754691496713,
+  "age": 53.72539119879232,
+  "chrono": 59,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-09-13",
+    "potentialAge": 54.671000581277035,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 53
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 52.245339325130594,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 19.5
+   }
+  }
+ },
  "2026-10-16": {
   "achievable": 51.58754691496713,
   "age": 53.85474739365515,
