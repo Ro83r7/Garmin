@@ -232,7 +232,7 @@
     });
     // Interaktion
     var cross = s('line', { y1: m.t, y2: m.t + ph, stroke: 'var(--muted)', 'stroke-width': 1, opacity: 0, 'stroke-dasharray': '3 3' }, svg);
-    var marks = o.series.filter(function (q) { return q.kind === 'line' || q.kind === 'dots'; }).map(function (q) { return { q: q, el: s('circle', { r: 5, fill: q.color, stroke: 'var(--card)', 'stroke-width': 2, opacity: 0 }, svg) }; });
+    var marks = o.series.filter(function (q) { return q.kind === 'line' || q.kind === 'dots'; }).map(function (q) { return { q: q, el: s('circle', { r: 5, fill: q.color, stroke: 'var(--solid)', 'stroke-width': 2, opacity: 0 }, svg) }; });
     var tip = document.createElement('div'); tip.className = 'tip'; tip.hidden = true; host.appendChild(tip);
     var live = document.createElement('div'); live.className = 'sr'; live.setAttribute('aria-live', 'polite'); host.appendChild(live);
     var has = []; rows.forEach(function (r, k) {
@@ -338,6 +338,25 @@
         });
       });
     }
+    draw();
+  };
+
+  /* Unauffälliger Design-Umschalter ganz unten; die Wahl bleibt im Browser gespeichert. */
+  G.themeSwitch = function (host) {
+    if (!window.GTheme) return;
+    var names = { aurora: 'Aurora', sorbet: 'Sorbet', klassisch: 'Klassisch' };
+    function draw() {
+      var cur = GTheme.get();
+      host.innerHTML = 'Design ' + GTheme.list.map(function (t) {
+        return '<button type="button" data-t="' + t + '" aria-pressed="' + (t === cur) + '">' + names[t] + '</button>';
+      }).join('');
+    }
+    host.setAttribute('role', 'group'); host.setAttribute('aria-label', 'Design wählen');
+    host.addEventListener('click', function (e) {
+      var b = e.target.closest('button'); if (!b) return;
+      GTheme.set(b.dataset.t); draw();
+      if (window.G && G.onTheme) G.onTheme();
+    });
     draw();
   };
 

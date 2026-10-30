@@ -9,6 +9,12 @@ Privates, täglich aktualisiertes Trainings- und Gesundheits-Dashboard als stati
 Telefone (Breite unter 700 px oder iPhone) werden automatisch auf `/m/` geleitet. In beiden Ansichten
 gibt es einen Umschalt-Link, die Wahl wird im Browser gespeichert.
 
+## Designs
+
+Ganz unten auf jeder Seite steht klein „Design: Aurora · Sorbet · Klassisch“. Die Wahl wird im Browser gespeichert
+(`localStorage`, gilt für Desktop und Mobil) und bleibt bis zur nächsten Umstellung. Standard ist Aurora.
+Die Farben der Designs stehen in `site/assets/themes.css`, die Wahl in `site/assets/theme.js`.
+
 ## So funktioniert es
 
 ```
@@ -50,6 +56,12 @@ Cloudflare Pages veröffentlicht den Ordner site/ direkt aus dem Repo
    → *Run workflow* mit **Branch: main** (Haken „Komplette Historie“ nur, wenn du alles neu laden willst). Beim ersten Lauf werden die Beispieldaten verworfen und die echte Historie geladen.
 6. Blockiert das Pushen der Action: [Workflow-Berechtigungen](https://github.com/Ro83r7/Garmin/settings/actions)
    (*Read and write permissions*) bzw. einen Branch-Schutz für `main` prüfen.
+
+## Offene Punkte (später, keine Priorität)
+
+- [ ] **Zugriffsschutz aktivieren**, solange fehlt, ist die Seite für jeden mit der Adresse erreichbar (nur `noindex`).
+  Cloudflare → Workers & Pages → dein Projekt → *Settings* → *Domains & Routes* → *Cloudflare Access* aktivieren,
+  Richtlinie „Allow“ nur für deine E-Mail-Adresse ([Anleitung](https://developers.cloudflare.com/cloudflare-one/applications/configure-apps/self-hosted-public-app/)).
 
 ### Optional: Deploy-Hook
 

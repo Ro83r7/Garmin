@@ -29,7 +29,7 @@
     var ls = D.kpi.last_sleep, h = '<div class="stack">';
     if (ls) {
       var sc = ls.sleep_score;
-      h += card('c-sleep', '<h2 class="c-sleep">' + G.chip('moon', 'sleep') + 'Letzte Nacht</h2><p class="sub" style="margin-bottom:0">Aufgewacht am ' + G.wd(ls.date) + ' ' + G.fmtDate(ls.date) + '</p>' +
+      h += card('c-sleep night-card', '<h2 class="c-sleep">' + G.chip('moon', 'sleep') + 'Letzte Nacht</h2><p class="sub" style="margin-bottom:0">Aufgewacht am ' + G.wd(ls.date) + ' ' + G.fmtDate(ls.date) + '</p>' +
         '<div class="night">' +
         '<div class="it"><div class="l">' + G.icon('bed') + 'Bett</div><div class="v">' + G.time(ls.bed) + '</div></div>' +
         '<div class="it"><div class="l">' + G.icon('sun') + 'Aufwachen</div><div class="v">' + G.time(ls.wake) + '</div></div>' +
@@ -138,6 +138,7 @@
     state.range = parseInt(b.dataset.r, 10); G.store.set('garmin-range-m', String(state.range)); show();
   });
   window.addEventListener('resize', G.debounce(function () { if (D && RENDER[state.view][1]) RENDER[state.view][1](); }, 150));
+  G.themeSwitch($('themes'));
   G.load(['meta', 'daily', 'weeks', 'activities', 'kpi']).then(function (d) {
     D = { meta: d.meta, daily: d.daily, weeks: d.weeks, acts: d.activities, kpi: d.kpi };
     $('stand').innerHTML = G.icon('clock') + 'Stand: ' + G.stand(D.meta).text;
