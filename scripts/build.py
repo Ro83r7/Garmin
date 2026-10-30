@@ -23,7 +23,9 @@ TYPE_LABELS = {
     "hiking": "Wandern", "cycling": "Radfahren", "indoor_cycling": "Indoor-Rad",
     "road_biking": "Rennrad", "mountain_biking": "Mountainbike", "lap_swimming": "Schwimmen",
     "open_water_swimming": "Freiwasser", "strength_training": "Krafttraining",
-    "yoga": "Yoga", "elliptical": "Crosstrainer", "other": "Sonstiges",
+    "golf": "Golf", "resort_skiing": "Skifahren", "resort_skiing_snowboarding": "Ski/Snowboard",
+    "indoor_cardio": "Indoor-Cardio", "hiit": "HIIT", "indoor_rowing": "Rudergerät", "pilates": "Pilates",
+    "stand_up_paddleboarding": "SUP", "e_bike_fitness": "E-Bike", "yoga": "Yoga", "elliptical": "Crosstrainer", "other": "Sonstiges",
 }
 COMPONENT_LABELS = {
     "rhr": "Ruhepuls", "restingheartrate": "Ruhepuls", "bmi": "BMI",

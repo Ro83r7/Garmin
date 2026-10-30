@@ -57,7 +57,7 @@
     var k = D.kpi, h = '<div class="grid kpis">';
     k.kpis.forEach(function (x) {
       var m = KP[x.key], d = x.delta, dg = x.digits || 0;
-      var dtxt = d == null ? 'keine Baseline (zu wenige Werte)' : (d > 0 ? '+' : d < 0 ? '−' : '±') + G.num(Math.abs(d), dg) + (x.unit ? ' ' + x.unit : '') + ' <span class="muted">vs. Ø ' + G.num(x.base, dg) + '</span>';
+      var dtxt = d == null ? 'keine Baseline (zu wenige Werte)' : G.signed(d, dg) + (x.unit ? ' ' + x.unit : '') + ' <span class="muted">vs. Ø ' + G.num(x.base, dg) + '</span>';
       h += card('kpi c-' + m[1],
         '<div class="head">' + G.chip(m[0], m[1]) + x.label + '</div>' +
         '<div class="val">' + kpiVal(x) + '<small>' + (x.value == null ? '' : x.unit) + '</small></div>' +

@@ -105,7 +105,13 @@ class Api:
                     self.login()
                     continue
                 if e.code in (429, 500, 502, 503, 504) and attempt < 3:
-                    time.sleep(2 ** (attempt + 1))
+                    wait = 2 ** (attempt + 1)
+                    if e.code == 429:  # Rate-Limit: Retry-After beachten, sonst deutlich länger warten
+                        try:
+                            wait = max(wait * 5, min(120, int(e.headers.get("Retry-After", 0))))
+                        except (TypeError, ValueError):
+                            wait *= 5
+                    time.sleep(wait)
                     continue
                 if e.code in (204, 404):
                     return None
@@ -206,8 +212,14 @@ def fetch_hrv(api, start, end):
 
 def fetch_fitnessage(api, dates):
     out = {}
-    for d in dates:
-        res = api.get(f"/fitnessage-service/fitnessage/v2/{d.isoformat()}")
+    for n, d in enumerate(dates):
+        if n:
+            time.sleep(1.0)  # Einzelabrufe pro Tag: Rate-Limit schonen
+        try:
+            res = api.get(f"/fitnessage-service/fitnessage/v2/{d.isoformat()}")
+        except ApiError as e:
+            warn(f"Fitness-Alter {d.isoformat()} übersprungen: {e}")  # ein Tag darf fehlen
+            continue
         if not isinstance(res, dict) or num(res.get("fitnessAge")) is None:
             continue
         out[d.isoformat()] = {

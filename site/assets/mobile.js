@@ -42,7 +42,7 @@
     var z = D.kpi.z45, tiles = D.kpi.kpis.filter(function (k) { return KP[k.key]; });
     tiles.forEach(function (k) {
       var m = KP[k.key], d = k.delta, dg = k.digits || 0;
-      var tr = d == null ? G.icon('info') + 'ohne Baseline' : G.icon(d > 0 ? 'up' : d < 0 ? 'down' : 'right') + (d > 0 ? '+' : d < 0 ? '−' : '±') + G.num(Math.abs(d), dg) + ' vs. Ø 28 T.';
+      var tr = d == null ? G.icon('info') + 'ohne Baseline' : G.icon(d > 0 ? 'up' : d < 0 ? 'down' : 'right') + G.signed(d, dg) + ' vs. Ø 28 T.';
       var tab = { rhr: 'herz', hrv: 'herz', stress: 'herz', sleep_score: 'schlaf', steps: 'training' }[k.key];
       h += '<a class="card tile c-' + m[1] + '" href="#' + tab + '"><div class="l">' + G.chip(m[0], m[1]) + k.label + '</div>' +
         '<div class="v">' + (k.value == null ? '–' : G.num(k.value, dg)) + '<small>' + (k.value == null ? '' : k.unit) + '</small></div>' +
