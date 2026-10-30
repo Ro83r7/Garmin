@@ -251,6 +251,7 @@
   });
   window.addEventListener('resize', G.debounce(function () { if (D) { DRAW[state.view](); } }, 150));
 
+  G.themeSwitch($('themes'));
   G.load(['meta', 'daily', 'weeks', 'activities', 'kpi', 'year', 'body']).then(function (d) {
     D = { meta: d.meta, daily: d.daily, weeks: d.weeks, acts: d.activities, kpi: d.kpi, year: d.year, body: d.body };
     var st = G.stand(D.meta);

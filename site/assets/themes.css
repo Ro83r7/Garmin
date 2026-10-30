@@ -1,0 +1,71 @@
+/* Designs: Aurora (dunkel, Glas), Sorbet (hell, bunt). "klassisch" nutzt die Standardfarben aus base.css. */
+
+/* ---------- Aurora ---------- */
+html[data-theme="aurora"] {
+  --bg: #0a0e1f; --card: rgba(255,255,255,.075); --solid: #1a2040; --chip: rgba(255,255,255,.08);
+  --text: #f4f6ff; --muted: #bcc3e6; --grid: rgba(255,255,255,.13); --border: rgba(255,255,255,.16);
+  --shadow: 0 20px 50px rgba(0,0,0,.28); --accent: #a9b5ff; --on-accent: #0a0e1f;
+  --heart: #ff7b7b; --hrv: #b794ff; --sleep: #8f9cff; --stress: #ffae5c; --train: #3fe08a; --steps: #2fd9d0; --fit: #ffd23f;
+  --ok: #6ff0a6; --warn: #ffd966; --bad: #ffa59f; --info: #9db9ff;
+  --z1: #8f9bb3; --z2: #5db4dd; --z3: #5bc788; --z4: #f2b84a; --z5: #ff7b72;
+  color-scheme: dark;
+}
+html[data-theme="aurora"] body {
+  background:
+    radial-gradient(900px 500px at 6% -5%, rgba(108,123,255,.50), transparent 60%),
+    radial-gradient(800px 520px at 100% 4%, rgba(255,107,107,.34), transparent 60%),
+    radial-gradient(900px 600px at 70% 100%, rgba(25,200,192,.30), transparent 60%), #0a0e1f;
+  background-attachment: fixed;
+}
+html[data-theme="aurora"] .card, html[data-theme="aurora"] .side, html[data-theme="aurora"] .seg {
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+}
+html[data-theme="aurora"] .card.kpi, html[data-theme="aurora"] .tile { position: relative; overflow: hidden; }
+html[data-theme="aurora"] .card.kpi::after, html[data-theme="aurora"] .tile::after {
+  content: ""; position: absolute; width: 150px; height: 150px; right: -50px; top: -60px; border-radius: 50%;
+  background: var(--c); filter: blur(46px); opacity: .42; pointer-events: none;
+}
+html[data-theme="aurora"] .chip-icon { background: color-mix(in srgb, var(--c, var(--accent)) 26%, transparent); }
+html[data-theme="aurora"] .brand .chip-icon { background: linear-gradient(135deg, #ff7b7b, #6c7bff); color: #fff; }
+html[data-theme="aurora"] .banner.warn { background: rgba(255,210,63,.16); border-color: rgba(255,210,63,.45); }
+html[data-theme="aurora"] .banner.sample { background: rgba(183,148,255,.16); border-color: rgba(183,148,255,.45); }
+html[data-theme="aurora"] .tabbar { background: rgba(14,18,40,.82); }
+
+/* ---------- Sorbet ---------- */
+html[data-theme="sorbet"] {
+  --bg: #fff8f1; --card: #ffffff; --solid: #ffffff; --chip: #f4eefc;
+  --text: #241a33; --muted: #5b5170; --grid: #eee7f7; --border: #f0e8f8;
+  --shadow: 0 10px 0 -2px rgba(36,26,51,.05), 0 18px 40px rgba(110,80,160,.13);
+  --accent: #6d46d6; --on-accent: #ffffff; --radius: 26px;
+  --heart: #c93a3a; --hrv: #7a3fe0; --sleep: #4a52d9; --stress: #b25405; --train: #137a3d; --steps: #0b7488; --fit: #8f5b00;
+  --ok: #137a3d; --warn: #7a4f00; --bad: #b3261e; --info: #1d4ed8;
+  color-scheme: light;
+}
+html[data-theme="sorbet"] body {
+  background:
+    radial-gradient(520px 380px at 0% 0%, #ffd9e4, transparent 70%),
+    radial-gradient(520px 380px at 100% 8%, #d7e4ff, transparent 70%),
+    radial-gradient(640px 440px at 50% 100%, #d6f7e6, transparent 70%), #fff8f1;
+  background-attachment: fixed;
+}
+html[data-theme="sorbet"] .card { border: 2px solid #fff; }
+html[data-theme="sorbet"] .card.kpi, html[data-theme="sorbet"] .tile { background: color-mix(in srgb, var(--c) 13%, #ffffff); }
+html[data-theme="sorbet"] .chip-icon { background: var(--c, var(--accent)); color: #fff; border-radius: 50%; }
+html[data-theme="sorbet"] .brand .chip-icon { background: linear-gradient(135deg, #ff8a5c, #7a3fe0); }
+html[data-theme="sorbet"] .kpi .head, html[data-theme="sorbet"] .tile .l { color: var(--text); }
+html[data-theme="sorbet"] .side { background: #ffffffd9; border-right-color: #fff; }
+html[data-theme="sorbet"] .side nav a[aria-current="page"] { background: color-mix(in srgb, var(--c) 18%, #fff); }
+html[data-theme="sorbet"] .pill { background: #ffffffcc; }
+html[data-theme="sorbet"] .night-card { background: linear-gradient(135deg, #ffe3a8, #ffc4d6); }
+html[data-theme="sorbet"] .night-card .night .it { background: rgba(255,255,255,.65); }
+html[data-theme="sorbet"] .seg button[aria-pressed="true"] { background: #241a33; }
+html[data-theme="sorbet"] .tabbar { background: rgba(255,255,255,.88); }
+
+/* ---------- Design-Umschalter (bewusst unauffällig, ganz unten) ---------- */
+.themes { margin: 18px 0 8px; text-align: center; font-size: .72rem; color: var(--muted); opacity: .6; }
+.themes:hover, .themes:focus-within { opacity: 1; }
+.themes button {
+  border: 0; background: none; color: inherit; font: inherit; cursor: pointer; padding: 14px 8px; min-height: 44px; min-width: 44px;
+  text-decoration: none;
+}
+.themes button[aria-pressed="true"] { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }

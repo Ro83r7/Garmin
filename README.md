@@ -9,6 +9,12 @@ Privates, täglich aktualisiertes Trainings- und Gesundheits-Dashboard als stati
 Telefone (Breite unter 700 px oder iPhone) werden automatisch auf `/m/` geleitet. In beiden Ansichten
 gibt es einen Umschalt-Link, die Wahl wird im Browser gespeichert.
 
+## Designs
+
+Ganz unten auf jeder Seite steht klein „Design: Aurora · Sorbet · Klassisch“. Die Wahl wird im Browser gespeichert
+(`localStorage`, gilt für Desktop und Mobil) und bleibt bis zur nächsten Umstellung. Standard ist Aurora.
+Die Farben der Designs stehen in `site/assets/themes.css`, die Wahl in `site/assets/theme.js`.
+
 ## So funktioniert es
 
 ```
