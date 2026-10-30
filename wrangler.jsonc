@@ -1,0 +1,9 @@
+{
+  // Cloudflare (Workers Builds): liefert den Ordner site/ als statische Website aus.
+  // "name" muss mit dem Namen deines Projekts in Cloudflare übereinstimmen.
+  "name": "garmin",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./site"
+  }
+}

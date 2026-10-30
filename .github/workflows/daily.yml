@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "30 5 * * *"   # täglich 05:30 UTC (läuft nur auf dem Standardzweig)
   workflow_dispatch:
+    inputs:
+      full:
+        description: "Komplette Historie neu holen (z. B. um das Fitness-Alter nachzuladen)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -26,7 +31,7 @@ jobs:
       - name: Garmin-Daten abrufen
         env:
           GARMIN_PERSONAL_API_KEY: ${{ secrets.GARMIN_PERSONAL_API_KEY }}
-        run: python scripts/fetch_garmin.py
+        run: python scripts/fetch_garmin.py ${{ inputs.full && '--full' || '' }}
 
       - name: Website-Daten berechnen
         run: python scripts/build.py
