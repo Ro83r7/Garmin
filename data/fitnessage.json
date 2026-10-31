@@ -1837,7 +1837,7 @@
  },
  "2026-10-25": {
   "achievable": 52.467414159960065,
-  "age": 55.26669437344576,
+  "age": 55.14406859864523,
   "chrono": 60,
   "components": {
    "bmi": {
@@ -1851,7 +1851,7 @@
    },
    "rhr": {
     "stale": false,
-    "value": 58
+    "value": 57
    },
    "vigorousDaysAvg": {
     "numOfWeeksForIm": 6,
@@ -1859,7 +1859,7 @@
     "priority": 2,
     "stale": false,
     "targetValue": 3,
-    "value": 0.3
+    "value": 0.5
    },
    "vigorousMinutesAvg": {
     "numOfWeeksForIm": 6,
@@ -1873,7 +1873,7 @@
  },
  "2026-10-26": {
   "achievable": 52.467414159960065,
-  "age": 55.26669437344576,
+  "age": 55.14406859864523,
   "chrono": 60,
   "components": {
    "bmi": {
@@ -1887,7 +1887,7 @@
    },
    "rhr": {
     "stale": false,
-    "value": 58
+    "value": 57
    },
    "vigorousDaysAvg": {
     "numOfWeeksForIm": 6,
