@@ -2,8 +2,12 @@ name: Tägliches Update
 
 on:
   schedule:
-    - cron: "17 3 * * *"   # täglich 03:17 UTC (GitHub startet Zeitpläne oft verspätet)
-    - cron: "47 5 * * *"   # Sicherheitsnetz: zweiter Lauf, harmlos, weil der Abruf idempotent ist
+    # GitHub-Zeitpläne kennen nur UTC. Je Zielzeit zwei Einträge (Sommer-/Winterzeit);
+    # der Schritt "Zeitfenster prüfen" lässt nur den passenden Eintrag laufen.
+    - cron: "30 5 * * *"   # 07:30 deutscher Zeit im Sommer
+    - cron: "30 6 * * *"   # 07:30 deutscher Zeit im Winter
+    - cron: "0 7 * * *"    # 09:00 deutscher Zeit im Sommer
+    - cron: "0 8 * * *"    # 09:00 deutscher Zeit im Winter
   workflow_dispatch:
     inputs:
       full:
@@ -23,23 +27,47 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - name: Zeitfenster prüfen
+        id: gate
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          # Manuelle Starts laufen immer. Zeitplan-Starts nur, wenn der Eintrag in deutscher Zeit 07:30 oder 09:00 ist.
+          run=true
+          if [ -n "$SCHEDULE" ]; then
+            set -f; set -- $SCHEDULE; set +f
+            off=$(TZ=Europe/Berlin date +%z | sed -E 's/^([+-])0?([0-9]).*/\1\2/')
+            local_h=$(( (10#$2 + off + 24) % 24 ))
+            case "$local_h:$1" in
+              7:30|9:0) run=true ;;
+              *) run=false ;;
+            esac
+            echo "Zeitplan '$SCHEDULE', Versatz $off h, deutsche Zeit $local_h:$1 -> run=$run"
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+
+      - if: steps.gate.outputs.run == 'true'
+        uses: actions/checkout@v4
         with:
           ref: main   # immer main, auch wenn der Zeitplan vom Standardzweig aus startet
 
-      - uses: actions/setup-python@v5
+      - if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Garmin-Daten abrufen
+      - if: steps.gate.outputs.run == 'true'
+        name: Garmin-Daten abrufen
         env:
           GARMIN_PERSONAL_API_KEY: ${{ secrets.GARMIN_PERSONAL_API_KEY }}
         run: python scripts/fetch_garmin.py ${{ inputs.full && '--full' || '' }}
 
-      - name: Website-Daten berechnen
+      - if: steps.gate.outputs.run == 'true'
+        name: Website-Daten berechnen
         run: python scripts/build.py
 
-      - name: Geänderte Daten committen
+      - if: steps.gate.outputs.run == 'true'
+        name: Geänderte Daten committen
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
