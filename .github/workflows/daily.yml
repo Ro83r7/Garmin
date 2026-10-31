@@ -2,7 +2,8 @@ name: Tägliches Update
 
 on:
   schedule:
-    - cron: "30 5 * * *"   # täglich 05:30 UTC (läuft nur auf dem Standardzweig)
+    - cron: "17 3 * * *"   # täglich 03:17 UTC (GitHub startet Zeitpläne oft verspätet)
+    - cron: "47 5 * * *"   # Sicherheitsnetz: zweiter Lauf, harmlos, weil der Abruf idempotent ist
   workflow_dispatch:
     inputs:
       full:
@@ -23,6 +24,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # immer main, auch wenn der Zeitplan vom Standardzweig aus startet
 
       - uses: actions/setup-python@v5
         with:
@@ -45,7 +48,7 @@ jobs:
             echo "Keine Änderungen."
           else
             git commit -m "Daten aktualisiert ($(date -u +%Y-%m-%d))"
-            git push
+            git push origin HEAD:main
           fi
 
       # Optional: nur nötig, falls Cloudflare Pages nach dem Commit nicht selbst neu veröffentlicht.
