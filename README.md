@@ -103,5 +103,9 @@ Dann `http://localhost:8000/` (Desktop) bzw. `/m/` öffnen. Echte Daten lokal ho
 - **Veränderung:** letzter vollständiger Wert minus Mittel der 28 Tage davor (mindestens 7 Werte nötig).
 - **Ampel:** Abweichung in Standardabweichungen der eigenen 28 Tage; grün „Im Rahmen/Besser“, gelb „Etwas schwächer“
   (ab 0,75 σ), rot „Deutlich schwächer“ (ab 1,5 σ). Immer mit Symbol und Text.
+- **VO2max:** Tageswerte aus dem Garmin-Endpunkt `metrics-service/metrics/maxmet/daily`; fehlt er, dient der letzte
+  `vO2MaxValue` der Aktivitäten des Tages. Nur Tage mit Messung haben einen Wert (Lücken bleiben Lücken).
+- **Longevity+:** Kalenderalter minus Fitness-Alter in Jahren (aus `chronologicalAge` und `fitnessAge` von Garmin).
+  Positiv heißt: Das Fitness-Alter liegt unter dem Kalenderalter. Springt um +1, wenn Garmin dein Alter erhöht.
 - **Intervall-Wochen:** Minuten in Zone 4 + 5 (`hrTimeInZone_4/5`) aller Aktivitäten, Woche Mo bis So.
 - **Intensitätsminuten:** moderat + 2 × intensiv (wie bei Garmin), Woche Mo bis So.

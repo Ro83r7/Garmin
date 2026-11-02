@@ -41,13 +41,15 @@
   }
   function area(id, h) { return '<div id="' + id + '" role="figure"></div>'; }
   function kpiVal(k) {
-    return k.value == null ? '–' : G.num(k.value, k.digits || 0);
+    if (k.value == null) return '–';
+    return (k.key === 'longevity' && k.value > 0 ? '+' : '') + G.num(k.value, k.digits || 0);
   }
 
   /* ---------- Übersicht ---------- */
   var KP = {
     rhr: ['heart', 'heart'], hrv: ['activity', 'hrv'], sleep_score: ['moon', 'sleep'], sleep_dur: ['bed', 'sleep'],
-    stress: ['zap', 'stress'], steps: ['footprints', 'steps'], fitness_age: ['hourglass', 'fit'], im_week: ['timer', 'train']
+    stress: ['zap', 'stress'], steps: ['footprints', 'steps'], fitness_age: ['hourglass', 'fit'], im_week: ['timer', 'train'],
+    vo2: ['wind', 'fit'], longevity: ['trending', 'fit']
   };
   function arrow(d, good) {
     if (d == null || d === 0) return G.icon('right');
@@ -201,6 +203,8 @@
     var b = D.body, h = '<div class="grid">';
     h += '<div class="grid cols2">' + card('', head('scale', 'fit', 'Gewicht', 'Einzelne Wägungen, Lücken bleiben Lücken') + area('ch-weight')) +
       card('', head('scale', 'fit', 'BMI') + area('ch-bmi')) + '</div>';
+    h += '<div class="grid cols2">' + card('', head('wind', 'fit', 'VO2max', 'Garmin-Schätzung in ml/kg/min, nur Tage mit neuer Messung') + area('ch-vo2')) +
+      card('', head('trending', 'fit', 'Longevity+', 'Kalenderalter minus Fitness-Alter in Jahren. Positiv heißt: dein Fitness-Alter liegt unter deinem Kalenderalter.') + area('ch-lon')) + '</div>';
     h += '<div class="grid cols2">' + card('', head('hourglass', 'fit', 'Fitness-Alter', 'Wert von Garmin (kleiner ist besser), gestrichelt = erreichbares Fitness-Alter') + area('ch-fit') +
       G.legend([{ color: C('fit'), label: 'Fitness-Alter' }, { color: C('fit'), label: 'Erreichbar' }])) +
       card('', head('hourglass', 'fit', 'Komponenten') + '<div id="fit-comp"></div>') + '</div>';
@@ -216,6 +220,11 @@
     G.chart($('ch-fit'), { rows: f, x0: x0(), x1: x1(), events: ev(), height: 230, aria: 'Fitness-Alter',
       series: [{ key: 'achievable', kind: 'line', color: C('fit'), label: 'Erreichbar', dash: '5 4', width: 1.8, dots: false, fmt: function (v) { return G.num(v, 1) + ' Jahre'; } },
         { key: 'age', kind: 'line', color: C('fit'), label: 'Fitness-Alter', fmt: function (v) { return G.num(v, 1) + ' Jahre'; } }] });
+    var vr = daily().filter(function (x) { return x.vo2 != null; });
+    G.chart($('ch-vo2'), { rows: vr, x0: x0(), x1: x1(), events: ev(), height: 230, aria: 'VO2max',
+      series: [{ key: 'vo2', kind: 'line', color: C('fit'), label: 'VO2max', fmt: function (v) { return G.num(v, 1) + ' ml/kg/min'; } }] });
+    G.chart($('ch-lon'), { rows: f, x0: x0(), x1: x1(), events: ev(), height: 230, aria: 'Longevity+', refs: [{ y: 0, label: 'Kalenderalter' }],
+      series: [{ key: 'longevity', kind: 'line', color: C('fit'), label: 'Longevity+', fmt: function (v) { return (v > 0 ? '+' : '') + G.num(v, 1) + ' Jahre'; } }] });
     var lf = b.fitness.length ? b.fitness[b.fitness.length - 1] : null;
     var comp = b.components;
     $('fit-comp').innerHTML = !lf ? '<div class="empty">Noch keine Fitness-Alter-Daten</div>' :

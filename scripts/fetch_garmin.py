@@ -210,6 +210,21 @@ def fetch_hrv(api, start, end):
     return out
 
 
+def fetch_vo2max(api, start, end):
+    """VO2max je Tag (nur Tage mit Messung). Mehrere mögliche Feldnamen, weil das Format nicht dokumentiert ist."""
+    out = {}
+    for s, e in chunks(start, end):
+        res = api.get(f"/metrics-service/metrics/maxmet/daily/{s.isoformat()}/{e.isoformat()}")
+        items = res if isinstance(res, list) else (res or {}).get("data", [])
+        for it in items or []:
+            d = it.get("calendarDate")
+            g = it.get("generic") if isinstance(it.get("generic"), dict) else it
+            v = num(g.get("vo2MaxPreciseValue")) or num(g.get("vo2MaxValue"))
+            if d and v:
+                out[d] = {"v": round(v, 1)}
+    return out
+
+
 def fetch_fitnessage(api, dates):
     out = {}
     for n, d in enumerate(dates):
@@ -268,7 +283,7 @@ def fetch_activities(api, start, end):
                 "id": aid, "type": dig(it, "activityType", "typeKey") or "other",
                 "start": st.replace(" ", "T")[:19], "dist": num(it.get("distance")),
                 "dur": num(it.get("duration")), "avg_hr": num(it.get("averageHR")),
-                "max_hr": num(it.get("maxHR")),
+                "max_hr": num(it.get("maxHR")), "vo2": num(it.get("vO2MaxValue")),
                 "z": zones if any(z is not None for z in zones) else None,
                 "name": it.get("activityName"),
             }
@@ -295,7 +310,7 @@ def main():
     meta = load("meta.json", {})
     sample = bool(meta.get("sample"))
     state = {n: ({} if sample else load(f"{n}.json", {}))
-             for n in ("daily", "sleep", "hrv", "activities", "fitnessage", "weight")}
+             for n in ("daily", "sleep", "hrv", "activities", "fitnessage", "weight", "vo2max")}
     first_run = args.full or sample or not state["daily"]
     start = date.fromisoformat(settings["historie_ab"]) if first_run else today - timedelta(days=RECENT_DAYS)
     a_start = date.fromisoformat(settings["aktivitaeten_ab"]) if first_run else start
@@ -336,6 +351,9 @@ def main():
     r = run("HRV", fetch_hrv, api, start, today)
     if r is not None:
         state["hrv"].update(r)
+    r = run("VO2max", fetch_vo2max, api, start, today)
+    if r is not None:
+        state["vo2max"].update(r)
     r = run("Gewicht", fetch_weight, api, start, today)
     if r is not None:
         state["weight"].update(r)
