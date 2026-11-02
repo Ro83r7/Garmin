@@ -9,7 +9,7 @@
   var D = null, state = { view: 'heute', range: 30 };
   var $ = function (id) { return document.getElementById(id); };
   var C = function (n) { return 'var(--' + n + ')'; };
-  var KP = { rhr: ['heart', 'heart'], hrv: ['activity', 'hrv'], sleep_score: ['moon', 'sleep'], stress: ['zap', 'stress'], steps: ['footprints', 'steps'] };
+  var KP = { rhr: ['heart', 'heart'], hrv: ['activity', 'hrv'], sleep_score: ['moon', 'sleep'], stress: ['zap', 'stress'], steps: ['footprints', 'steps'], vo2: ['wind', 'fit'], longevity: ['trending', 'fit'] };
 
   $('foot-icon').innerHTML = G.icon('info');
   $('to-desktop').innerHTML = G.icon('monitor') + 'Desktop-Ansicht';
@@ -43,16 +43,16 @@
     tiles.forEach(function (k) {
       var m = KP[k.key], d = k.delta, dg = k.digits || 0;
       var tr = d == null ? G.icon('info') + 'ohne Baseline' : G.icon(d > 0 ? 'up' : d < 0 ? 'down' : 'right') + G.signed(d, dg) + ' vs. Ø 28 T.';
-      var tab = { rhr: 'herz', hrv: 'herz', stress: 'herz', sleep_score: 'schlaf', steps: 'training' }[k.key];
+      var tab = { rhr: 'herz', hrv: 'herz', stress: 'herz', sleep_score: 'schlaf', steps: 'training', vo2: 'training', longevity: 'heute' }[k.key];
       h += '<a class="card tile c-' + m[1] + '" href="#' + tab + '"><div class="l">' + G.chip(m[0], m[1]) + k.label + '</div>' +
-        '<div class="v">' + (k.value == null ? '–' : G.num(k.value, dg)) + '<small>' + (k.value == null ? '' : k.unit) + '</small></div>' +
+        '<div class="v">' + (k.value == null ? '–' : (k.key === 'longevity' && k.value > 0 ? '+' : '') + G.num(k.value, dg)) + '<small>' + (k.value == null ? '' : k.unit) + '</small></div>' +
         '<div class="tr">' + tr + '</div>' + G.pill(k.status) + '</a>';
     });
     // sechste Kachel: Zone 4/5 diese Woche
     h += '<a class="card tile c-train" href="#training"><div class="l">' + G.chip('target', 'train') + 'Zone 4/5 Woche</div>' +
       '<div class="v">' + G.num(z.value, 0) + '<small>von ' + z.goal + ' min</small></div>' +
       '<div class="tr">' + G.icon(z.value >= z.goal ? 'check' : 'right') + 'Wochenziel</div>' + (z.status ? G.pill(z.status) : '') + '</a>';
-    h += '</div></div>';
+    h += '</div><p class="muted" style="font-size:.8125rem;margin:0">Longevity+ = Kalenderalter minus Fitness-Alter in Jahren. VO2max in ml/kg/min.</p></div>';
     $('v-heute').innerHTML = h;
   }
   function renderHeart() {

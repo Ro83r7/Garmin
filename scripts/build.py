@@ -134,12 +134,19 @@ def main():
     acts_raw = load("activities.json", {})
     weight = load("weight.json", {})
     fit = load("fitnessage.json", {})
+    vo2max = load("vo2max.json", {})
     meta = load("meta.json", {})
 
     all_dates = [d for d in list(daily) + list(sleep) + list(hrv) if d <= today_s]
     if not all_dates:
         raise SystemExit("Keine Daten in data/. Erst fetch_garmin.py oder make_sample_data.py ausführen.")
     first = date.fromisoformat(min(all_dates))
+
+    # VO2max: bevorzugt Tageswerte von Garmin, sonst der letzte Wert aus Aktivitäten des Tages
+    act_vo2 = {}
+    for a in sorted(acts_raw.values(), key=lambda a: a["start"]):
+        if a.get("vo2"):
+            act_vo2[a["start"][:10]] = a["vo2"]
 
     # ---- Tageszeilen --------------------------------------------------------
     rows = []
@@ -164,6 +171,7 @@ def main():
             "sleep_score": sl.get("score"), "sleep_dur": sl.get("dur"), "deep": sl.get("deep"),
             "rem": sl.get("rem"), "light": light, "awake": sl.get("awake"),
             "bed": sl.get("bed"), "wake": sl.get("wake"),
+            "vo2": (vo2max.get(k) or {}).get("v") or act_vo2.get(k),
             "bed_min": minutes_after_noon(sl.get("bed")), "wake_min": minutes_after_noon(sl.get("wake")),
         })
         d += timedelta(days=1)
@@ -242,16 +250,16 @@ def main():
     }
 
     # ---- KPIs -----------------------------------------------------------------
-    def kpi_series(key, label, unit, good, worse_word, digits=0, scale=1.0):
+    def kpi_series(key, label, unit, good, worse_word, digits=0, scale=1.0, min_n=7, compact=False):
         vals = [(x["date"], x[key]) for x in rows if x[key] is not None]
         if not vals:
             return {"key": key, "label": label, "unit": unit, "value": None, "spark": []}
         ld, lv = vals[-1]
         prev = [x[key] for x in rows if x[key] is not None and ld > x["date"] >= iso(date.fromisoformat(ld) - timedelta(days=28))]
-        bm = mean(prev) if len(prev) >= 7 else None
-        bsd = statistics.pstdev(prev) if len(prev) >= 7 else None
+        bm = mean(prev) if len(prev) >= min_n else None
+        bsd = statistics.pstdev(prev) if len(prev) >= min_n else None
         delta = (lv - bm) if bm is not None else None
-        spark = [x[key] for x in rows[-30:]]
+        spark = [v for _, v in vals[-12:]] if compact else [x[key] for x in rows[-30:]]
         return {
             "key": key, "label": label, "unit": unit, "date": ld, "digits": digits,
             "value": r(lv * scale, 2), "base": r(bm * scale, 2) if bm is not None else None,
@@ -268,6 +276,7 @@ def main():
         kpi_series("stress", "Stress", "", "low", "höher"),
         kpi_series("steps", "Schritte", "", "high", "niedriger"),
     ]
+    kpis.append(kpi_series("vo2", "VO2max", "ml/kg/min", "high", "niedriger", digits=1, min_n=3, compact=True))
     fit_rows = sorted(({"date": k, **v} for k, v in fit.items() if k <= today_s), key=lambda x: x["date"])
     fk = {"key": "fitness_age", "label": "Fitness-Alter", "unit": "Jahre", "digits": 1, "value": None,
           "spark": [x["age"] for x in fit_rows[-30:]], "good": "low"}
@@ -279,6 +288,17 @@ def main():
                   delta=r(last["age"] - bm, 1) if bm is not None else None,
                   status=status_for(last["age"], bm, statistics.pstdev(prev) if len(prev) > 1 else 0.3, "low", "höher"))
     kpis.append(fk)
+    # Longevity+ = Kalenderalter minus Fitness-Alter (Jahre; positiv = Fitness-Alter liegt darunter)
+    lon_rows = [(x["date"], x["chrono"] - x["age"]) for x in fit_rows if x.get("chrono") is not None and x.get("age") is not None]
+    lk = {"key": "longevity", "label": "Longevity+", "unit": "Jahre", "digits": 1, "value": None,
+          "spark": [r(v, 2) for _, v in lon_rows[-30:]], "good": "high"}
+    if lon_rows:
+        ld, lv = lon_rows[-1]
+        prev = [v for d, v in lon_rows if ld > d >= iso(date.fromisoformat(ld) - timedelta(days=28))]
+        bm = mean(prev) if prev else None
+        lk.update(date=ld, value=r(lv, 1), base=r(bm, 1), delta=r(lv - bm, 1) if bm is not None else None,
+                  status=status_for(lv, bm, statistics.pstdev(prev) if len(prev) > 1 else 0.3, "high", "niedriger"))
+    kpis.append(lk)
     full = [wk for wk in weeks if not wk["partial"] and wk["im"] is not None]
     ik = {"key": "im_week", "label": "Intensitätsminuten pro Woche", "unit": "min", "digits": 0, "value": None,
           "spark": [wk["im"] for wk in weeks[-12:]], "good": "high"}
@@ -303,7 +323,8 @@ def main():
     body = {
         "weight": sorted(({"date": k, **v} for k, v in weight.items() if k <= today_s), key=lambda x: x["date"]),
         "fitness": [{"date": x["date"], "age": x["age"], "achievable": x.get("achievable"),
-                     "chrono": x.get("chrono")} for x in fit_rows],
+                     "chrono": x.get("chrono"),
+                     "longevity": r(x["chrono"] - x["age"], 1) if x.get("chrono") is not None and x.get("age") is not None else None} for x in fit_rows],
         "components": normalize_components(fit_rows[-1].get("components")) if fit_rows else [],
         "height_cm": settings.get("groesse_cm"),
     }
