@@ -9,6 +9,13 @@ Privates, täglich aktualisiertes Trainings- und Gesundheits-Dashboard als stati
 Telefone (Breite unter 700 px oder iPhone) werden automatisch auf `/m/` geleitet. In beiden Ansichten
 gibt es einen Umschalt-Link, die Wahl wird im Browser gespeichert.
 
+## Zeitplan
+
+GitHub startet Zeitpläne in diesem Repo erfahrungsgemäß 6 bis 9 Stunden verspätet. Die Einträge in
+`.github/workflows/daily.yml` liegen deshalb bewusst nachts (22:30, 00:30, 02:00 und 03:30 UTC), damit die Läufe
+mit der Verspätung am Morgen deutscher Zeit ankommen. Der Abruf ist idempotent, mehrere Läufe schaden nicht.
+Wird GitHub später pünktlicher, die Zeiten entsprechend anpassen (Alternative: Auslöser über Cloudflare).
+
 ## Designs
 
 Ganz unten auf jeder Seite steht klein „Design: Aurora · Sorbet · Klassisch“. Die Wahl wird im Browser gespeichert
@@ -18,7 +25,7 @@ Die Farben der Designs stehen in `site/assets/themes.css`, die Wahl in `site/ass
 ## So funktioniert es
 
 ```
-GitHub Action (täglich 05:30 UTC)
+GitHub Action (nachts, siehe Zeitplan unten)
   scripts/fetch_garmin.py  →  data/*.json        (Rohdaten, Upsert nach Datum)
   scripts/build.py         →  site/data/*.json   (Wochen, Mittel, Baselines, KPIs)
   Commit nach main (nur bei Änderung)
