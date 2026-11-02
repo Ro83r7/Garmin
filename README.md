@@ -1,5 +1,7 @@
 # Garmin Dashboard
 
+**Adresse:** https://garmin.robert-sang.workers.dev/ (Mobil: `/m/`)
+
 Privates, täglich aktualisiertes Trainings- und Gesundheits-Dashboard als statische Website
 (Deutsch, ohne Backend, ohne Framework, ohne Tracker).
 
