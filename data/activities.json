@@ -8,6 +8,7 @@
   "name": "Essen Gehen",
   "start": "2025-01-06T10:09:10",
   "type": "walking",
+  "vo2": null,
   "z": [
    262.998,
    0.0,
@@ -25,6 +26,7 @@
   "name": "Essen Laufen",
   "start": "2025-01-06T11:58:39",
   "type": "running",
+  "vo2": null,
   "z": [
    12.0,
    107.999,
@@ -42,6 +44,7 @@
   "name": "Laufbandtraining",
   "start": "2025-01-08T11:35:06",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    27.0,
    142.598,
@@ -59,6 +62,7 @@
   "name": "Laufbandtraining",
   "start": "2025-01-10T11:43:44",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    18.0,
    57.0,
@@ -76,6 +80,7 @@
   "name": "Laufbandtraining",
   "start": "2025-01-13T13:30:10",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    26.001,
    137.638,
@@ -93,6 +98,7 @@
   "name": "Inezgane Golf",
   "start": "2025-01-20T10:53:27",
   "type": "golf",
+  "vo2": null,
   "z": [
    4350.985,
    34.0,
@@ -110,6 +116,7 @@
   "name": "Inezgane Golf",
   "start": "2025-01-21T11:25:06",
   "type": "golf",
+  "vo2": null,
   "z": [
    8521.966,
    895.996,
@@ -127,6 +134,7 @@
   "name": "Inezgane Golf",
   "start": "2025-01-21T14:20:59",
   "type": "golf",
+  "vo2": null,
   "z": [
    7290.783,
    232.999,
@@ -144,6 +152,7 @@
   "name": "Indoor Cycling",
   "start": "2025-01-22T10:00:20",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    1405.723,
    1764.0,
@@ -161,6 +170,7 @@
   "name": "Agadir Gehen",
   "start": "2025-01-22T11:26:33",
   "type": "walking",
+  "vo2": null,
   "z": [
    298.997,
    0.0,
@@ -178,6 +188,7 @@
   "name": "Agadir Gehen",
   "start": "2025-01-22T12:20:48",
   "type": "walking",
+  "vo2": null,
   "z": [
    180.001,
    0.0,
@@ -195,6 +206,7 @@
   "name": "Agadir Gehen",
   "start": "2025-01-22T12:57:53",
   "type": "walking",
+  "vo2": null,
   "z": [
    64.001,
    0.0,
@@ -212,6 +224,7 @@
   "name": "Taghazout Golf",
   "start": "2025-01-23T10:55:37",
   "type": "golf",
+  "vo2": null,
   "z": [
    5884.01,
    45.0,
@@ -229,6 +242,7 @@
   "name": "Inezgane Golf",
   "start": "2025-01-24T10:58:03",
   "type": "golf",
+  "vo2": null,
   "z": [
    11530.983,
    488.008,
@@ -246,6 +260,7 @@
   "name": "Inezgane Golf",
   "start": "2025-01-25T10:59:42",
   "type": "golf",
+  "vo2": null,
   "z": [
    4050.01,
    87.999,
@@ -263,6 +278,7 @@
   "name": "Laufbandtraining",
   "start": "2025-01-27T11:20:32",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    7.478,
    24.071,
@@ -280,6 +296,7 @@
   "name": "Laufbandtraining",
   "start": "2025-01-31T10:32:51",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    0.0,
    29.847,
@@ -297,6 +314,7 @@
   "name": "Laufbandtraining",
   "start": "2025-02-01T12:08:08",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    0.0,
    33.761,
@@ -314,6 +332,7 @@
   "name": "Mülheim an der Ruhr Gehen",
   "start": "2025-02-02T20:06:55",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -331,6 +350,7 @@
   "name": "Mülheim an der Ruhr Gehen",
   "start": "2025-02-02T20:34:34",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -348,6 +368,7 @@
   "name": "Essen Laufen",
   "start": "2025-02-09T12:31:53",
   "type": "running",
+  "vo2": null,
   "z": [
    11.0,
    282.996,
@@ -365,6 +386,7 @@
   "name": "Duisburg Golf",
   "start": "2025-02-09T14:57:31",
   "type": "golf",
+  "vo2": null,
   "z": [
    2576.207,
    85.996,
@@ -382,6 +404,7 @@
   "name": "Laufbandtraining",
   "start": "2025-02-15T10:10:17",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    8.621,
    10.001,
@@ -399,6 +422,7 @@
   "name": "Duisburg Golf",
   "start": "2025-02-16T12:59:45",
   "type": "golf",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -416,6 +440,7 @@
   "name": "Boukhalef Golf",
   "start": "2025-02-18T11:20:10",
   "type": "golf",
+  "vo2": null,
   "z": [
    3007.023,
    109.002,
@@ -433,6 +458,7 @@
   "name": "Boukhalef Golf",
   "start": "2025-02-19T10:47:19",
   "type": "golf",
+  "vo2": null,
   "z": [
    3399.043,
    103.001,
@@ -450,6 +476,7 @@
   "name": "Tangier Golf",
   "start": "2025-02-20T11:09:30",
   "type": "golf",
+  "vo2": null,
   "z": [
    3446.007,
    139.001,
@@ -467,6 +494,7 @@
   "name": "Boukhalef Golf",
   "start": "2025-02-21T10:32:17",
   "type": "golf",
+  "vo2": null,
   "z": [
    4405.053,
    57.97,
@@ -484,6 +512,7 @@
   "name": "Boukhalef Laufen",
   "start": "2025-02-21T17:10:30",
   "type": "running",
+  "vo2": null,
   "z": [
    9.0,
    415.0,
@@ -501,6 +530,7 @@
   "name": "Boukhalef Golf",
   "start": "2025-02-22T12:45:29",
   "type": "golf",
+  "vo2": null,
   "z": [
    3659.968,
    641.002,
@@ -518,6 +548,7 @@
   "name": "Boukhalef Golf",
   "start": "2025-02-23T11:11:02",
   "type": "golf",
+  "vo2": null,
   "z": [
    3527.009,
    74.002,
@@ -535,6 +566,7 @@
   "name": "Laufbandtraining",
   "start": "2025-02-26T08:37:00",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    3.0,
    64.644,
@@ -552,6 +584,7 @@
   "name": "Essen Gehen",
   "start": "2025-02-26T13:27:34",
   "type": "walking",
+  "vo2": null,
   "z": [
    110.992,
    0.0,
@@ -569,6 +602,7 @@
   "name": "Duisburg Golf",
   "start": "2025-03-01T13:09:26",
   "type": "golf",
+  "vo2": null,
   "z": [
    527.003,
    0.0,
@@ -586,6 +620,7 @@
   "name": "Duisburg Golf",
   "start": "2025-03-02T12:56:57",
   "type": "golf",
+  "vo2": null,
   "z": [
    531.0,
    0.0,
@@ -603,6 +638,7 @@
   "name": "Duisburg Golf",
   "start": "2025-03-03T10:57:10",
   "type": "golf",
+  "vo2": null,
   "z": [
    902.674,
    0.0,
@@ -620,6 +656,7 @@
   "name": "Essen Laufen",
   "start": "2025-03-03T16:28:20",
   "type": "running",
+  "vo2": null,
   "z": [
    9.0,
    8.0,
@@ -637,6 +674,7 @@
   "name": "Essen Laufen",
   "start": "2025-03-05T10:30:24",
   "type": "running",
+  "vo2": null,
   "z": [
    0.0,
    41.472,
@@ -654,6 +692,7 @@
   "name": "Duisburg Golf",
   "start": "2025-03-08T11:45:25",
   "type": "golf",
+  "vo2": null,
   "z": [
    58.998,
    0.0,
@@ -671,6 +710,7 @@
   "name": "Duisburg Golf",
   "start": "2025-03-08T14:27:45",
   "type": "golf",
+  "vo2": null,
   "z": [
    1052.034,
    0.0,
@@ -688,6 +728,7 @@
   "name": "Duisburg Golf",
   "start": "2025-03-09T12:50:52",
   "type": "golf",
+  "vo2": null,
   "z": [
    211.998,
    0.0,
@@ -705,6 +746,7 @@
   "name": "Duisburg Golf",
   "start": "2025-03-15T12:11:16",
   "type": "golf",
+  "vo2": null,
   "z": [
    2919.014,
    13.0,
@@ -722,6 +764,7 @@
   "name": "Düsseldorf Gehen",
   "start": "2025-03-16T13:35:28",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -739,6 +782,7 @@
   "name": "Essen Laufen",
   "start": "2025-03-17T16:41:37",
   "type": "running",
+  "vo2": null,
   "z": [
    5.0,
    17.001,
@@ -756,6 +800,7 @@
   "name": "Duisburg Golf",
   "start": "2025-03-23T09:36:56",
   "type": "golf",
+  "vo2": null,
   "z": [
    354.033,
    0.0,
@@ -773,6 +818,7 @@
   "name": "Wegberg Golf",
   "start": "2025-03-26T12:36:17",
   "type": "golf",
+  "vo2": null,
   "z": [
    4959.012,
    126.002,
@@ -790,6 +836,7 @@
   "name": "Indoor Cycling",
   "start": "2025-03-28T20:20:47",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    565.829,
    1271.998,
@@ -807,6 +854,7 @@
   "name": "Essen Laufen",
   "start": "2025-03-29T16:58:00",
   "type": "running",
+  "vo2": null,
   "z": [
    13.0,
    178.003,
@@ -824,6 +872,7 @@
   "name": "Pylos Golf",
   "start": "2025-04-04T11:01:44",
   "type": "golf",
+  "vo2": null,
   "z": [
    2486.03,
    90.002,
@@ -841,6 +890,7 @@
   "name": "Gargalianoi Gehen",
   "start": "2025-04-06T13:08:09",
   "type": "walking",
+  "vo2": null,
   "z": [
    40.001,
    0.0,
@@ -858,6 +908,7 @@
   "name": "Pylos Golf",
   "start": "2025-04-05T10:41:59",
   "type": "golf",
+  "vo2": null,
   "z": [
    1785.995,
    23.001,
@@ -875,6 +926,7 @@
   "name": "Gargalianoi Golf",
   "start": "2025-04-07T11:19:31",
   "type": "golf",
+  "vo2": null,
   "z": [
    1259.032,
    35.968,
@@ -892,6 +944,7 @@
   "name": "Pylos Golf",
   "start": "2025-04-09T10:32:48",
   "type": "golf",
+  "vo2": null,
   "z": [
    6061.022,
    284.0,
@@ -909,6 +962,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-11T12:09:09",
   "type": "golf",
+  "vo2": null,
   "z": [
    860.998,
    75.998,
@@ -926,6 +980,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-12T11:35:21",
   "type": "golf",
+  "vo2": null,
   "z": [
    41.006,
    0.0,
@@ -943,6 +998,7 @@
   "name": "Duisburg Gehen",
   "start": "2025-04-13T18:53:01",
   "type": "walking",
+  "vo2": null,
   "z": [
    1841.981,
    0.0,
@@ -960,6 +1016,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-14T09:35:15",
   "type": "golf",
+  "vo2": null,
   "z": [
    2029.004,
    0.0,
@@ -977,6 +1034,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-18T12:03:24",
   "type": "golf",
+  "vo2": null,
   "z": [
    1263.004,
    2.0,
@@ -994,6 +1052,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-19T10:44:41",
   "type": "golf",
+  "vo2": null,
   "z": [
    1563.019,
    9.002,
@@ -1011,6 +1070,7 @@
   "name": "Essen Laufen",
   "start": "2025-04-20T08:14:57",
   "type": "running",
+  "vo2": null,
   "z": [
    8.0,
    200.998,
@@ -1028,6 +1088,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-20T12:06:04",
   "type": "golf",
+  "vo2": null,
   "z": [
    1661.998,
    0.0,
@@ -1045,6 +1106,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-21T09:25:00",
   "type": "golf",
+  "vo2": null,
   "z": [
    556.024,
    0.0,
@@ -1062,6 +1124,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-21T14:55:57",
   "type": "golf",
+  "vo2": null,
   "z": [
    1093.89,
    7.0,
@@ -1079,6 +1142,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-22T16:09:35",
   "type": "golf",
+  "vo2": null,
   "z": [
    2054.955,
    0.0,
@@ -1096,6 +1160,7 @@
   "name": "Essen Gehen",
   "start": "2025-04-25T09:34:46",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -1113,6 +1178,7 @@
   "name": "Essen Laufen",
   "start": "2025-04-25T16:13:41",
   "type": "running",
+  "vo2": null,
   "z": [
    14.001,
    104.997,
@@ -1130,6 +1196,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-26T09:28:09",
   "type": "golf",
+  "vo2": null,
   "z": [
    923.004,
    0.0,
@@ -1147,6 +1214,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-27T10:39:11",
   "type": "golf",
+  "vo2": null,
   "z": [
    1041.994,
    38.001,
@@ -1164,6 +1232,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-27T13:54:23",
   "type": "golf",
+  "vo2": null,
   "z": [
    36.0,
    0.0,
@@ -1181,6 +1250,7 @@
   "name": "Essen Laufen",
   "start": "2025-04-27T18:54:26",
   "type": "running",
+  "vo2": null,
   "z": [
    10.998,
    27.0,
@@ -1198,6 +1268,7 @@
   "name": "Essen Laufen",
   "start": "2025-04-27T19:37:49",
   "type": "running",
+  "vo2": null,
   "z": [
    0.0,
    109.987,
@@ -1215,6 +1286,7 @@
   "name": "Duisburg Golf",
   "start": "2025-04-28T12:41:38",
   "type": "golf",
+  "vo2": null,
   "z": [
    1759.994,
    13.999,
@@ -1232,6 +1304,7 @@
   "name": "Essen Radfahren",
   "start": "2025-04-30T18:37:57",
   "type": "cycling",
+  "vo2": null,
   "z": [
    1681.361,
    182.999,
@@ -1249,6 +1322,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-01T10:13:29",
   "type": "golf",
+  "vo2": null,
   "z": [
    881.987,
    0.0,
@@ -1266,6 +1340,7 @@
   "name": "Jesolo Golf",
   "start": "2025-05-03T10:35:39",
   "type": "golf",
+  "vo2": null,
   "z": [
    3636.809,
    159.004,
@@ -1283,6 +1358,7 @@
   "name": "Jesolo Gehen",
   "start": "2025-05-04T07:53:02",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -1300,6 +1376,7 @@
   "name": "Jesolo Gehen",
   "start": "2025-05-04T09:17:57",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -1317,6 +1394,7 @@
   "name": "Jesolo Gehen",
   "start": "2025-05-04T10:36:18",
   "type": "walking",
+  "vo2": null,
   "z": [
    900.982,
    0.0,
@@ -1334,6 +1412,7 @@
   "name": "Jesolo Laufen",
   "start": "2025-05-05T10:56:29",
   "type": "running",
+  "vo2": null,
   "z": [
    15.0,
    716.993,
@@ -1351,6 +1430,7 @@
   "name": "Essen Laufen",
   "start": "2025-05-06T18:51:38",
   "type": "running",
+  "vo2": null,
   "z": [
    9.0,
    75.999,
@@ -1368,6 +1448,7 @@
   "name": "Indoor Cycling",
   "start": "2025-05-07T11:34:15",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    398.001,
    594.996,
@@ -1385,6 +1466,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-10T13:33:33",
   "type": "golf",
+  "vo2": null,
   "z": [
    1185.003,
    96.999,
@@ -1402,6 +1484,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-11T10:55:24",
   "type": "golf",
+  "vo2": null,
   "z": [
    65.998,
    0.0,
@@ -1419,6 +1502,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-12T16:42:34",
   "type": "golf",
+  "vo2": null,
   "z": [
    37.924,
    0.0,
@@ -1436,6 +1520,7 @@
   "name": "Essen Laufen",
   "start": "2025-05-13T11:09:50",
   "type": "running",
+  "vo2": null,
   "z": [
    11.0,
    12.0,
@@ -1453,6 +1538,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-14T11:57:22",
   "type": "golf",
+  "vo2": null,
   "z": [
    3.0,
    0.0,
@@ -1470,6 +1556,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-14T18:55:26",
   "type": "golf",
+  "vo2": null,
   "z": [
    534.488,
    0.0,
@@ -1487,6 +1574,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-15T11:04:48",
   "type": "golf",
+  "vo2": null,
   "z": [
    1103.985,
    22.0,
@@ -1504,6 +1592,7 @@
   "name": "Essen Laufen",
   "start": "2025-05-15T20:12:07",
   "type": "running",
+  "vo2": null,
   "z": [
    9.999,
    12.0,
@@ -1521,6 +1610,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-16T16:14:58",
   "type": "golf",
+  "vo2": null,
   "z": [
    530.017,
    0.0,
@@ -1538,6 +1628,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-17T11:35:44",
   "type": "golf",
+  "vo2": null,
   "z": [
    182.999,
    0.0,
@@ -1555,6 +1646,7 @@
   "name": "Essen Laufen",
   "start": "2025-05-17T18:35:28",
   "type": "running",
+  "vo2": null,
   "z": [
    8.0,
    24.992,
@@ -1572,6 +1664,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-18T16:17:14",
   "type": "golf",
+  "vo2": null,
   "z": [
    140.996,
    0.0,
@@ -1589,6 +1682,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-19T12:06:09",
   "type": "golf",
+  "vo2": null,
   "z": [
    76.999,
    0.0,
@@ -1606,6 +1700,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-20T12:56:02",
   "type": "golf",
+  "vo2": null,
   "z": [
    471.99,
    0.0,
@@ -1623,6 +1718,7 @@
   "name": "Essen Laufen",
   "start": "2025-05-20T16:55:47",
   "type": "running",
+  "vo2": null,
   "z": [
    14.001,
    37.999,
@@ -1640,6 +1736,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-21T10:41:11",
   "type": "golf",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -1657,6 +1754,7 @@
   "name": "Essen Laufen",
   "start": "2025-05-22T15:35:33",
   "type": "running",
+  "vo2": null,
   "z": [
    12.036,
    150.963,
@@ -1674,6 +1772,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-23T12:53:43",
   "type": "golf",
+  "vo2": null,
   "z": [
    76.999,
    0.0,
@@ -1691,6 +1790,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-24T11:07:01",
   "type": "golf",
+  "vo2": null,
   "z": [
    128.998,
    0.0,
@@ -1708,6 +1808,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-25T15:52:11",
   "type": "golf",
+  "vo2": null,
   "z": [
    1238.001,
    0.0,
@@ -1725,6 +1826,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-26T09:58:34",
   "type": "golf",
+  "vo2": null,
   "z": [
    270.997,
    0.0,
@@ -1742,6 +1844,7 @@
   "name": "Essen Laufen",
   "start": "2025-05-26T18:35:42",
   "type": "running",
+  "vo2": null,
   "z": [
    0.0,
    529.19,
@@ -1759,6 +1862,7 @@
   "name": "Essen Laufen",
   "start": "2025-05-28T19:09:41",
   "type": "running",
+  "vo2": null,
   "z": [
    13.756,
    102.767,
@@ -1776,6 +1880,7 @@
   "name": "Indoor Cycling",
   "start": "2025-05-28T21:04:32",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    26.0,
    573.002,
@@ -1793,6 +1898,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-29T10:15:47",
   "type": "golf",
+  "vo2": null,
   "z": [
    1565.94,
    0.0,
@@ -1810,6 +1916,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-30T11:04:43",
   "type": "golf",
+  "vo2": null,
   "z": [
    261.956,
    0.0,
@@ -1827,6 +1934,7 @@
   "name": "Essen Laufen",
   "start": "2025-05-30T18:09:02",
   "type": "running",
+  "vo2": null,
   "z": [
    6.002,
    6.998,
@@ -1844,6 +1952,7 @@
   "name": "Duisburg Golf",
   "start": "2025-05-31T10:51:41",
   "type": "golf",
+  "vo2": null,
   "z": [
    9603.148,
    686.994,
@@ -1861,6 +1970,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-01T13:15:16",
   "type": "golf",
+  "vo2": null,
   "z": [
    1830.981,
    0.0,
@@ -1878,6 +1988,7 @@
   "name": "Essen Laufen",
   "start": "2025-06-03T10:11:03",
   "type": "running",
+  "vo2": null,
   "z": [
    14.0,
    132.0,
@@ -1895,6 +2006,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-03T12:52:42",
   "type": "golf",
+  "vo2": null,
   "z": [
    1301.011,
    0.0,
@@ -1912,6 +2024,7 @@
   "name": "Essen Laufen",
   "start": "2025-06-05T13:55:11",
   "type": "running",
+  "vo2": null,
   "z": [
    8.999,
    26.0,
@@ -1929,6 +2042,7 @@
   "name": "Essen Laufen",
   "start": "2025-06-08T15:20:25",
   "type": "running",
+  "vo2": null,
   "z": [
    5.0,
    10.0,
@@ -1946,6 +2060,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-09T15:53:02",
   "type": "golf",
+  "vo2": null,
   "z": [
    252.001,
    0.0,
@@ -1963,6 +2078,7 @@
   "name": "Voerde (Niederrhein) Gehen",
   "start": "2025-06-12T18:17:29",
   "type": "walking",
+  "vo2": null,
   "z": [
    134.983,
    0.0,
@@ -1980,6 +2096,7 @@
   "name": "Essen Gehen",
   "start": "2025-06-13T14:29:27",
   "type": "walking",
+  "vo2": null,
   "z": [
    69.997,
    0.0,
@@ -1997,6 +2114,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-15T15:01:57",
   "type": "golf",
+  "vo2": null,
   "z": [
    137.001,
    0.0,
@@ -2014,6 +2132,7 @@
   "name": "Essen Laufen",
   "start": "2025-06-15T18:45:40",
   "type": "running",
+  "vo2": null,
   "z": [
    5.999,
    322.984,
@@ -2031,6 +2150,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-16T09:39:16",
   "type": "golf",
+  "vo2": null,
   "z": [
    632.004,
    1.0,
@@ -2048,6 +2168,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-18T09:35:54",
   "type": "golf",
+  "vo2": null,
   "z": [
    240.0,
    0.0,
@@ -2065,6 +2186,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-19T12:27:32",
   "type": "golf",
+  "vo2": null,
   "z": [
    12254.972,
    312.998,
@@ -2082,6 +2204,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-20T12:37:21",
   "type": "golf",
+  "vo2": null,
   "z": [
    12.997,
    0.0,
@@ -2099,6 +2222,7 @@
   "name": "Essen Laufen",
   "start": "2025-06-20T18:24:58",
   "type": "running",
+  "vo2": null,
   "z": [
    16.949,
    28.001,
@@ -2116,6 +2240,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-21T10:34:10",
   "type": "golf",
+  "vo2": null,
   "z": [
    7313.008,
    34.999,
@@ -2133,6 +2258,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-22T11:53:44",
   "type": "golf",
+  "vo2": null,
   "z": [
    177.996,
    0.0,
@@ -2150,6 +2276,7 @@
   "name": "Laufbandtraining",
   "start": "2025-06-23T13:37:31",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    7.001,
    13.999,
@@ -2167,6 +2294,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-24T13:35:28",
   "type": "golf",
+  "vo2": null,
   "z": [
    36.233,
    0.0,
@@ -2184,6 +2312,7 @@
   "name": "Essen Laufen",
   "start": "2025-06-24T19:12:37",
   "type": "running",
+  "vo2": null,
   "z": [
    21.805,
    12.001,
@@ -2201,6 +2330,7 @@
   "name": "Sankt Augustin Golf",
   "start": "2025-06-28T12:02:42",
   "type": "golf",
+  "vo2": null,
   "z": [
    7782.031,
    316.002,
@@ -2218,6 +2348,7 @@
   "name": "Duisburg Golf",
   "start": "2025-06-29T13:05:04",
   "type": "golf",
+  "vo2": null,
   "z": [
    822.01,
    0.0,
@@ -2235,6 +2366,7 @@
   "name": "Essen Laufen",
   "start": "2025-07-03T10:20:55",
   "type": "running",
+  "vo2": null,
   "z": [
    8.999,
    174.986,
@@ -2252,6 +2384,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-01T19:00:46",
   "type": "golf",
+  "vo2": null,
   "z": [
    226.001,
    0.0,
@@ -2269,6 +2402,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-05T12:06:17",
   "type": "golf",
+  "vo2": null,
   "z": [
    31.999,
    0.0,
@@ -2286,6 +2420,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-07T12:43:20",
   "type": "golf",
+  "vo2": null,
   "z": [
    194.999,
    0.0,
@@ -2303,6 +2438,7 @@
   "name": "Essen Laufen",
   "start": "2025-07-07T18:24:33",
   "type": "running",
+  "vo2": null,
   "z": [
    13.0,
    41.0,
@@ -2320,6 +2456,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-09T14:16:44",
   "type": "golf",
+  "vo2": null,
   "z": [
    11260.995,
    809.003,
@@ -2337,6 +2474,7 @@
   "name": "Essen Laufen",
   "start": "2025-07-10T16:17:04",
   "type": "running",
+  "vo2": null,
   "z": [
    18.0,
    13.001,
@@ -2354,6 +2492,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-10T18:32:03",
   "type": "golf",
+  "vo2": null,
   "z": [
    1155.968,
    0.0,
@@ -2371,6 +2510,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-12T12:46:44",
   "type": "golf",
+  "vo2": null,
   "z": [
    10414.054,
    261.002,
@@ -2388,6 +2528,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-14T10:24:30",
   "type": "golf",
+  "vo2": null,
   "z": [
    127.005,
    0.0,
@@ -2405,6 +2546,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-14T18:45:13",
   "type": "golf",
+  "vo2": null,
   "z": [
    181.0,
    0.0,
@@ -2422,6 +2564,7 @@
   "name": "Essen Laufen",
   "start": "2025-07-18T11:24:23",
   "type": "running",
+  "vo2": null,
   "z": [
    5.0,
    26.001,
@@ -2439,6 +2582,7 @@
   "name": "Vught Golf",
   "start": "2025-07-17T12:24:19",
   "type": "golf",
+  "vo2": null,
   "z": [
    16257.949,
    1425.993,
@@ -2456,6 +2600,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-19T14:25:18",
   "type": "golf",
+  "vo2": null,
   "z": [
    2281.018,
    4.998,
@@ -2473,6 +2618,7 @@
   "name": "Essen Laufen",
   "start": "2025-07-21T17:45:59",
   "type": "running",
+  "vo2": null,
   "z": [
    15.999,
    131.997,
@@ -2490,6 +2636,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-23T14:14:40",
   "type": "golf",
+  "vo2": null,
   "z": [
    9514.908,
    179.002,
@@ -2507,6 +2654,7 @@
   "name": "Duisburg Golf",
   "start": "2025-07-30T16:39:03",
   "type": "golf",
+  "vo2": null,
   "z": [
    3730.996,
    0.0,
@@ -2524,6 +2672,7 @@
   "name": "Duisburg Golf",
   "start": "2025-08-05T16:09:41",
   "type": "golf",
+  "vo2": null,
   "z": [
    983.0,
    0.0,
@@ -2541,6 +2690,7 @@
   "name": "Grünberg Gehen",
   "start": "2025-08-07T20:04:52",
   "type": "walking",
+  "vo2": null,
   "z": [
    888.81,
    5.0,
@@ -2558,6 +2708,7 @@
   "name": "Grünberg Gehen",
   "start": "2025-08-07T20:26:41",
   "type": "walking",
+  "vo2": null,
   "z": [
    427.972,
    0.0,
@@ -2575,6 +2726,7 @@
   "name": "Reiskirchen Golf",
   "start": "2025-08-09T17:57:41",
   "type": "golf",
+  "vo2": null,
   "z": [
    3112.994,
    301.001,
@@ -2592,6 +2744,7 @@
   "name": "Duisburg Golf",
   "start": "2025-08-10T15:25:34",
   "type": "golf",
+  "vo2": null,
   "z": [
    1169.0,
    0.0,
@@ -2609,6 +2762,7 @@
   "name": "Duisburg Golf",
   "start": "2025-08-13T10:51:07",
   "type": "golf",
+  "vo2": null,
   "z": [
    2914.002,
    0.0,
@@ -2626,6 +2780,7 @@
   "name": "Essen Laufen",
   "start": "2025-08-25T19:05:31",
   "type": "running",
+  "vo2": null,
   "z": [
    13.0,
    6.998,
@@ -2643,6 +2798,7 @@
   "name": "Essen Laufen",
   "start": "2025-08-30T16:48:00",
   "type": "running",
+  "vo2": null,
   "z": [
    2.0,
    19.0,
@@ -2660,6 +2816,7 @@
   "name": "Essen Laufen",
   "start": "2025-09-01T10:28:22",
   "type": "running",
+  "vo2": null,
   "z": [
    3.978,
    53.001,
@@ -2677,6 +2834,7 @@
   "name": "Duisburg Golf",
   "start": "2025-08-18T16:21:48",
   "type": "golf",
+  "vo2": null,
   "z": [
    1159.018,
    0.0,
@@ -2694,6 +2852,7 @@
   "name": "Duisburg Golf",
   "start": "2025-08-20T14:28:04",
   "type": "golf",
+  "vo2": null,
   "z": [
    8360.015,
    71.0,
@@ -2711,6 +2870,7 @@
   "name": "Duisburg Golf",
   "start": "2025-08-23T11:48:40",
   "type": "golf",
+  "vo2": null,
   "z": [
    4253.972,
    3.0,
@@ -2728,6 +2888,7 @@
   "name": "Duisburg Golf",
   "start": "2025-08-25T16:11:58",
   "type": "golf",
+  "vo2": null,
   "z": [
    1313.799,
    87.997,
@@ -2745,6 +2906,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-03T14:16:43",
   "type": "golf",
+  "vo2": null,
   "z": [
    11533.998,
    325.01,
@@ -2762,6 +2924,7 @@
   "name": "Essen Laufen",
   "start": "2025-09-04T12:38:00",
   "type": "running",
+  "vo2": null,
   "z": [
    29.335,
    143.999,
@@ -2779,6 +2942,7 @@
   "name": "Düsseldorf Gehen",
   "start": "2025-09-06T16:36:00",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -2796,6 +2960,7 @@
   "name": "Düsseldorf Gehen",
   "start": "2025-09-06T23:15:11",
   "type": "walking",
+  "vo2": null,
   "z": [
    299.0,
    0.0,
@@ -2813,6 +2978,7 @@
   "name": "Duisburg Gehen",
   "start": "2025-09-07T07:56:32",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -2830,6 +2996,7 @@
   "name": "Essen Laufen",
   "start": "2025-09-10T19:05:37",
   "type": "running",
+  "vo2": null,
   "z": [
    5.999,
    13.0,
@@ -2847,6 +3014,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-12T12:22:34",
   "type": "golf",
+  "vo2": null,
   "z": [
    5868.97,
    26.0,
@@ -2864,6 +3032,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-14T15:20:02",
   "type": "golf",
+  "vo2": null,
   "z": [
    327.006,
    0.0,
@@ -2881,6 +3050,7 @@
   "name": "Essen Gehen",
   "start": "2025-09-15T16:18:26",
   "type": "walking",
+  "vo2": null,
   "z": [
    39.998,
    0.0,
@@ -2898,6 +3068,7 @@
   "name": "Indoor Cycling",
   "start": "2025-09-15T17:54:02",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    3.998,
    969.165,
@@ -2915,6 +3086,7 @@
   "name": "Essen Laufen",
   "start": "2025-09-16T17:05:01",
   "type": "running",
+  "vo2": null,
   "z": [
    10.0,
    15.999,
@@ -2932,6 +3104,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-17T11:03:57",
   "type": "golf",
+  "vo2": null,
   "z": [
    306.991,
    0.0,
@@ -2949,6 +3122,7 @@
   "name": "Essen Laufen",
   "start": "2025-09-18T11:24:19",
   "type": "running",
+  "vo2": null,
   "z": [
    12.0,
    41.0,
@@ -2966,6 +3140,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-19T12:59:56",
   "type": "golf",
+  "vo2": null,
   "z": [
    90.997,
    0.0,
@@ -2983,6 +3158,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-19T16:27:01",
   "type": "golf",
+  "vo2": null,
   "z": [
    704.011,
    0.0,
@@ -3000,6 +3176,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-20T09:58:39",
   "type": "golf",
+  "vo2": null,
   "z": [
    3361.994,
    73.0,
@@ -3017,6 +3194,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-20T11:48:38",
   "type": "golf",
+  "vo2": null,
   "z": [
    1428.106,
    63.001,
@@ -3034,6 +3212,7 @@
   "name": "Essen Gehen",
   "start": "2025-09-22T13:46:31",
   "type": "walking",
+  "vo2": null,
   "z": [
    71.982,
    0.0,
@@ -3051,6 +3230,7 @@
   "name": "Essen Laufen",
   "start": "2025-09-22T17:27:44",
   "type": "running",
+  "vo2": null,
   "z": [
    12.0,
    19.0,
@@ -3068,6 +3248,7 @@
   "name": "Essen Gehen",
   "start": "2025-09-26T12:26:11",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -3085,6 +3266,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-27T12:24:03",
   "type": "golf",
+  "vo2": null,
   "z": [
    193.0,
    0.0,
@@ -3102,6 +3284,7 @@
   "name": "Indoor Cycling",
   "start": "2025-09-27T21:31:04",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    88.0,
    1250.378,
@@ -3119,6 +3302,7 @@
   "name": "Duisburg Golf",
   "start": "2025-09-28T13:14:13",
   "type": "golf",
+  "vo2": null,
   "z": [
    7.002,
    0.0,
@@ -3136,6 +3320,7 @@
   "name": "Indoor Cycling",
   "start": "2025-09-29T20:50:28",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    127.68,
    310.999,
@@ -3153,6 +3338,7 @@
   "name": "Essen Gehen",
   "start": "2025-10-01T14:02:02",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -3170,6 +3356,7 @@
   "name": "Halle (Westfalen) Laufen",
   "start": "2025-10-02T18:35:21",
   "type": "running",
+  "vo2": null,
   "z": [
    27.153,
    371.988,
@@ -3187,6 +3374,7 @@
   "name": "Essen Gehen",
   "start": "2025-10-06T17:03:38",
   "type": "walking",
+  "vo2": null,
   "z": [
    35.001,
    0.0,
@@ -3204,6 +3392,7 @@
   "name": "Essen Laufen",
   "start": "2025-10-06T17:37:16",
   "type": "running",
+  "vo2": null,
   "z": [
    10.002,
    16.999,
@@ -3221,6 +3410,7 @@
   "name": "Essen Laufen",
   "start": "2025-10-09T17:40:40",
   "type": "running",
+  "vo2": null,
   "z": [
    16.0,
    28.0,
@@ -3238,6 +3428,7 @@
   "name": "Duisburg Golf",
   "start": "2025-10-15T12:05:56",
   "type": "golf",
+  "vo2": null,
   "z": [
    10719.929,
    262.998,
@@ -3255,6 +3446,7 @@
   "name": "Duisburg Gehen",
   "start": "2025-10-17T08:10:42",
   "type": "walking",
+  "vo2": null,
   "z": [
    17.001,
    0.0,
@@ -3272,6 +3464,7 @@
   "name": "Essen Gehen",
   "start": "2025-10-21T10:39:29",
   "type": "walking",
+  "vo2": null,
   "z": [
    379.978,
    0.0,
@@ -3289,6 +3482,7 @@
   "name": "Essen Laufen",
   "start": "2025-10-22T16:38:48",
   "type": "running",
+  "vo2": null,
   "z": [
    42.0,
    198.988,
@@ -3306,6 +3500,7 @@
   "name": "Indoor Cycling",
   "start": "2025-10-28T17:47:06",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    190.001,
    940.346,
@@ -3323,6 +3518,7 @@
   "name": "Mülheim an der Ruhr Gehen",
   "start": "2025-07-06T20:19:01",
   "type": "walking",
+  "vo2": null,
   "z": [
    815.97,
    0.0,
@@ -3340,6 +3536,7 @@
   "name": "Mülheim an der Ruhr Gehen",
   "start": "2025-11-08T17:35:48",
   "type": "walking",
+  "vo2": null,
   "z": [
    3.0,
    0.0,
@@ -3357,6 +3554,7 @@
   "name": "Almada Laufen",
   "start": "2025-11-09T17:15:57",
   "type": "running",
+  "vo2": null,
   "z": [
    8.001,
    28.999,
@@ -3374,6 +3572,7 @@
   "name": "Almada Golf",
   "start": "2025-11-10T11:00:24",
   "type": "golf",
+  "vo2": null,
   "z": [
    2198.994,
    36.002,
@@ -3391,6 +3590,7 @@
   "name": "Almada Golf",
   "start": "2025-11-11T11:29:00",
   "type": "golf",
+  "vo2": null,
   "z": [
    1080.978,
    0.0,
@@ -3408,6 +3608,7 @@
   "name": "Almada Golf",
   "start": "2025-11-12T12:20:45",
   "type": "golf",
+  "vo2": null,
   "z": [
    4448.022,
    88.001,
@@ -3425,6 +3626,7 @@
   "name": "Almada Golf",
   "start": "2025-11-13T11:11:21",
   "type": "golf",
+  "vo2": null,
   "z": [
    1984.113,
    0.0,
@@ -3442,6 +3644,7 @@
   "name": "Almada Golf",
   "start": "2025-11-14T11:25:57",
   "type": "golf",
+  "vo2": null,
   "z": [
    1977.003,
    0.0,
@@ -3459,6 +3662,7 @@
   "name": "Almada Golf",
   "start": "2025-11-15T10:35:38",
   "type": "golf",
+  "vo2": null,
   "z": [
    1161.019,
    0.0,
@@ -3476,6 +3680,7 @@
   "name": "Essen Laufen",
   "start": "2025-12-02T13:46:06",
   "type": "running",
+  "vo2": null,
   "z": [
    38.0,
    224.0,
@@ -3493,6 +3698,7 @@
   "name": "Laufbandtraining",
   "start": "2025-12-08T14:24:04",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    175.502,
    212.995,
@@ -3510,6 +3716,7 @@
   "name": "Essen Gehen",
   "start": "2025-12-09T14:01:23",
   "type": "walking",
+  "vo2": null,
   "z": [
    58.973,
    0.0,
@@ -3527,6 +3734,7 @@
   "name": "Essen Laufen",
   "start": "2025-12-09T15:31:48",
   "type": "running",
+  "vo2": null,
   "z": [
    17.001,
    20.999,
@@ -3544,6 +3752,7 @@
   "name": "Laufen",
   "start": "2025-12-13T13:46:56",
   "type": "running",
+  "vo2": null,
   "z": [
    54.985,
    177.997,
@@ -3561,6 +3770,7 @@
   "name": "Laufen",
   "start": "2025-12-13T14:02:45",
   "type": "running",
+  "vo2": null,
   "z": [
    16.001,
    229.999,
@@ -3578,6 +3788,7 @@
   "name": "Laufbandtraining",
   "start": "2025-12-15T08:52:38",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    46.0,
    207.042,
@@ -3595,6 +3806,7 @@
   "name": "Laufen",
   "start": "2025-12-17T09:22:48",
   "type": "running",
+  "vo2": null,
   "z": [
    6.982,
    107.651,
@@ -3612,6 +3824,7 @@
   "name": "Mutrah Gehen",
   "start": "2025-12-17T11:41:59",
   "type": "walking",
+  "vo2": null,
   "z": [
    261.978,
    0.0,
@@ -3629,6 +3842,7 @@
   "name": "Laufbandtraining",
   "start": "2025-12-19T13:53:36",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    11.999,
    30.0,
@@ -3646,6 +3860,7 @@
   "name": "Abu Dhabi Radfahren",
   "start": "2025-12-20T15:00:54",
   "type": "cycling",
+  "vo2": null,
   "z": [
    257.002,
    0.0,
@@ -3663,6 +3878,7 @@
   "name": "Abu Dhabi Radfahren",
   "start": "2025-12-20T11:22:08",
   "type": "cycling",
+  "vo2": null,
   "z": [
    24.0,
    0.0,
@@ -3680,6 +3896,7 @@
   "name": "Abu Dhabi Radfahren",
   "start": "2025-12-20T12:38:40",
   "type": "cycling",
+  "vo2": null,
   "z": [
    357.993,
    0.0,
@@ -3697,6 +3914,7 @@
   "name": "Abu Dhabi Radfahren",
   "start": "2025-12-20T13:27:46",
   "type": "cycling",
+  "vo2": null,
   "z": [
    229.0,
    0.0,
@@ -3714,6 +3932,7 @@
   "name": "Laufbandtraining",
   "start": "2025-12-22T12:23:45",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    34.0,
    102.0,
@@ -3731,6 +3950,7 @@
   "name": "Essen Gehen",
   "start": "2025-12-23T10:53:05",
   "type": "walking",
+  "vo2": null,
   "z": [
    119.999,
    0.0,
@@ -3748,6 +3968,7 @@
   "name": "Laufbandtraining",
   "start": "2025-12-30T16:24:41",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    301.999,
    424.0,
@@ -3765,6 +3986,7 @@
   "name": "Laufbandtraining",
   "start": "2026-01-01T14:45:57",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    339.69,
    164.998,
@@ -3782,6 +4004,7 @@
   "name": "Laufbandtraining",
   "start": "2026-01-04T11:13:30",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    30.001,
    261.756,
@@ -3799,6 +4022,7 @@
   "name": "Ischgl - Silvretta Arena Skifahren",
   "start": "2026-01-16T08:57:11",
   "type": "resort_skiing",
+  "vo2": null,
   "z": [
    1424.006,
    23.999,
@@ -3816,6 +4040,7 @@
   "name": "Inezgane Golf",
   "start": "2026-01-19T11:58:09",
   "type": "golf",
+  "vo2": null,
   "z": [
    1735.001,
    12.0,
@@ -3833,6 +4058,7 @@
   "name": "Inezgane Golf",
   "start": "2026-01-20T12:07:28",
   "type": "golf",
+  "vo2": null,
   "z": [
    158.993,
    0.0,
@@ -3850,6 +4076,7 @@
   "name": "Inezgane Golf",
   "start": "2026-01-20T14:55:57",
   "type": "golf",
+  "vo2": null,
   "z": [
    2446.996,
    23.0,
@@ -3867,6 +4094,7 @@
   "name": "Laufbandtraining",
   "start": "2026-01-21T09:01:03",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    39.0,
    222.002,
@@ -3884,6 +4112,7 @@
   "name": "Inezgane Golf",
   "start": "2026-01-21T11:42:23",
   "type": "golf",
+  "vo2": null,
   "z": [
    3349.013,
    0.999,
@@ -3901,6 +4130,7 @@
   "name": "Laufbandtraining",
   "start": "2026-01-22T09:24:07",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    35.001,
    151.997,
@@ -3918,6 +4148,7 @@
   "name": "Agadir Gehen",
   "start": "2026-01-22T11:50:04",
   "type": "walking",
+  "vo2": null,
   "z": [
    115.98,
    0.0,
@@ -3935,6 +4166,7 @@
   "name": "Inezgane Golf",
   "start": "2026-01-23T12:08:56",
   "type": "golf",
+  "vo2": null,
   "z": [
    1700.003,
    0.0,
@@ -3952,6 +4184,7 @@
   "name": "Laufbandtraining",
   "start": "2026-01-29T15:52:11",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    7.867,
    50.001,
@@ -3969,6 +4202,7 @@
   "name": "Laufbandtraining",
   "start": "2026-02-03T18:29:59",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    22.999,
    156.0,
@@ -3986,6 +4220,7 @@
   "name": "Laufbandtraining",
   "start": "2026-02-08T13:22:11",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    33.001,
    52.001,
@@ -4003,6 +4238,7 @@
   "name": "Laufbandtraining",
   "start": "2026-02-10T09:33:09",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    36.0,
    82.999,
@@ -4020,6 +4256,7 @@
   "name": "Laufen",
   "start": "2026-02-12T10:49:47",
   "type": "running",
+  "vo2": null,
   "z": [
    0.0,
    108.983,
@@ -4037,6 +4274,7 @@
   "name": "Laufbandtraining",
   "start": "2026-02-14T12:33:51",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    36.0,
    74.0,
@@ -4054,6 +4292,7 @@
   "name": "Laufbandtraining",
   "start": "2026-02-18T08:45:34",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    29.001,
    133.004,
@@ -4071,6 +4310,7 @@
   "name": "Duisburg Gehen",
   "start": "2026-02-18T16:10:49",
   "type": "walking",
+  "vo2": null,
   "z": [
    304.0,
    0.0,
@@ -4088,6 +4328,7 @@
   "name": "Laufbandtraining",
   "start": "2026-02-20T09:28:12",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    43.001,
    85.999,
@@ -4105,6 +4346,7 @@
   "name": "Duisburg Laufen",
   "start": "2026-02-26T15:36:01",
   "type": "running",
+  "vo2": null,
   "z": [
    10.953,
    32.999,
@@ -4122,6 +4364,7 @@
   "name": "Taghazout Golf",
   "start": "2026-01-24T12:15:01",
   "type": "golf",
+  "vo2": null,
   "z": [
    3903.985,
    103.007,
@@ -4139,6 +4382,7 @@
   "name": "Duisburg Golf",
   "start": "2026-02-01T13:38:28",
   "type": "golf",
+  "vo2": null,
   "z": [
    492.002,
    69.001,
@@ -4156,6 +4400,7 @@
   "name": "Duisburg Golf",
   "start": "2026-03-01T11:23:53",
   "type": "golf",
+  "vo2": null,
   "z": [
    256.993,
    0.0,
@@ -4173,6 +4418,7 @@
   "name": "Duisburg Laufen",
   "start": "2026-03-05T15:01:44",
   "type": "running",
+  "vo2": null,
   "z": [
    21.0,
    951.45,
@@ -4190,6 +4436,7 @@
   "name": "Duisburg Golf",
   "start": "2026-03-07T14:39:54",
   "type": "golf",
+  "vo2": null,
   "z": [
    13.0,
    0.0,
@@ -4207,6 +4454,7 @@
   "name": "Duisburg Golf",
   "start": "2026-03-08T10:45:40",
   "type": "golf",
+  "vo2": null,
   "z": [
    261.991,
    38.008,
@@ -4224,6 +4472,7 @@
   "name": "Duisburg Golf",
   "start": "2026-03-08T13:43:41",
   "type": "golf",
+  "vo2": null,
   "z": [
    220.29,
    0.0,
@@ -4241,6 +4490,7 @@
   "name": "Laufbandtraining",
   "start": "2026-03-10T12:10:38",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    22.999,
    44.0,
@@ -4258,6 +4508,7 @@
   "name": "Hurghada Laufen",
   "start": "2026-03-15T15:36:23",
   "type": "running",
+  "vo2": null,
   "z": [
    78.302,
    147.975,
@@ -4275,6 +4526,7 @@
   "name": "Hurghada Golf",
   "start": "2026-03-16T09:06:11",
   "type": "golf",
+  "vo2": null,
   "z": [
    478.967,
    22.0,
@@ -4292,6 +4544,7 @@
   "name": "Hurghada Golf",
   "start": "2026-03-17T12:11:50",
   "type": "golf",
+  "vo2": null,
   "z": [
    861.004,
    0.0,
@@ -4309,6 +4562,7 @@
   "name": "Hurghada Golf",
   "start": "2026-03-20T11:40:13",
   "type": "golf",
+  "vo2": null,
   "z": [
    1294.608,
    29.001,
@@ -4326,6 +4580,7 @@
   "name": "Duisburg Golf",
   "start": "2026-03-22T12:49:46",
   "type": "golf",
+  "vo2": null,
   "z": [
    99.008,
    0.0,
@@ -4343,6 +4598,7 @@
   "name": "Laufbandtraining",
   "start": "2026-04-05T15:05:22",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    44.0,
    257.999,
@@ -4360,6 +4616,7 @@
   "name": "Duisburg Golf",
   "start": "2026-03-29T11:37:32",
   "type": "golf",
+  "vo2": null,
   "z": [
    55.001,
    0.0,
@@ -4377,6 +4634,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-03T13:16:40",
   "type": "golf",
+  "vo2": null,
   "z": [
    0.999,
    0.0,
@@ -4394,6 +4652,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-06T11:11:20",
   "type": "golf",
+  "vo2": null,
   "z": [
    241.999,
    0.0,
@@ -4411,6 +4670,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-08T09:27:07",
   "type": "golf",
+  "vo2": null,
   "z": [
    25.001,
    0.0,
@@ -4428,6 +4688,7 @@
   "name": "Laufen",
   "start": "2026-04-10T17:45:21",
   "type": "running",
+  "vo2": null,
   "z": [
    46.998,
    298.992,
@@ -4445,6 +4706,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-11T11:14:26",
   "type": "golf",
+  "vo2": null,
   "z": [
    5.001,
    0.0,
@@ -4462,6 +4724,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-12T13:40:24",
   "type": "golf",
+  "vo2": null,
   "z": [
    149.001,
    0.0,
@@ -4479,6 +4742,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-15T09:25:24",
   "type": "golf",
+  "vo2": null,
   "z": [
    259.884,
    0.0,
@@ -4496,6 +4760,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-04-15T17:51:14",
   "type": "cycling",
+  "vo2": null,
   "z": [
    236.003,
    0.0,
@@ -4513,6 +4778,7 @@
   "name": "Duisburg Gehen",
   "start": "2026-04-17T18:41:02",
   "type": "walking",
+  "vo2": null,
   "z": [
    42.001,
    0.0,
@@ -4530,6 +4796,7 @@
   "name": "Laufen",
   "start": "2026-04-19T11:48:56",
   "type": "running",
+  "vo2": null,
   "z": [
    22.0,
    72.0,
@@ -4547,6 +4814,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-20T12:43:36",
   "type": "golf",
+  "vo2": null,
   "z": [
    8921.068,
    1286.968,
@@ -4564,6 +4832,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-04-23T16:27:09",
   "type": "cycling",
+  "vo2": null,
   "z": [
    367.999,
    0.0,
@@ -4581,6 +4850,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-04-24T18:23:32",
   "type": "cycling",
+  "vo2": null,
   "z": [
    82.002,
    0.0,
@@ -4598,6 +4868,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-25T11:03:47",
   "type": "golf",
+  "vo2": null,
   "z": [
    568.006,
    1.0,
@@ -4615,6 +4886,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-26T12:55:25",
   "type": "golf",
+  "vo2": null,
   "z": [
    196.006,
    0.0,
@@ -4632,6 +4904,7 @@
   "name": "Duisburg Laufen",
   "start": "2026-04-28T13:32:10",
   "type": "running",
+  "vo2": null,
   "z": [
    15.668,
    26.999,
@@ -4649,6 +4922,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-04-28T14:14:59",
   "type": "cycling",
+  "vo2": null,
   "z": [
    544.182,
    13.0,
@@ -4666,6 +4940,7 @@
   "name": "Duisburg Golf",
   "start": "2026-04-28T14:53:17",
   "type": "golf",
+  "vo2": null,
   "z": [
    233.998,
    0.0,
@@ -4683,6 +4958,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-04-28T16:36:51",
   "type": "cycling",
+  "vo2": null,
   "z": [
    584.769,
    6.0,
@@ -4700,6 +4976,7 @@
   "name": "Balearic Islands Gehen",
   "start": "2026-05-02T12:04:21",
   "type": "walking",
+  "vo2": null,
   "z": [
    36.978,
    0.0,
@@ -4717,6 +4994,7 @@
   "name": "Alcúdia Gehen",
   "start": "2026-05-03T16:15:09",
   "type": "walking",
+  "vo2": null,
   "z": [
    56.001,
    0.0,
@@ -4734,6 +5012,7 @@
   "name": "Alcúdia Gehen",
   "start": "2026-05-06T17:43:34",
   "type": "walking",
+  "vo2": null,
   "z": [
    3.0,
    0.0,
@@ -4751,6 +5030,7 @@
   "name": "Alcúdia Gehen",
   "start": "2026-05-06T19:23:09",
   "type": "walking",
+  "vo2": null,
   "z": [
    33.979,
    0.0,
@@ -4768,6 +5048,7 @@
   "name": "Alcúdia Golf",
   "start": "2026-05-05T12:37:18",
   "type": "golf",
+  "vo2": null,
   "z": [
    2728.852,
    69.999,
@@ -4785,6 +5066,7 @@
   "name": "Duisburg Golf",
   "start": "2026-05-14T12:16:27",
   "type": "golf",
+  "vo2": null,
   "z": [
    2339.983,
    47.996,
@@ -4802,6 +5084,7 @@
   "name": "Laufbandtraining",
   "start": "2026-05-15T16:51:22",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    28.525,
    167.002,
@@ -4819,6 +5102,7 @@
   "name": "Duisburg Golf",
   "start": "2026-05-16T12:14:40",
   "type": "golf",
+  "vo2": null,
   "z": [
    719.02,
    19.971,
@@ -4836,6 +5120,7 @@
   "name": "Duisburg Laufen",
   "start": "2026-05-17T14:29:48",
   "type": "running",
+  "vo2": null,
   "z": [
    55.287,
    84.002,
@@ -4853,6 +5138,7 @@
   "name": "Duisburg Golf",
   "start": "2026-05-25T14:18:27",
   "type": "golf",
+  "vo2": null,
   "z": [
    180.003,
    0.0,
@@ -4870,6 +5156,7 @@
   "name": "Essen Laufen",
   "start": "2026-05-26T21:33:20",
   "type": "running",
+  "vo2": null,
   "z": [
    15.0,
    299.994,
@@ -4887,6 +5174,7 @@
   "name": "Laufen",
   "start": "2026-05-28T09:47:16",
   "type": "running",
+  "vo2": null,
   "z": [
    74.999,
    477.603,
@@ -4904,6 +5192,7 @@
   "name": "Duisburg Golf",
   "start": "2026-05-29T16:16:58",
   "type": "golf",
+  "vo2": null,
   "z": [
    2041.127,
    0.0,
@@ -4921,6 +5210,7 @@
   "name": "Laufbandtraining",
   "start": "2026-06-02T08:44:17",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    28.001,
    68.999,
@@ -4938,6 +5228,7 @@
   "name": "Laufbandtraining",
   "start": "2026-06-04T12:07:02",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    29.0,
    56.002,
@@ -4955,6 +5246,7 @@
   "name": "Hamburg Gehen",
   "start": "2026-06-06T14:14:01",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -4972,6 +5264,7 @@
   "name": "Hamburg Gehen",
   "start": "2026-06-07T05:40:37",
   "type": "walking",
+  "vo2": null,
   "z": [
    149.959,
    0.0,
@@ -4989,6 +5282,7 @@
   "name": "Hamburg Gehen",
   "start": "2026-06-07T08:14:31",
   "type": "walking",
+  "vo2": null,
   "z": [
    536.078,
    33.998,
@@ -5006,6 +5300,7 @@
   "name": "Hamburg Gehen",
   "start": "2026-06-07T14:57:26",
   "type": "walking",
+  "vo2": null,
   "z": [
    122.999,
    0.0,
@@ -5023,6 +5318,7 @@
   "name": "Hamburg Gehen",
   "start": "2026-06-07T20:44:00",
   "type": "walking",
+  "vo2": null,
   "z": [
    355.981,
    0.0,
@@ -5040,6 +5336,7 @@
   "name": "Hamburg Gehen",
   "start": "2026-06-08T11:31:00",
   "type": "walking",
+  "vo2": null,
   "z": [
    117.984,
    0.0,
@@ -5057,6 +5354,7 @@
   "name": "Laufbandtraining",
   "start": "2026-06-08T18:38:37",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    16.999,
    70.001,
@@ -5074,6 +5372,7 @@
   "name": "Essen Laufen",
   "start": "2026-06-09T08:24:57",
   "type": "running",
+  "vo2": null,
   "z": [
    8.428,
    9.999,
@@ -5091,6 +5390,7 @@
   "name": "Essen Laufen",
   "start": "2026-06-11T09:01:34",
   "type": "running",
+  "vo2": null,
   "z": [
    14.337,
    44.04,
@@ -5108,6 +5408,7 @@
   "name": "Duisburg Golf",
   "start": "2026-06-12T16:23:18",
   "type": "golf",
+  "vo2": null,
   "z": [
    4389.995,
    0.0,
@@ -5125,6 +5426,7 @@
   "name": "Duisburg Golf",
   "start": "2026-06-14T12:40:34",
   "type": "golf",
+  "vo2": null,
   "z": [
    248.996,
    0.0,
@@ -5142,6 +5444,7 @@
   "name": "Laufbandtraining",
   "start": "2026-06-16T09:25:55",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    39.002,
    98.0,
@@ -5159,6 +5462,7 @@
   "name": "Duisburg Golf",
   "start": "2026-06-17T14:02:17",
   "type": "golf",
+  "vo2": null,
   "z": [
    8908.956,
    80.995,
@@ -5176,6 +5480,7 @@
   "name": "Duisburg Golf",
   "start": "2026-06-20T11:49:25",
   "type": "golf",
+  "vo2": null,
   "z": [
    9050.024,
    99.001,
@@ -5193,6 +5498,7 @@
   "name": "Duisburg Golf",
   "start": "2026-06-23T18:18:33",
   "type": "golf",
+  "vo2": null,
   "z": [
    1.0,
    0.0,
@@ -5210,6 +5516,7 @@
   "name": "Essen Laufen",
   "start": "2026-06-22T15:29:16",
   "type": "running",
+  "vo2": null,
   "z": [
    20.834,
    113.001,
@@ -5227,6 +5534,7 @@
   "name": "Norderney Gehen",
   "start": "2026-06-26T14:02:30",
   "type": "walking",
+  "vo2": null,
   "z": [
    32.0,
    0.0,
@@ -5244,6 +5552,7 @@
   "name": "Duisburg Golf",
   "start": "2026-06-29T19:20:02",
   "type": "golf",
+  "vo2": null,
   "z": [
    241.99,
    0.0,
@@ -5261,6 +5570,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-01T18:35:47",
   "type": "golf",
+  "vo2": null,
   "z": [
    1382.007,
    0.0,
@@ -5278,6 +5588,7 @@
   "name": "Mülheim an der Ruhr Golf",
   "start": "2026-07-04T10:49:29",
   "type": "golf",
+  "vo2": null,
   "z": [
    5671.991,
    158.998,
@@ -5295,6 +5606,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-05T17:09:14",
   "type": "golf",
+  "vo2": null,
   "z": [
    143.996,
    0.0,
@@ -5312,6 +5624,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-06T12:43:56",
   "type": "golf",
+  "vo2": null,
   "z": [
    30.758,
    0.0,
@@ -5329,6 +5642,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-07T18:27:37",
   "type": "golf",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -5346,6 +5660,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-11T11:54:50",
   "type": "golf",
+  "vo2": null,
   "z": [
    6894.02,
    0.0,
@@ -5363,6 +5678,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-12T16:05:41",
   "type": "golf",
+  "vo2": null,
   "z": [
    428.996,
    0.0,
@@ -5380,6 +5696,7 @@
   "name": "Laufbandtraining",
   "start": "2026-07-13T10:52:51",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    41.0,
    114.336,
@@ -5397,6 +5714,7 @@
   "name": "Cardio",
   "start": "2026-07-15T10:37:26",
   "type": "indoor_cardio",
+  "vo2": null,
   "z": [
    49.877,
    281.005,
@@ -5414,6 +5732,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-15T18:17:50",
   "type": "golf",
+  "vo2": null,
   "z": [
    224.993,
    0.0,
@@ -5431,6 +5750,7 @@
   "name": "Vught Golf",
   "start": "2026-07-19T12:54:08",
   "type": "golf",
+  "vo2": null,
   "z": [
    3240.978,
    58.0,
@@ -5448,6 +5768,7 @@
   "name": "Laufbandtraining",
   "start": "2026-07-22T09:21:24",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    74.001,
    170.0,
@@ -5465,6 +5786,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-21T11:17:35",
   "type": "golf",
+  "vo2": null,
   "z": [
    792.999,
    410.999,
@@ -5482,6 +5804,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-22T18:26:27",
   "type": "golf",
+  "vo2": null,
   "z": [
    172.998,
    0.0,
@@ -5499,6 +5822,7 @@
   "name": "Duisburg Laufen",
   "start": "2026-07-23T18:53:39",
   "type": "running",
+  "vo2": null,
   "z": [
    12.999,
    210.999,
@@ -5516,6 +5840,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-25T12:56:08",
   "type": "golf",
+  "vo2": null,
   "z": [
    9208.019,
    297.997,
@@ -5533,6 +5858,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-07-26T09:54:26",
   "type": "cycling",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -5550,6 +5876,7 @@
   "name": "Düsseldorf Gehen",
   "start": "2026-07-26T12:53:10",
   "type": "walking",
+  "vo2": null,
   "z": [
    59.999,
    0.0,
@@ -5567,6 +5894,7 @@
   "name": "Düsseldorf Radfahren",
   "start": "2026-07-26T15:44:59",
   "type": "cycling",
+  "vo2": null,
   "z": [
    734.001,
    0.0,
@@ -5584,6 +5912,7 @@
   "name": "Laufbandtraining",
   "start": "2026-07-27T11:34:39",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    41.129,
    98.0,
@@ -5601,6 +5930,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-07-27T15:54:33",
   "type": "cycling",
+  "vo2": null,
   "z": [
    156.003,
    0.0,
@@ -5618,6 +5948,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-07-28T11:53:39",
   "type": "cycling",
+  "vo2": null,
   "z": [
    96.998,
    0.0,
@@ -5635,6 +5966,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-07-28T13:08:48",
   "type": "cycling",
+  "vo2": null,
   "z": [
    98.001,
    0.0,
@@ -5652,6 +5984,7 @@
   "name": "Duisburg Gehen",
   "start": "2026-07-29T15:57:31",
   "type": "walking",
+  "vo2": null,
   "z": [
    91.991,
    0.0,
@@ -5669,6 +6002,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-07-31T14:44:24",
   "type": "cycling",
+  "vo2": null,
   "z": [
    477.997,
    127.001,
@@ -5686,6 +6020,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-02T10:59:55",
   "type": "cycling",
+  "vo2": null,
   "z": [
    282.439,
    112.999,
@@ -5703,6 +6038,7 @@
   "name": "Duisburg Golf",
   "start": "2026-07-29T18:21:24",
   "type": "golf",
+  "vo2": null,
   "z": [
    255.002,
    51.0,
@@ -5720,6 +6056,7 @@
   "name": "Duisburg Golf",
   "start": "2026-08-02T13:03:41",
   "type": "golf",
+  "vo2": null,
   "z": [
    8.997,
    0.0,
@@ -5737,6 +6074,7 @@
   "name": "Laufbandtraining",
   "start": "2026-08-03T10:18:03",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    26.997,
    267.892,
@@ -5754,6 +6092,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-03T11:49:16",
   "type": "cycling",
+  "vo2": null,
   "z": [
    149.608,
    0.0,
@@ -5771,6 +6110,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-03T13:25:13",
   "type": "cycling",
+  "vo2": null,
   "z": [
    48.999,
    0.0,
@@ -5788,6 +6128,7 @@
   "name": "Duisburg Golf",
   "start": "2026-08-03T18:28:40",
   "type": "golf",
+  "vo2": null,
   "z": [
    443.994,
    0.0,
@@ -5805,6 +6146,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-04T14:56:02",
   "type": "cycling",
+  "vo2": null,
   "z": [
    6.0,
    0.0,
@@ -5822,6 +6164,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-04T17:49:49",
   "type": "cycling",
+  "vo2": null,
   "z": [
    58.001,
    0.0,
@@ -5839,6 +6182,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-04T19:02:35",
   "type": "cycling",
+  "vo2": null,
   "z": [
    194.999,
    0.0,
@@ -5856,6 +6200,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-05T17:49:43",
   "type": "cycling",
+  "vo2": null,
   "z": [
    232.002,
    0.0,
@@ -5873,6 +6218,7 @@
   "name": "Duisburg Golf",
   "start": "2026-08-05T18:26:06",
   "type": "golf",
+  "vo2": null,
   "z": [
    93.002,
    0.0,
@@ -5890,6 +6236,7 @@
   "name": "Laufbandtraining",
   "start": "2026-08-07T10:08:45",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    104.999,
    208.0,
@@ -5907,6 +6254,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-07T14:52:45",
   "type": "cycling",
+  "vo2": null,
   "z": [
    98.002,
    0.0,
@@ -5924,6 +6272,7 @@
   "name": "Indoor Cycling",
   "start": "2026-08-07T18:04:09",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    1504.971,
    667.999,
@@ -5941,6 +6290,7 @@
   "name": "Duisburg Golf",
   "start": "2026-08-08T15:04:55",
   "type": "golf",
+  "vo2": null,
   "z": [
    4758.991,
    0.0,
@@ -5958,6 +6308,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-09T13:30:50",
   "type": "cycling",
+  "vo2": null,
   "z": [
    169.002,
    0.0,
@@ -5975,6 +6326,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-09T14:06:09",
   "type": "cycling",
+  "vo2": null,
   "z": [
    6.623,
    0.0,
@@ -5992,6 +6344,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-09T14:42:48",
   "type": "cycling",
+  "vo2": null,
   "z": [
    43.999,
    0.0,
@@ -6009,6 +6362,7 @@
   "name": "Duisburg Gehen",
   "start": "2026-08-09T15:26:06",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -6026,6 +6380,7 @@
   "name": "Duisburg Gehen",
   "start": "2026-08-09T15:44:24",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -6043,6 +6398,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-09T16:06:50",
   "type": "cycling",
+  "vo2": null,
   "z": [
    224.999,
    18.001,
@@ -6060,6 +6416,7 @@
   "name": "Duisburg Gehen",
   "start": "2026-08-09T19:04:08",
   "type": "walking",
+  "vo2": null,
   "z": [
    37.999,
    0.0,
@@ -6077,6 +6434,7 @@
   "name": "Laufbandtraining",
   "start": "2026-08-10T10:40:05",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    19.672,
    149.999,
@@ -6094,6 +6452,7 @@
   "name": "Duisburg Golf",
   "start": "2026-08-11T18:24:49",
   "type": "golf",
+  "vo2": null,
   "z": [
    2.0,
    0.0,
@@ -6111,6 +6470,7 @@
   "name": "Laufbandtraining",
   "start": "2026-08-19T08:51:41",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    23.0,
    86.252,
@@ -6128,6 +6488,7 @@
   "name": "Duisburg Laufen",
   "start": "2026-08-20T12:39:22",
   "type": "running",
+  "vo2": null,
   "z": [
    24.0,
    221.989,
@@ -6145,6 +6506,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-20T13:53:50",
   "type": "cycling",
+  "vo2": null,
   "z": [
    124.0,
    0.0,
@@ -6162,6 +6524,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-20T15:02:56",
   "type": "cycling",
+  "vo2": null,
   "z": [
    86.0,
    0.0,
@@ -6179,6 +6542,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-20T17:47:39",
   "type": "cycling",
+  "vo2": null,
   "z": [
    507.624,
    7.999,
@@ -6196,6 +6560,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-20T18:58:10",
   "type": "cycling",
+  "vo2": null,
   "z": [
    262.001,
    14.999,
@@ -6213,6 +6578,7 @@
   "name": "Duisburg Golf",
   "start": "2026-08-22T09:26:47",
   "type": "golf",
+  "vo2": null,
   "z": [
    3887.999,
    12.999,
@@ -6230,6 +6596,7 @@
   "name": "Duisburg Golf",
   "start": "2026-08-23T10:06:21",
   "type": "golf",
+  "vo2": null,
   "z": [
    1485.01,
    111.0,
@@ -6247,6 +6614,7 @@
   "name": "Duisburg Laufen",
   "start": "2026-08-23T16:43:36",
   "type": "running",
+  "vo2": null,
   "z": [
    464.945,
    708.715,
@@ -6264,6 +6632,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-25T14:32:32",
   "type": "cycling",
+  "vo2": null,
   "z": [
    84.999,
    0.0,
@@ -6281,6 +6650,7 @@
   "name": "Laufbandtraining",
   "start": "2026-08-25T18:05:51",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    46.995,
    318.004,
@@ -6298,6 +6668,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-26T14:37:05",
   "type": "cycling",
+  "vo2": null,
   "z": [
    124.999,
    0.0,
@@ -6315,6 +6686,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-26T17:05:32",
   "type": "cycling",
+  "vo2": null,
   "z": [
    487.0,
    0.0,
@@ -6332,6 +6704,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-26T20:28:29",
   "type": "cycling",
+  "vo2": null,
   "z": [
    233.998,
    0.0,
@@ -6349,6 +6722,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-27T13:42:18",
   "type": "cycling",
+  "vo2": null,
   "z": [
    36.998,
    0.0,
@@ -6366,6 +6740,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-08-27T15:06:54",
   "type": "cycling",
+  "vo2": null,
   "z": [
    224.998,
    0.0,
@@ -6383,6 +6758,7 @@
   "name": "Laufbandtraining",
   "start": "2026-08-29T13:10:50",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    18.001,
    169.932,
@@ -6400,6 +6776,7 @@
   "name": "Düsseldorf Gehen",
   "start": "2026-08-29T15:01:32",
   "type": "walking",
+  "vo2": null,
   "z": [
    29.0,
    0.0,
@@ -6417,6 +6794,7 @@
   "name": "Laufbandtraining",
   "start": "2026-08-31T09:27:46",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    51.0,
    312.094,
@@ -6434,6 +6812,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-01T17:24:57",
   "type": "cycling",
+  "vo2": null,
   "z": [
    32.0,
    0.0,
@@ -6451,6 +6830,7 @@
   "name": "Duisburg Golf",
   "start": "2026-09-02T18:44:13",
   "type": "golf",
+  "vo2": null,
   "z": [
    142.995,
    0.0,
@@ -6468,6 +6848,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-06T11:13:44",
   "type": "cycling",
+  "vo2": null,
   "z": [
    42.001,
    0.0,
@@ -6485,6 +6866,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-06T13:54:05",
   "type": "cycling",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -6502,6 +6884,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-07T17:47:35",
   "type": "cycling",
+  "vo2": null,
   "z": [
    515.811,
    3.999,
@@ -6519,6 +6902,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-08T14:44:11",
   "type": "cycling",
+  "vo2": null,
   "z": [
    107.0,
    0.0,
@@ -6536,6 +6920,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-08T16:00:32",
   "type": "cycling",
+  "vo2": null,
   "z": [
    61.002,
    0.0,
@@ -6553,6 +6938,7 @@
   "name": "Laufbandtraining",
   "start": "2026-09-08T18:40:31",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    36.998,
    77.001,
@@ -6570,6 +6956,7 @@
   "name": "'s-Hertogenbosch Radfahren",
   "start": "2026-09-12T06:22:07",
   "type": "cycling",
+  "vo2": null,
   "z": [
    172.998,
    0.0,
@@ -6587,6 +6974,7 @@
   "name": "Vught Radfahren",
   "start": "2026-09-12T15:59:23",
   "type": "cycling",
+  "vo2": null,
   "z": [
    1536.0,
    0.0,
@@ -6604,6 +6992,7 @@
   "name": "Laufbandtraining",
   "start": "2026-09-13T10:20:40",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    60.0,
    260.287,
@@ -6621,6 +7010,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-14T16:47:01",
   "type": "cycling",
+  "vo2": null,
   "z": [
    621.001,
    12.999,
@@ -6638,6 +7028,7 @@
   "name": "Essen Laufen",
   "start": "2026-09-15T17:43:00",
   "type": "running",
+  "vo2": null,
   "z": [
    29.641,
    504.991,
@@ -6655,6 +7046,7 @@
   "name": "Indoor-Radfahren",
   "start": "2026-09-17T18:46:39",
   "type": "indoor_cycling",
+  "vo2": null,
   "z": [
    586.37,
    0.0,
@@ -6672,6 +7064,7 @@
   "name": "Duisburg Golf",
   "start": "2026-09-18T13:54:30",
   "type": "golf",
+  "vo2": null,
   "z": [
    458.0,
    0.0,
@@ -6689,6 +7082,7 @@
   "name": "Laufbandtraining",
   "start": "2026-09-22T18:13:16",
   "type": "treadmill_running",
+  "vo2": null,
   "z": [
    108.654,
    633.003,
@@ -6706,6 +7100,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-23T14:53:48",
   "type": "cycling",
+  "vo2": null,
   "z": [
    61.001,
    0.0,
@@ -6723,6 +7118,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-23T16:07:13",
   "type": "cycling",
+  "vo2": null,
   "z": [
    104.998,
    0.0,
@@ -6740,6 +7136,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-30T11:49:41",
   "type": "cycling",
+  "vo2": null,
   "z": [
    315.001,
    0.0,
@@ -6757,6 +7154,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-30T12:17:05",
   "type": "cycling",
+  "vo2": null,
   "z": [
    140.999,
    0.0,
@@ -6774,6 +7172,7 @@
   "name": "Duisburg Radfahren",
   "start": "2026-09-30T15:09:06",
   "type": "cycling",
+  "vo2": null,
   "z": [
    193.001,
    0.0,
@@ -6791,6 +7190,7 @@
   "name": "Hawaii County Gehen",
   "start": "2026-10-08T12:16:06",
   "type": "walking",
+  "vo2": null,
   "z": [
    352.99,
    0.0,
@@ -6808,6 +7208,7 @@
   "name": "Hawaii County Gehen",
   "start": "2026-10-09T17:40:29",
   "type": "walking",
+  "vo2": null,
   "z": [
    180.0,
    0.0,
@@ -6825,6 +7226,7 @@
   "name": "Hawaii County Gehen",
   "start": "2026-10-09T18:07:38",
   "type": "walking",
+  "vo2": null,
   "z": [
    17.001,
    0.0,
@@ -6842,6 +7244,7 @@
   "name": "Hawaii County Gehen",
   "start": "2026-10-10T10:58:08",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -6859,6 +7262,7 @@
   "name": "Hawaii County Gehen",
   "start": "2026-10-11T07:58:37",
   "type": "walking",
+  "vo2": null,
   "z": [
    1345.79,
    113.0,
@@ -6876,6 +7280,7 @@
   "name": "Hawaii County Gehen",
   "start": "2026-10-11T12:05:58",
   "type": "walking",
+  "vo2": null,
   "z": [
    1008.969,
    30.0,
@@ -6893,6 +7298,7 @@
   "name": "Hawaii County Gehen",
   "start": "2026-10-11T13:38:46",
   "type": "walking",
+  "vo2": null,
   "z": [
    965.507,
    80.0,
@@ -6910,6 +7316,7 @@
   "name": "Duisburg Golf",
   "start": "2026-10-04T15:44:25",
   "type": "golf",
+  "vo2": null,
   "z": [
    150.001,
    0.0,
@@ -6927,6 +7334,7 @@
   "name": "Hawaii County Golf",
   "start": "2026-10-14T10:43:04",
   "type": "golf",
+  "vo2": null,
   "z": [
    1486.021,
    75.997,
@@ -6944,6 +7352,7 @@
   "name": "Hawaii County Gehen",
   "start": "2026-10-15T18:03:06",
   "type": "walking",
+  "vo2": null,
   "z": [
    0.0,
    0.0,
@@ -6961,6 +7370,7 @@
   "name": "Hawaii County Gehen",
   "start": "2026-10-17T17:27:44",
   "type": "walking",
+  "vo2": null,
   "z": [
    5.0,
    0.0,

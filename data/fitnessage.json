@@ -1441,7 +1441,7 @@
  },
  "2026-10-08": {
   "achievable": 51.58754691496713,
-  "age": 52.57459592912659,
+  "age": 52.43678677407062,
   "chrono": 59,
   "components": {
    "bmi": {
@@ -1455,7 +1455,7 @@
    },
    "rhr": {
     "stale": false,
-    "value": 52
+    "value": 51
    },
    "vigorousDaysAvg": {
     "numOfWeeksForIm": 6,
@@ -2183,7 +2183,7 @@
     "priority": 2,
     "stale": false,
     "targetValue": 3,
-    "value": 0.3
+    "value": 0.1
    },
    "vigorousMinutesAvg": {
     "numOfWeeksForIm": 6,
@@ -2191,7 +2191,7 @@
     "priority": 1,
     "stale": false,
     "targetValue": 75,
-    "value": 8.1
+    "value": 6.1
    }
   }
  }

@@ -1911,18 +1911,18 @@
   "stress": 31
  },
  "2026-10-03": {
-  "im_mod": 0,
+  "im_mod": 5,
   "im_vig": 0,
-  "rhr": null,
-  "steps": null,
-  "stress": null
+  "rhr": 58,
+  "steps": 3944,
+  "stress": 29
  },
  "2026-10-04": {
-  "im_mod": 11,
+  "im_mod": 24,
   "im_vig": 0,
-  "rhr": 59,
-  "steps": 7713,
-  "stress": 26
+  "rhr": 51,
+  "steps": 12669,
+  "stress": 28
  },
  "2026-10-05": {
   "im_mod": 6,
@@ -2130,8 +2130,8 @@
  "2026-11-03": {
   "im_mod": 0,
   "im_vig": 0,
-  "rhr": 57,
-  "steps": 51,
-  "stress": 21
+  "rhr": 52,
+  "steps": 378,
+  "stress": 18
  }
 }
