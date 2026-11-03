@@ -45,7 +45,7 @@
       var tr = d == null ? G.icon('info') + 'ohne Baseline' : G.icon(d > 0 ? 'up' : d < 0 ? 'down' : 'right') + G.signed(d, dg) + ' vs. Ø 28 T.';
       var tab = { rhr: 'herz', hrv: 'herz', stress: 'herz', sleep_score: 'schlaf', steps: 'training', vo2: 'training', longevity: 'heute' }[k.key];
       h += '<a class="card tile c-' + m[1] + '" href="#' + tab + '"><div class="l">' + G.chip(m[0], m[1]) + k.label + '</div>' +
-        '<div class="v">' + (k.value == null ? '–' : (k.key === 'longevity' && k.value > 0 ? '+' : '') + G.num(k.value, dg)) + '<small>' + (k.value == null ? '' : k.unit) + '</small></div>' +
+        '<div class="v">' + (k.value == null ? '–' : (k.key === 'longevity' && k.value > 0 ? '+' : '') + G.num(k.value, dg)) + '<small>' + (k.value == null ? '' : k.unit) + '</small>' + G.altBadge(k) + '</div>' +
         '<div class="tr">' + tr + '</div>' + G.pill(k.status) + '</a>';
     });
     // sechste Kachel: Zone 4/5 diese Woche

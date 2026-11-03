@@ -5,12 +5,16 @@ Regeln: fehlende Werte bleiben None (Lücke), nie 0. Tageswerte des heutigen Tei
 (Ruhepuls, Schritte, Stress, Intensität) werden verworfen und fließen in keinen Mittelwert.
 """
 import argparse
+import sys
 import json
 import math
 import statistics
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import sports  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -134,19 +138,12 @@ def main():
     acts_raw = load("activities.json", {})
     weight = load("weight.json", {})
     fit = load("fitnessage.json", {})
-    vo2max = load("vo2max.json", {})
     meta = load("meta.json", {})
 
     all_dates = [d for d in list(daily) + list(sleep) + list(hrv) if d <= today_s]
     if not all_dates:
         raise SystemExit("Keine Daten in data/. Erst fetch_garmin.py oder make_sample_data.py ausführen.")
     first = date.fromisoformat(min(all_dates))
-
-    # VO2max: bevorzugt Tageswerte von Garmin, sonst der letzte Wert aus Aktivitäten des Tages
-    act_vo2 = {}
-    for a in sorted(acts_raw.values(), key=lambda a: a["start"]):
-        if a.get("vo2"):
-            act_vo2[a["start"][:10]] = a["vo2"]
 
     # ---- Tageszeilen --------------------------------------------------------
     rows = []
@@ -171,10 +168,13 @@ def main():
             "sleep_score": sl.get("score"), "sleep_dur": sl.get("dur"), "deep": sl.get("deep"),
             "rem": sl.get("rem"), "light": light, "awake": sl.get("awake"),
             "bed": sl.get("bed"), "wake": sl.get("wake"),
-            "vo2": (vo2max.get(k) or {}).get("v") or act_vo2.get(k),
             "bed_min": minutes_after_noon(sl.get("bed")), "wake_min": minutes_after_noon(sl.get("wake")),
         })
         d += timedelta(days=1)
+    # VO2max nach Uth (15,3 x HFmax / Ruhepuls), Ruhepuls = Mittel der 28 Tage davor (mind. 7 Werte)
+    for i, row in enumerate(rows):
+        prev = [x["rhr"] for x in rows[max(0, i - 28):i] if x["rhr"] is not None]
+        row["vo2"] = r(15.3 * settings["hfmax"] / (sum(prev) / len(prev)), 1) if len(prev) >= 7 else None
     for key, name in (("rhr", "rhr7"), ("stress", "stress7"), ("steps", "steps7"),
                       ("sleep_score", "sleep_score7"), ("sleep_dur", "sleep_dur7"), ("hrv", "hrv7")):
         for row, v in zip(rows, rolling(rows, key)):
@@ -193,6 +193,21 @@ def main():
         })
     acts.sort(key=lambda a: a["start"], reverse=True)
     acts = [a for a in acts if a["date"] <= today_s]
+
+    # Zweites Verfahren: aus Tempo und Herzfrequenz einzelner Läufe (ACSM-Laufformel, % der Herzfrequenzreserve)
+    def run_vo2(a):
+        if a["type"] not in ("running", "trail_running", "treadmill_running") or not a.get("dist") or not a.get("dur") or not a.get("avg_hr"):
+            return None
+        if a["dur"] < 900 or a["dist"] < 2500:
+            return None
+        prev = [x["rhr"] for x in rows if x["date"] < a["start"][:10] and x["rhr"] is not None][-14:]
+        if len(prev) < 5:
+            return None
+        rhr = sum(prev) / len(prev)
+        ratio = (a["avg_hr"] - rhr) / (settings["hfmax"] - rhr)
+        if not 0.45 <= ratio <= 0.95:
+            return None
+        return (0.2 * (a["dist"] / a["dur"] * 60) + 3.5 - 3.5) / ratio + 3.5
 
     # ---- Wochen (Mo bis So) ---------------------------------------------------
     a_from = date.fromisoformat(meta.get("activities_from") or iso(first))
@@ -276,7 +291,15 @@ def main():
         kpi_series("stress", "Stress", "", "low", "höher"),
         kpi_series("steps", "Schritte", "", "high", "niedriger"),
     ]
-    kpis.append(kpi_series("vo2", "VO2max", "ml/kg/min", "high", "niedriger", digits=1, min_n=3, compact=True))
+    vk = kpi_series("vo2", "VO2max", "ml/kg/min", "high", "niedriger", digits=1)
+    if vk.get("date"):
+        lo = iso(date.fromisoformat(vk["date"]) - timedelta(days=180))
+        ests = [e for a in acts_raw.values() if lo <= a["start"][:10] <= vk["date"] and (e := run_vo2(a)) is not None]
+        if len(ests) >= 3:
+            vk["alt"] = r(statistics.median(ests), 1)
+            vk["alt_delta"] = int(round(vk["alt"] - vk["value"]))
+            vk["alt_n"] = len(ests)
+    kpis.append(vk)
     fit_rows = sorted(({"date": k, **v} for k, v in fit.items() if k <= today_s), key=lambda x: x["date"])
     fk = {"key": "fitness_age", "label": "Fitness-Alter", "unit": "Jahre", "digits": 1, "value": None,
           "spark": [x["age"] for x in fit_rows[-30:]], "good": "low"}
@@ -346,6 +369,10 @@ def main():
     write("activities.json", acts)
     write("kpi.json", {"kpis": kpis, "z45": z45, "last_sleep": last_sleep})
     write("year.json", year)
+    acts_list = [a for a in acts_raw.values() if a["start"][:10] <= today_s]
+    write("running.json", sports.build_running(acts_list, today))
+    write("cycling.json", sports.build_cycling(acts_list, today))
+    write("golf.json", sports.build_golf(acts_list, today, ROOT / "config" / "golf_runden.json"))
     write("body.json", body)
     print(f"Build: {len(rows)} Tage, {len(weeks)} Wochen, {len(acts)} Aktivitäten, heute={today_s}")
 

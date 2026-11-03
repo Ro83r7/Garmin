@@ -4,7 +4,7 @@
   --border: #dde2ee; --shadow: 0 1px 2px rgba(26,32,51,.05), 0 8px 24px rgba(26,32,51,.06);
   --accent: #4f46e5; --on-accent: #ffffff; --solid: #ffffff; --chip: #f3f5fb;
   --heart: #c3372f; --hrv: #7436d9; --sleep: #4a43d6; --stress: #a8500a;
-  --train: #167a3a; --steps: #0b6f86; --fit: #8f5b00;
+  --train: #167a3a; --steps: #0b6f86; --fit: #8f5b00; --golf: #5b6d00;
   --ok: #167a3a; --warn: #8a5a00; --bad: #b3261e; --info: #1d4ed8;
   --z1: #8b97ad; --z2: #3a9bc4; --z3: #3fae6a; --z4: #e8a317; --z5: #e0483f;
   --radius: 20px;
@@ -16,7 +16,7 @@
     --border: #2a3250; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
     --accent: #a5b4fc; --on-accent: #181e32; --solid: #181e32; --chip: #0e1220;
     --heart: #ff8c82; --hrv: #c3a1ff; --sleep: #a9b5ff; --stress: #ffb877;
-    --train: #6fe3a0; --steps: #5fe3d0; --fit: #ffd25e;
+    --train: #6fe3a0; --steps: #5fe3d0; --fit: #ffd25e; --golf: #c7e34d;
     --ok: #6fe3a0; --warn: #ffd25e; --bad: #ffa59f; --info: #9db9ff;
     --z1: #8f9bb3; --z2: #5db4dd; --z3: #5bc788; --z4: #f2b84a; --z5: #ff7b72;
     color-scheme: dark;
@@ -38,7 +38,7 @@ button { font: inherit; color: inherit; }
 
 .c-heart { --c: var(--heart); } .c-hrv { --c: var(--hrv); } .c-sleep { --c: var(--sleep); }
 .c-stress { --c: var(--stress); } .c-train { --c: var(--train); } .c-steps { --c: var(--steps); }
-.c-fit { --c: var(--fit); }
+.c-fit { --c: var(--fit); } .c-golf { --c: var(--golf); } .c-run { --c: var(--train); } .c-bike { --c: var(--steps); }
 .chip-icon {
   display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 14px; flex: none;
   color: var(--c, var(--accent)); background: color-mix(in srgb, var(--c, var(--accent)) 14%, transparent);
@@ -88,3 +88,4 @@ button { font: inherit; color: inherit; }
 .empty { color: var(--muted); padding: 24px 0; text-align: center; }
 [hidden] { display: none !important; }
 .legend i.zl.z1 { background: var(--z1); } .legend i.zl.z2 { background: var(--z2); } .legend i.zl.z3 { background: var(--z3); } .legend i.zl.z4 { background: var(--z4); } .legend i.zl.z5 { background: var(--z5); }
+.alt { font-size: .5em; font-weight: 600; color: var(--muted); opacity: .8; margin-left: 6px; letter-spacing: 0; }
