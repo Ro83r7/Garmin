@@ -19,6 +19,10 @@
     var a = Math.abs(d), z = Number(a.toFixed(dg || 0)) === 0;
     return (z ? '±' : d > 0 ? '+' : '−') + G.num(a, dg);
   };
+  G.altBadge = function (k) {
+    if (k.key !== 'vo2' || k.alt_delta == null) return '';
+    return '<span class="alt" title="Zweites Verfahren (Tempo und Herzfrequenz der Läufe): ' + G.num(k.alt, 1) + '" aria-label="Zweites Verfahren, Abweichung ' + G.signed(k.alt_delta, 0) + '">' + G.signed(k.alt_delta, 0) + '</span>';
+  };
   G.dur = function (sec) {
     if (sec == null) return '–';
     var m = Math.round(sec / 60);
@@ -65,6 +69,9 @@
     clock: '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
     sort: '<path d="m7 15 5 5 5-5"/><path d="m7 9 5-5 5 5"/>',
     target: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+    bike: '<circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/>',
+    flag: '<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/>',
+    gauge: '<path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/>',
     wind: '<path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/>',
     trending: '<path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/>',
     calendar: '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>'
@@ -346,7 +353,7 @@
   /* Unauffälliger Design-Umschalter ganz unten; die Wahl bleibt im Browser gespeichert. */
   G.themeSwitch = function (host) {
     if (!window.GTheme) return;
-    var names = { aurora: 'Aurora', sorbet: 'Sorbet', klassisch: 'Klassisch' };
+    var names = { aurora: 'Aurora', sorbet: 'Sorbet', rainbow: 'Rainbow', klassisch: 'Klassisch' };
     function draw() {
       var cur = GTheme.get();
       host.innerHTML = 'Design ' + GTheme.list.map(function (t) {

@@ -5,6 +5,9 @@
     { id: 'herz', label: 'Herz und Erholung', icon: 'heartpulse', area: 'heart', title: 'Herz und Erholung' },
     { id: 'schlaf', label: 'Schlaf', icon: 'moon', area: 'sleep', title: 'Schlaf' },
     { id: 'training', label: 'Training', icon: 'route', area: 'train', title: 'Training' },
+    { id: 'laufen', label: 'Laufen', icon: 'gauge', area: 'run', title: 'Laufen' },
+    { id: 'rad', label: 'Radfahren', icon: 'bike', area: 'bike', title: 'Radfahren' },
+    { id: 'golf', label: 'Golf', icon: 'flag', area: 'golf', title: 'Golf' },
     { id: 'koerper', label: 'Körper', icon: 'scale', area: 'fit', title: 'Körper' }
   ];
   var RANGES = [30, 90, 180, 365, 0];
@@ -62,7 +65,7 @@
       var dtxt = d == null ? 'keine Baseline (zu wenige Werte)' : G.signed(d, dg) + (x.unit ? ' ' + x.unit : '') + ' <span class="muted">vs. Ø ' + G.num(x.base, dg) + '</span>';
       h += card('kpi c-' + m[1],
         '<div class="head">' + G.chip(m[0], m[1]) + x.label + '</div>' +
-        '<div class="val">' + kpiVal(x) + '<small>' + (x.value == null ? '' : x.unit) + '</small></div>' +
+        '<div class="val">' + kpiVal(x) + '<small>' + (x.value == null ? '' : x.unit) + '</small>' + G.altBadge(x) + '</div>' +
         '<div class="delta">' + (d == null ? G.icon('info') : arrow(d, x.good)) + '<span><b>' + dtxt + '</b></span></div>' +
         '<div class="foot2"><span class="muted" style="font-size:.8125rem">' + (x.date ? (x.key === 'im_week' ? 'Woche ab ' : '') + G.fmtDate(x.date) : 'keine Daten') + '</span>' + G.spark(x.spark, 'currentColor') + '</div>');
     });
@@ -203,7 +206,7 @@
     var b = D.body, h = '<div class="grid">';
     h += '<div class="grid cols2">' + card('', head('scale', 'fit', 'Gewicht', 'Einzelne Wägungen, Lücken bleiben Lücken') + area('ch-weight')) +
       card('', head('scale', 'fit', 'BMI') + area('ch-bmi')) + '</div>';
-    h += '<div class="grid cols2">' + card('', head('wind', 'fit', 'VO2max', 'Garmin-Schätzung in ml/kg/min, nur Tage mit neuer Messung') + area('ch-vo2')) +
+    h += '<div class="grid cols2">' + card('', head('wind', 'fit', 'VO2max', 'Nach Uth: 15,3 × HFmax ÷ Ruhepuls (Mittel der 28 Tage davor), in ml/kg/min') + area('ch-vo2')) +
       card('', head('trending', 'fit', 'Longevity+', 'Kalenderalter minus Fitness-Alter in Jahren. Positiv heißt: dein Fitness-Alter liegt unter deinem Kalenderalter.') + area('ch-lon')) + '</div>';
     h += '<div class="grid cols2">' + card('', head('hourglass', 'fit', 'Fitness-Alter', 'Wert von Garmin (kleiner ist besser), gestrichelt = erreichbares Fitness-Alter') + area('ch-fit') +
       G.legend([{ color: C('fit'), label: 'Fitness-Alter' }, { color: C('fit'), label: 'Erreichbar' }])) +
@@ -236,9 +239,187 @@
       }).join('') + '</div>' : '');
   }
 
+
+  /* ---------- Laufen, Radfahren, Golf ---------- */
+  function mmss(sec) { return sec == null ? '–' : Math.floor(sec / 60) + ':' + String(Math.round(sec % 60)).padStart(2, '0'); }
+  function tipList(tips) {
+    return '<ul class="tips">' + tips.map(function (t) {
+      return '<li class="' + t.level + '">' + G.icon(t.level === 'good' ? 'check' : t.level === 'warn' ? 'alert' : 'info') + '<div><b>' + t.title + '</b>' + t.text + '</div></li>';
+    }).join('') + '</ul><p class="note" style="margin:10px 0 0">Orientierung aus deinen eigenen Daten und groben Richtwerten, keine Trainings- oder medizinische Beratung.</p>';
+  }
+  /* m: [label, key, unit, digits, lowerBetter, formatter] */
+  function statTiles(sum, defs, area) {
+    return '<div class="grid kpis dyn">' + defs.map(function (m) {
+      var cur = sum[m[1]], prev = sum[m[1] + '_prev'], d = cur != null && prev != null ? cur - prev : null, f = m[5] || function (v) { return G.num(v, m[3]); };
+      var dtxt = d == null ? 'kein Vergleich' : (Math.abs(d) < Math.pow(10, -(m[3] || 0)) / 2 ? '±0' : (d > 0 ? '+' : '−') + (m[5] ? f(Math.abs(d)) : G.num(Math.abs(d), m[3]))) + (d == null ? '' : ' <span class="muted">vs. ' + f(prev) + '</span>');
+      return card('kpi c-' + area, '<div class="head">' + m[0] + '</div><div class="val">' + (cur == null ? '–' : f(cur)) + '<small>' + (cur == null ? '' : m[2]) + '</small></div><div class="delta">' + (d == null ? G.icon('info') : G.icon(d > 0 ? 'up' : d < 0 ? 'down' : 'right')) + '<span><b>' + dtxt + '</b></span></div>');
+    }).join('') + '</div>';
+  }
+  function perItem(id, rows, key, label, fmt, color, opts) {
+    opts = opts || {};
+    G.chart($(id), Object.assign({ rows: rows, x0: x0(), x1: x1(), events: ev(), height: 220, aria: label, yfmt: opts.yfmt, series: [
+      { key: key, kind: 'dots', color: color, label: label, fmt: fmt },
+      { key: key + '_r5', kind: 'line', color: color, label: 'Ø 5 Einheiten', dots: false, fmt: fmt }] }, opts.extra || {}));
+  }
+  function weeklyKm(items) {
+    var map = {}, out = [];
+    items.forEach(function (x) {
+      var d = new Date(x.date + 'T12:00:00Z'), wd = (d.getUTCDay() + 6) % 7, k = G.addDays(x.date, -wd);
+      map[k] = (map[k] || 0) + (x.dist_km || 0);
+    });
+    var k0 = Object.keys(map).sort()[0];
+    if (!k0) return out;
+    for (var k = k0; k <= x1(); k = G.addDays(k, 7)) out.push({ date: k, km: map[k] != null ? Math.round(map[k] * 10) / 10 : 0, partial: G.addDays(k, 6) >= x1() });
+    return out;
+  }
+
+  function renderRun() {
+    var R = D.run, s = R.summary, h = '<div class="grid">';
+    h += '<p class="note" style="margin:0">Letzte 90 Tage im Vergleich zu den 90 Tagen davor. Tempo: kleiner ist schneller.</p>';
+    var defs = [['Läufe', 'n', '', 0], ['Kilometer', 'km', 'km', 0], ['Ø Tempo', 'pace', '/km', 0, 1, mmss], ['Ø Herzfrequenz', 'hr', 'bpm', 0]];
+    if (R.has_dynamics) defs = defs.concat([['Kadenz', 'cad', 'spm', 0], ['Bodenkontaktzeit', 'gct', 'ms', 0], ['Vertikale Oszillation', 'vo', 'cm', 1], ['Vertikales Verhältnis', 'vr', '%', 1], ['Schrittlänge', 'sl', 'm', 2]]);
+    if (R.has_power) defs.push(['Leistung', 'pw', 'W', 0]);
+    h += statTiles(s, defs, 'run');
+    h += card('', head('gauge', 'run', 'Auffälligkeiten und Ideen', 'Aus deinen Läufen der letzten 90 Tage') + tipList(R.tips));
+    h += '<div class="grid cols2">' + card('', head('gauge', 'run', 'Tempo', 'Minuten pro Kilometer pro Lauf, Linie = Ø der letzten 5 Läufe') + area('ch-r-pace')) +
+      card('', head('heart', 'heart', 'Herzfrequenz', 'Durchschnitt pro Lauf') + area('ch-r-hr')) +
+      card('', head('wind', 'run', 'Effizienz', 'Meter pro Minute je Herzschlag pro Minute. Höher heißt mehr Tempo für dieselbe Herzfrequenz.') + area('ch-r-eff')) +
+      card('', head('footprints', 'run', 'Kilometer pro Monat', 'Alle Laufarten, letzte 12 Monate') + area('ch-r-km')) + '</div>';
+    if (R.has_dynamics) {
+      h += '<div class="grid cols2">' + card('', head('timer', 'run', 'Bodenkontaktzeit', 'Millisekunden, kürzer ist reaktiver') + area('ch-r-gct')) +
+        card('', head('footprints', 'run', 'Kadenz', 'Schritte pro Minute') + area('ch-r-cad')) +
+        card('', head('activity', 'run', 'Vertikale Oszillation', 'Zentimeter, weniger Auf und Ab ist sparsamer') + area('ch-r-vo')) +
+        card('', head('activity', 'run', 'Vertikales Verhältnis', 'Prozent, Oszillation im Verhältnis zur Schrittlänge') + area('ch-r-vr')) +
+        card('', head('route', 'run', 'Schrittlänge', 'Meter') + area('ch-r-sl')) +
+        (R.has_power ? card('', head('zap', 'run', 'Laufleistung', 'Watt im Durchschnitt pro Lauf') + area('ch-r-pw')) : '') + '</div>';
+    } else {
+      h += card('', head('info', 'run', 'Laufdynamik') + '<p class="note" style="margin:0">Für Bodenkontaktzeit, Kadenz, vertikales Verhältnis und Schrittlänge enthalten deine Läufe noch keine Werte. Nach dem nächsten vollständigen Abruf („Komplette Historie“ im Workflow) erscheinen sie hier, sofern deine Uhr sie aufzeichnet.</p>');
+    }
+    h += card('', head('timer', 'run', 'Läufe') + '<div id="tb-run"></div>');
+    h += '</div>';
+    $('v-laufen').innerHTML = h;
+  }
+  function drawRun() {
+    var R = D.run, rows = R.runs.filter(function (x) { return x.date >= start(); });
+    perItem('ch-r-pace', rows, 'pace', 'Tempo', function (v) { return mmss(v) + ' /km'; }, C('train'), { yfmt: mmss });
+    perItem('ch-r-hr', rows, 'hr', 'Herzfrequenz', function (v) { return G.num(v) + ' bpm'; }, C('heart'));
+    perItem('ch-r-eff', rows, 'eff', 'Effizienz', function (v) { return G.num(v, 2); }, C('steps'), { yfmt: function (v) { return G.num(v, 1); } });
+    G.chart($('ch-r-km'), { rows: R.monthly_km.map(function (m) { return { date: m.month + '-01', v: m.v }; }), x0: R.monthly_km[0].month + '-01', x1: R.monthly_km[11].month + '-28', step: 30, height: 220, aria: 'Kilometer pro Monat',
+      series: [{ key: 'v', kind: 'bar', color: C('train'), label: 'Kilometer', fmt: function (v) { return G.num(v, 0) + ' km'; } }] });
+    if (R.has_dynamics) {
+      perItem('ch-r-gct', rows, 'gct', 'Bodenkontaktzeit', function (v) { return G.num(v) + ' ms'; }, C('train'));
+      perItem('ch-r-cad', rows, 'cad', 'Kadenz', function (v) { return G.num(v) + ' spm'; }, C('steps'));
+      perItem('ch-r-vo', rows, 'vo', 'Vertikale Oszillation', function (v) { return G.num(v, 1) + ' cm'; }, C('hrv'), { yfmt: function (v) { return G.num(v, 1); } });
+      perItem('ch-r-vr', rows, 'vr', 'Vertikales Verhältnis', function (v) { return G.num(v, 1) + ' %'; }, C('sleep'), { yfmt: function (v) { return G.num(v, 1); } });
+      perItem('ch-r-sl', rows, 'sl', 'Schrittlänge', function (v) { return G.num(v, 2) + ' m'; }, C('fit'), { yfmt: function (v) { return G.num(v, 2); } });
+      if (R.has_power) perItem('ch-r-pw', rows, 'pw', 'Leistung', function (v) { return G.num(v) + ' W'; }, C('stress'));
+    }
+    G.table($('tb-run'), { rows: rows, search: true, sortKey: 'date', sortDir: -1, cols: [
+      { key: 'date', label: 'Datum', text: function (x) { return G.wd(x.date) + ' ' + G.fmtDate(x.date); } },
+      { key: 'type', label: 'Art', text: function (x) { return x.treadmill ? 'Laufband' : 'Draußen'; } },
+      { key: 'dist_km', label: 'km', num: 1, text: function (x) { return G.num(x.dist_km, 1); } },
+      { key: 'dur', label: 'Dauer', num: 1, text: function (x) { return G.dur(x.dur); } },
+      { key: 'pace', label: 'Tempo', num: 1, text: function (x) { return mmss(x.pace) + ' /km'; } },
+      { key: 'hr', label: 'Ø HF', num: 1, text: function (x) { return x.hr == null ? '–' : x.hr; } },
+      { key: 'cad', label: 'Kadenz', num: 1, text: function (x) { return x.cad == null ? '–' : G.num(x.cad); } },
+      { key: 'gct', label: 'GCT ms', num: 1, text: function (x) { return x.gct == null ? '–' : G.num(x.gct); } },
+      { key: 'vo', label: 'VO cm', num: 1, text: function (x) { return x.vo == null ? '–' : G.num(x.vo, 1); } },
+      { key: 'vr', label: 'VR %', num: 1, text: function (x) { return x.vr == null ? '–' : G.num(x.vr, 1); } },
+      { key: 'sl', label: 'Schritt m', num: 1, text: function (x) { return x.sl == null ? '–' : G.num(x.sl, 2); } }] });
+  }
+
+  function renderBike() {
+    var B = D.bike, s = B.summary, h = '<div class="grid">';
+    h += '<p class="note" style="margin:0">Letzte 90 Tage im Vergleich zu den 90 Tagen davor.</p>';
+    h += statTiles(s, [['Fahrten', 'n', '', 0], ['Kilometer', 'km', 'km', 0], ['Stunden', 'hours', 'h', 1], ['Ø Tempo', 'kmh', 'km/h', 1], ['Ø Herzfrequenz', 'hr', 'bpm', 0], ['Ø Strecke', 'dist_km', 'km', 1]], 'bike');
+    h += card('', head('bike', 'bike', 'Auffälligkeiten und Ideen', 'Aus deinen Fahrten der letzten 90 Tage') + tipList(B.tips));
+    h += '<div class="grid cols2">' + card('', head('bike', 'bike', 'Kilometer pro Woche', 'Draußen und Indoor, Mo bis So. Gestrichelt = laufende Woche.') + area('ch-b-km')) +
+      card('', head('wind', 'bike', 'Tempo', 'Durchschnitt pro Fahrt in km/h, Linie = Ø der letzten 5 Fahrten') + area('ch-b-kmh')) +
+      card('', head('heart', 'heart', 'Herzfrequenz', 'Durchschnitt pro Fahrt') + area('ch-b-hr')) +
+      card('', head('activity', 'bike', 'Effizienz', 'km/h je 100 Herzschläge pro Minute, höher ist besser (Strecke und Wind beeinflussen es)') + area('ch-b-eff')) + '</div>';
+    h += card('', head('timer', 'bike', 'Fahrten') + '<div id="tb-bike"></div>');
+    h += '<p class="note">Dein Garmin liefert für Radfahrten hier keine Leistungs- oder Trittfrequenzwerte (dafür bräuchte es Sensoren).</p></div>';
+    $('v-rad').innerHTML = h;
+  }
+  function drawBike() {
+    var B = D.bike, rows = B.rides.filter(function (x) { return x.date >= start(); });
+    var wk = weeklyKm(B.rides).filter(function (x) { return x.date >= G.addDays(start(), -6); });
+    G.chart($('ch-b-km'), { rows: wk, x0: wk.length ? wk[0].date : x0(), x1: wk.length ? wk[wk.length - 1].date : x1(), step: 7, height: 220, aria: 'Kilometer pro Woche',
+      series: [{ key: 'km', kind: 'bar', color: C('steps'), label: 'Kilometer', partialKey: 'partial', fmt: function (v) { return G.num(v, 1) + ' km'; } }] });
+    perItem('ch-b-kmh', rows, 'kmh', 'Tempo', function (v) { return G.num(v, 1) + ' km/h'; }, C('steps'), { yfmt: function (v) { return G.num(v, 0); } });
+    perItem('ch-b-hr', rows, 'hr', 'Herzfrequenz', function (v) { return G.num(v) + ' bpm'; }, C('heart'));
+    perItem('ch-b-eff', rows, 'eff', 'Effizienz', function (v) { return G.num(v, 1); }, C('train'), { yfmt: function (v) { return G.num(v, 1); } });
+    G.table($('tb-bike'), { rows: rows, search: true, sortKey: 'date', sortDir: -1, cols: [
+      { key: 'date', label: 'Datum', text: function (x) { return G.wd(x.date) + ' ' + G.fmtDate(x.date); } },
+      { key: 'indoor', label: 'Art', text: function (x) { return x.indoor ? 'Indoor' : 'Draußen'; } },
+      { key: 'dist_km', label: 'km', num: 1, text: function (x) { return G.num(x.dist_km, 1); } },
+      { key: 'dur', label: 'Dauer', num: 1, text: function (x) { return G.dur(x.dur); } },
+      { key: 'kmh', label: 'Ø km/h', num: 1, text: function (x) { return G.num(x.kmh, 1); } },
+      { key: 'hr', label: 'Ø HF', num: 1, text: function (x) { return x.hr == null ? '–' : x.hr; } },
+      { key: 'gain', label: 'Höhenmeter', num: 1, text: function (x) { return x.gain == null ? '–' : G.num(x.gain); } },
+      { key: 'cal', label: 'kcal', num: 1, text: function (x) { return x.cal == null ? '–' : G.num(x.cal); } }] });
+  }
+
+  function renderGolf() {
+    var Gf = D.golf, h = '<div class="grid">';
+    h += '<div class="grid kpis dyn">' +
+      card('kpi c-golf', '<div class="head">Runden gesamt</div><div class="val">' + Gf.n_rounds + '</div><div class="delta">' + G.icon('info') + '<span>' + Gf.n_other + ' kürzere Einheiten (zum Beispiel Range) nicht mitgezählt</span></div>') +
+      card('kpi c-golf', '<div class="head">Dieses Jahr bis heute</div><div class="val">' + Gf.ytd.cur + '<small>Runden</small></div><div class="delta">' + G.icon(Gf.ytd.cur >= Gf.ytd.prev ? 'up' : 'down') + '<span><b>Vorjahr: ' + Gf.ytd.prev + '</b></span></div>') +
+      card('kpi c-golf', '<div class="head">Ø Dauer pro Runde</div><div class="val">' + G.dur(Gf.avg.dur) + '</div><div class="delta">' + G.icon('clock') + '<span>Ø Strecke ' + G.num(Gf.avg.km, 1) + ' km</span></div>') +
+      card('kpi c-golf', '<div class="head">Ø Herzfrequenz</div><div class="val">' + G.num(Gf.avg.hr) + '<small>bpm</small></div><div class="delta">' + G.icon('heart') + '<span>über alle Runden</span></div>') + '</div>';
+    h += '<div class="grid cols2">' + card('', head('flag', 'golf', 'Runden pro Monat', 'Letzte 12 Monate') + area('ch-g-month')) +
+      card('', head('clock', 'golf', 'Dauer pro Runde', 'Stunden, Linie = Ø der letzten 5 Runden') + area('ch-g-dur')) +
+      card('', head('route', 'golf', 'Gelaufene Strecke', 'Kilometer pro Runde (Uhr im Gehen)') + area('ch-g-km')) +
+      card('', head('heart', 'heart', 'Herzfrequenz', 'Durchschnitt pro Runde') + area('ch-g-hr')) + '</div>';
+    h += card('', head('flag', 'golf', 'Plätze') + '<div id="tb-g-course"></div>');
+    h += card('', head('flag', 'golf', 'Strokes Gained und Scorekarten') + golfSgBody(Gf));
+    h += card('', head('timer', 'golf', 'Runden') + '<div id="tb-golf"></div>');
+    h += '</div>';
+    $('v-golf').innerHTML = h;
+  }
+  function golfSgBody(Gf) {
+    var s = Gf.scratch, h = '<p style="margin:0 0 10px">Garmin liefert über deinen Zugang <b>keine Scorekarten und keine Schlagdaten</b> (Schläge, Putts, Fairways, Grüns). Echte Strokes-Gained-Werte brauchen die Entfernung zum Loch vor und nach jedem Schlag und sind damit hier nicht berechenbar.</p>' +
+      '<p style="margin:0 0 10px">Als Näherung kannst du Runden von Hand in <code>config/golf_runden.json</code> eintragen. Dann vergleiche ich Putts, Grüns in Regulation und Fairways mit Scratch-Richtwerten (Putts ' + G.num(s.putts, 1) + ', GIR ' + s.gir_pct + ' %, Fairways ' + s.fir_pct + ' % pro Runde; grobe Mittelwerte aus Arccos-Auswertungen).</p>' +
+      '<p class="note" style="margin:0 0 10px">Beispiel: <code>{ "date": "2026-10-20", "course": "Platzname", "par": 72, "score": 84, "putts": 33, "gir": 6, "fir": 7, "fir_total": 14, "holes": 18 }</code></p>';
+    if (Gf.manual.length) {
+      h += '<div class="table-wrap"><table><thead><tr><th>Datum</th><th class="num">Score</th><th class="num">zu Par</th><th class="num">Putts</th><th class="num">vs. Scratch</th><th class="num">GIR %</th><th class="num">vs. Scratch</th><th class="num">Fairways %</th><th class="num">vs. Scratch</th></tr></thead><tbody>' + Gf.manual.map(function (m) {
+        var f = function (v, u) { return v == null ? '–' : (v > 0 ? '+' : v < 0 ? '−' : '±') + G.num(Math.abs(v), u || 0); };
+        return '<tr><td>' + G.fmtDate(m.date) + '</td><td class="num">' + (m.score == null ? '–' : m.score) + '</td><td class="num">' + f(m.to_par) + '</td><td class="num">' + (m.putts == null ? '–' : m.putts) + '</td><td class="num">' + f(m.putts_vs_scratch, 1) + '</td><td class="num">' + (m.gir_pct == null ? '–' : m.gir_pct) + '</td><td class="num">' + f(m.gir_vs_scratch) + '</td><td class="num">' + (m.fir_pct == null ? '–' : m.fir_pct) + '</td><td class="num">' + f(m.fir_vs_scratch) + '</td></tr>';
+      }).join('') + '</tbody></table></div>';
+    }
+    return h;
+  }
+  function drawGolf() {
+    var Gf = D.golf, rs = start(), rounds = Gf.rounds.filter(function (x) { return x.round; });
+    var rows = rounds.map(function (x, i) { return Object.assign({}, x, { dur_h: x.dur / 3600 }); });
+    var r5 = function (key) { rows.forEach(function (x, i) { var v = rows.slice(Math.max(0, i - 4), i + 1).map(function (y) { return y[key]; }).filter(function (y) { return y != null; }); x[key + '_r5'] = v.length >= 3 ? v.reduce(function (a, b) { return a + b; }, 0) / v.length : null; }); };
+    ['dur_h', 'dist_km', 'hr'].forEach(r5);
+    var vis = rows.filter(function (x) { return x.date >= rs; });
+    var M = Gf.monthly_rounds;
+    G.chart($('ch-g-month'), { rows: M.map(function (m) { return { date: m.month + '-01', v: m.v }; }), x0: M[0].month + '-01', x1: M[11].month + '-28', step: 30, height: 220, aria: 'Runden pro Monat',
+      series: [{ key: 'v', kind: 'bar', color: C('golf'), label: 'Runden', fmt: function (v) { return G.num(v, 0); } }] });
+    perItem('ch-g-dur', vis, 'dur_h', 'Dauer', function (v) { return G.num(v, 1) + ' h'; }, C('golf'), { yfmt: function (v) { return G.num(v, 1); } });
+    perItem('ch-g-km', vis, 'dist_km', 'Strecke', function (v) { return G.num(v, 1) + ' km'; }, C('steps'), { yfmt: function (v) { return G.num(v, 0); } });
+    perItem('ch-g-hr', vis, 'hr', 'Herzfrequenz', function (v) { return G.num(v) + ' bpm'; }, C('heart'));
+    G.table($('tb-g-course'), { rows: Gf.courses, sortKey: 'n', sortDir: -1, cols: [
+      { key: 'loc', label: 'Ort / Platz' },
+      { key: 'n', label: 'Runden', num: 1 },
+      { key: 'dur', label: 'Ø Dauer', num: 1, text: function (x) { return G.dur(x.dur); } },
+      { key: 'km', label: 'Ø km', num: 1, text: function (x) { return G.num(x.km, 1); } },
+      { key: 'hr', label: 'Ø HF', num: 1, text: function (x) { return x.hr == null ? '–' : G.num(x.hr); } },
+      { key: 'last', label: 'Zuletzt', text: function (x) { return G.fmtDateY(x.last); } }] });
+    G.table($('tb-golf'), { rows: rounds.filter(function (x) { return x.date >= rs; }), search: true, sortKey: 'date', sortDir: -1, cols: [
+      { key: 'date', label: 'Datum', text: function (x) { return G.wd(x.date) + ' ' + G.fmtDate(x.date); } },
+      { key: 'loc', label: 'Ort / Platz' },
+      { key: 'dur', label: 'Dauer', num: 1, text: function (x) { return G.dur(x.dur); } },
+      { key: 'dist_km', label: 'km', num: 1, text: function (x) { return G.num(x.dist_km, 1); } },
+      { key: 'hr', label: 'Ø HF', num: 1, text: function (x) { return x.hr == null ? '–' : x.hr; } },
+      { key: 'cal', label: 'kcal', num: 1, text: function (x) { return x.cal == null ? '–' : G.num(x.cal); } }] });
+  }
+
   /* ---------- Steuerung ---------- */
-  var DRAW = { uebersicht: function () {}, herz: drawHeart, schlaf: drawSleep, training: drawTraining, koerper: drawBody };
-  var RENDER = { uebersicht: renderOverview, herz: renderHeart, schlaf: renderSleep, training: renderTraining, koerper: renderBody };
+  var DRAW = { uebersicht: function () {}, herz: drawHeart, schlaf: drawSleep, training: drawTraining, laufen: drawRun, rad: drawBike, golf: drawGolf, koerper: drawBody };
+  var RENDER = { uebersicht: renderOverview, herz: renderHeart, schlaf: renderSleep, training: renderTraining, laufen: renderRun, rad: renderBike, golf: renderGolf, koerper: renderBody };
   function show() {
     var v = VIEWS.filter(function (x) { return x.id === state.view; })[0] || VIEWS[0];
     document.querySelectorAll('.view').forEach(function (e) { e.classList.toggle('on', e.id === 'v-' + v.id); });
@@ -261,8 +442,8 @@
   window.addEventListener('resize', G.debounce(function () { if (D) { DRAW[state.view](); } }, 150));
 
   G.themeSwitch($('themes'));
-  G.load(['meta', 'daily', 'weeks', 'activities', 'kpi', 'year', 'body']).then(function (d) {
-    D = { meta: d.meta, daily: d.daily, weeks: d.weeks, acts: d.activities, kpi: d.kpi, year: d.year, body: d.body };
+  G.load(['meta', 'daily', 'weeks', 'activities', 'kpi', 'year', 'body', 'running', 'cycling', 'golf']).then(function (d) {
+    D = { meta: d.meta, daily: d.daily, weeks: d.weeks, acts: d.activities, kpi: d.kpi, year: d.year, body: d.body, run: d.running, bike: d.cycling, golf: d.golf };
     var st = G.stand(D.meta);
     $('stand').innerHTML = G.icon('clock') + 'Stand: ' + st.text;
     G.banners($('banners'), D.meta);

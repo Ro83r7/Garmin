@@ -5,7 +5,7 @@ html[data-theme="aurora"] {
   --bg: #0a0e1f; --card: rgba(255,255,255,.075); --solid: #1a2040; --chip: rgba(255,255,255,.08);
   --text: #f4f6ff; --muted: #bcc3e6; --grid: rgba(255,255,255,.13); --border: rgba(255,255,255,.16);
   --shadow: 0 20px 50px rgba(0,0,0,.28); --accent: #a9b5ff; --on-accent: #0a0e1f;
-  --heart: #ff7b7b; --hrv: #b794ff; --sleep: #8f9cff; --stress: #ffae5c; --train: #3fe08a; --steps: #2fd9d0; --fit: #ffd23f;
+  --heart: #ff7b7b; --hrv: #b794ff; --sleep: #8f9cff; --stress: #ffae5c; --train: #3fe08a; --steps: #2fd9d0; --fit: #ffd23f; --golf: #c7e34d;
   --ok: #6ff0a6; --warn: #ffd966; --bad: #ffa59f; --info: #9db9ff;
   --z1: #8f9bb3; --z2: #5db4dd; --z3: #5bc788; --z4: #f2b84a; --z5: #ff7b72;
   color-scheme: dark;
@@ -69,3 +69,53 @@ html[data-theme="sorbet"] .tabbar { background: rgba(255,255,255,.88); }
   text-decoration: none;
 }
 .themes button[aria-pressed="true"] { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+
+/* ---------- Rainbow (hell, sehr bunt) ---------- */
+html[data-theme="rainbow"] {
+  --bg: #fff6fb; --card: #ffffff; --solid: #ffffff; --chip: #fff1d6;
+  --text: #1f1537; --muted: #55496f; --grid: #f1e6fb; --border: #ffffff;
+  --shadow: 0 12px 30px rgba(168,85,247,.16);
+  --accent: #7b2ff7; --on-accent: #ffffff; --radius: 28px;
+  --heart: #d4264d; --hrv: #8a2be2; --sleep: #3b4fe0; --stress: #c2540a; --train: #0f8a47; --steps: #007f95; --fit: #9a5b00;
+  --ok: #0f7a40; --warn: #7a4f00; --bad: #b3261e; --info: #1d4ed8;
+  --z1: #7f8fb0; --z2: #1da1d6; --z3: #22b573; --z4: #f5a200; --z5: #ee3f55;
+  --rainbow: linear-gradient(120deg, #ff5a5f, #ffa63d, #ffe14d, #3ed598, #31c3ff, #7b61ff, #ff5fb3);
+  color-scheme: light;
+}
+html[data-theme="rainbow"] body {
+  background:
+    radial-gradient(520px 400px at 0% 0%, #ffd0e4, transparent 70%),
+    radial-gradient(520px 400px at 100% 0%, #cfe9ff, transparent 70%),
+    radial-gradient(560px 420px at 0% 100%, #fff0b8, transparent 70%),
+    radial-gradient(560px 420px at 100% 100%, #c9f5df, transparent 70%), #fff6fb;
+  background-attachment: fixed;
+}
+html[data-theme="rainbow"] body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: 6px; z-index: 50; background: var(--rainbow);
+}
+html[data-theme="rainbow"] .card {
+  border: 3px solid transparent;
+  background: linear-gradient(#ffffff, #ffffff) padding-box, var(--rainbow) border-box;
+}
+html[data-theme="rainbow"] .card.kpi, html[data-theme="rainbow"] .tile {
+  background:
+    linear-gradient(150deg, color-mix(in srgb, var(--c) 30%, #fff), color-mix(in srgb, var(--c) 10%, #fff)) padding-box,
+    var(--rainbow) border-box;
+}
+html[data-theme="rainbow"] .chip-icon { background: var(--c, var(--accent)); color: #fff; border-radius: 50%; box-shadow: 0 4px 10px color-mix(in srgb, var(--c, #7b2ff7) 40%, transparent); }
+html[data-theme="rainbow"] .brand .chip-icon { background: var(--rainbow); }
+html[data-theme="rainbow"] .brand, html[data-theme="rainbow"] .top h1, html[data-theme="rainbow"] .hd h1 {
+  background: linear-gradient(100deg, #d4264d, #8a2be2 40%, #3b4fe0 70%, #007f95); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+html[data-theme="rainbow"] .kpi .head, html[data-theme="rainbow"] .tile .l { color: var(--text); }
+html[data-theme="rainbow"] .side { background: #ffffffe6; border-right: 3px solid transparent; border-image: var(--rainbow) 1; }
+html[data-theme="rainbow"] .side nav a[aria-current="page"] { background: color-mix(in srgb, var(--c) 22%, #fff); }
+html[data-theme="rainbow"] .pill { background: #ffffffd9; }
+html[data-theme="rainbow"] .seg { background: #fff; border: 2px solid #f3d6ff; }
+html[data-theme="rainbow"] .seg button[aria-pressed="true"] { background: var(--rainbow); color: #1f1537; }
+html[data-theme="rainbow"] .night-card { background: linear-gradient(135deg, #ffe08a, #ffb3d1) padding-box, var(--rainbow) border-box; }
+html[data-theme="rainbow"] .night-card .night .it { background: rgba(255,255,255,.7); }
+html[data-theme="rainbow"] .tabbar { background: rgba(255,255,255,.92); border-top: 3px solid transparent; border-image: var(--rainbow) 1; }
+html[data-theme="rainbow"] .tabbar a[aria-current="page"] { background: color-mix(in srgb, var(--c) 20%, #fff); }
+html[data-theme="rainbow"] .banner.warn { background: #fff0b8; border-color: #ffd84d; }
+html[data-theme="rainbow"] .banner.sample { background: #efe0ff; border-color: #c8a2ff; }

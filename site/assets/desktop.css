@@ -72,3 +72,12 @@ tbody tr:hover { background: color-mix(in srgb, var(--accent) 7%, transparent); 
   .brand { padding: 0 8px; } .side nav { flex-direction: row; flex-wrap: wrap; } .side .spacer, .side .small { display: none; }
   main { padding: 16px; }
 }
+
+.tips { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.tips li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 16px; background: var(--chip); }
+.tips li b { display: block; }
+.tips li .i { margin-top: 2px; }
+.tips .good .i { color: var(--ok); } .tips .info .i { color: var(--info); } .tips .warn .i { color: var(--warn); }
+.dyn .kpi .val { font-size: 1.7rem; }
+.delta .up, .delta .down { color: var(--text); }
+.note { color: var(--muted); font-size: .875rem; }

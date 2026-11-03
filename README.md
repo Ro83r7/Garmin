@@ -11,6 +11,18 @@ Privates, täglich aktualisiertes Trainings- und Gesundheits-Dashboard als stati
 Telefone (Breite unter 700 px oder iPhone) werden automatisch auf `/m/` geleitet. In beiden Ansichten
 gibt es einen Umschalt-Link, die Wahl wird im Browser gespeichert.
 
+## Seiten Laufen, Radfahren, Golf (Desktop)
+
+- **Laufen:** Tempo, Herzfrequenz, Effizienz sowie Laufdynamik (Kadenz, Bodenkontaktzeit, vertikale Oszillation,
+  vertikales Verhältnis, Schrittlänge, Leistung), soweit die Uhr sie aufzeichnet. Dazu Vergleich der letzten 90 Tage mit den 90 Tagen davor
+  und regelbasierte Hinweise.
+- **Radfahren:** Wochenkilometer, Tempo, Herzfrequenz, Effizienz. Garmin liefert hier keine Leistung oder Trittfrequenz.
+- **Golf:** Runden (ab 2 Stunden oder 3 km; Aktivitäten über 10 Stunden werden ignoriert), Dauer, Strecke, Herzfrequenz, Plätze.
+  Garmin liefert über diesen Zugang keine Scorekarten oder Schlagdaten, daher kein echtes Strokes Gained. Runden kannst du in
+  `config/golf_runden.json` von Hand eintragen (Beispiel steht auf der Seite); sie werden mit Scratch-Richtwerten verglichen
+  (Putts 29,9, GIR 59 %, Fairways 51 %, grobe Mittelwerte aus Arccos-Auswertungen von Golf Monthly).
+- Neue Felder (Laufdynamik, Platzname) erscheinen nach einem Workflow-Lauf mit „Komplette Historie“.
+
 ## Zeitplan
 
 GitHub startet Zeitpläne in diesem Repo erfahrungsgemäß 6 bis 9 Stunden verspätet. Die Einträge in
@@ -20,7 +32,7 @@ Wird GitHub später pünktlicher, die Zeiten entsprechend anpassen (Alternative:
 
 ## Designs
 
-Ganz unten auf jeder Seite steht klein „Design: Aurora · Sorbet · Klassisch“. Die Wahl wird im Browser gespeichert
+Ganz unten auf jeder Seite steht klein „Design: Aurora · Sorbet · Rainbow · Klassisch“. Die Wahl wird im Browser gespeichert
 (`localStorage`, gilt für Desktop und Mobil) und bleibt bis zur nächsten Umstellung. Standard ist Aurora.
 Die Farben der Designs stehen in `site/assets/themes.css`, die Wahl in `site/assets/theme.js`.
 
@@ -103,8 +115,10 @@ Dann `http://localhost:8000/` (Desktop) bzw. `/m/` öffnen. Echte Daten lokal ho
 - **Veränderung:** letzter vollständiger Wert minus Mittel der 28 Tage davor (mindestens 7 Werte nötig).
 - **Ampel:** Abweichung in Standardabweichungen der eigenen 28 Tage; grün „Im Rahmen/Besser“, gelb „Etwas schwächer“
   (ab 0,75 σ), rot „Deutlich schwächer“ (ab 1,5 σ). Immer mit Symbol und Text.
-- **VO2max:** Tageswerte aus dem Garmin-Endpunkt `metrics-service/metrics/maxmet/daily`; fehlt er, dient der letzte
-  `vO2MaxValue` der Aktivitäten des Tages. Nur Tage mit Messung haben einen Wert (Lücken bleiben Lücken).
+- **VO2max:** Garmin liefert sie über den Personal-API-Zugang nicht. Hauptwert nach Uth: 15,3 × HFmax ÷ Ruhepuls
+  (Ruhepuls = Mittel der 28 Tage davor; passt zum Garmin-Wert in der App). Daneben steht klein die Differenz zu einem zweiten
+  Verfahren: Median aus Tempo und Herzfrequenz deiner Läufe der letzten 180 Tage (ACSM-Laufformel, Anteil der
+  Herzfrequenzreserve), mindestens 3 geeignete Läufe.
 - **Longevity+:** Kalenderalter minus Fitness-Alter in Jahren (aus `chronologicalAge` und `fitnessAge` von Garmin).
   Positiv heißt: Das Fitness-Alter liegt unter dem Kalenderalter. Springt um +1, wenn Garmin dein Alter erhöht.
 - **Intervall-Wochen:** Minuten in Zone 4 + 5 (`hrTimeInZone_4/5`) aller Aktivitäten, Woche Mo bis So.

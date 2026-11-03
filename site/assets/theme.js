@@ -1,6 +1,6 @@
 /* Design-Wahl: früh laden, damit nichts flackert. Speicherung nur im Browser (try/catch). */
 (function () {
-  var LIST = ['aurora', 'sorbet', 'klassisch'], KEY = 'garmin-theme', COLORS = { aurora: '#0a0e1f', sorbet: '#fff8f1' };
+  var LIST = ['aurora', 'sorbet', 'rainbow', 'klassisch'], KEY = 'garmin-theme', COLORS = { aurora: '#0a0e1f', sorbet: '#fff8f1', rainbow: '#fff4fa' };
   function get() {
     var v = null;
     try { v = localStorage.getItem(KEY); } catch (e) { /* ignorieren */ }
