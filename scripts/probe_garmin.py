@@ -72,6 +72,49 @@ def main():
         shape(res)
         for p, typ, nn in vo2_keys(res)[:15]:
             print(f"  >> VO2-Feld: {p} ({typ}, gefüllt={nn})")
+    print("\n=== Felder der Aktivitätsliste je Typ (nur Namen gefüllter Felder)")
+    try:
+        res = api.get("/activitylist-service/activities/search/activities",
+                      {"start": 0, "limit": 40, "startDate": (today - timedelta(days=400)).isoformat(), "endDate": t})
+        acts = res if isinstance(res, list) else []
+        for tk in ("running", "treadmill_running", "cycling", "golf"):
+            cand = [a for a in acts if (a.get("activityType") or {}).get("typeKey") == tk]
+            if not cand:
+                print(f"{tk}: keine Aktivität im Abruf")
+                continue
+            keys = sorted({k for a in cand for k, v in a.items() if v not in (None, "", [], {}) and not isinstance(v, (dict, list))})
+            print(f"{tk} ({len(cand)} Akt.): " + ", ".join(keys))
+    except fg.ApiError as e:
+        print("FEHLER:", e)
+    print("\n=== Golf-Endpunkte (Struktur)")
+    golf = [
+        "/gcs-golfcommunity/api/v2/scorecard/summary?user-locale=en&per-page=5",
+        "/gcs-golfcommunity/api/v2/club/player",
+        "/gcs-golfcommunity/api/v2/golf-course/search?per-page=1",
+    ]
+    for path in golf:
+        print(f"--- {path.split('?')[0]}")
+        try:
+            res = api.get(path)
+        except fg.ApiError as e:
+            print("  FEHLER:", e)
+            continue
+        if res is None:
+            print("  leer (204/404)")
+            continue
+        shape(res, 1, 3)
+    print("\n=== Aktivitäts-Detail Struktur (Tiefe 2)")
+    try:
+        res = api.get("/activitylist-service/activities/search/activities",
+                      {"start": 0, "limit": 40, "startDate": (today - timedelta(days=400)).isoformat(), "endDate": t})
+        for tk in ("running", "golf"):
+            aid = next((a.get("activityId") for a in (res or []) if (a.get("activityType") or {}).get("typeKey") == tk), None)
+            if aid:
+                print(f"--- {tk} Detail")
+                d = api.get(f"/activity-service/activity/{aid}")
+                shape(d, 1, 2) if d else print("  leer")
+    except fg.ApiError as e:
+        print("FEHLER:", e)
     print("\n=== Aktivitäts-Details (VO2-Felder)")
     try:
         res = api.get("/activitylist-service/activities/search/activities",
