@@ -72,6 +72,34 @@ def main():
         shape(res)
         for p, typ, nn in vo2_keys(res)[:15]:
             print(f"  >> VO2-Feld: {p} ({typ}, gefüllt={nn})")
+    print("\n=== Aktivitäts-Details (VO2-Felder)")
+    try:
+        res = api.get("/activitylist-service/activities/search/activities",
+                      {"start": 0, "limit": 40, "startDate": (today - timedelta(days=200)).isoformat(), "endDate": t})
+        acts = res if isinstance(res, list) else []
+        picks = {}
+        for a in acts:
+            tk = (a.get("activityType") or {}).get("typeKey")
+            if tk in ("running", "trail_running", "cycling", "treadmill_running") and tk not in picks:
+                picks[tk] = a.get("activityId")
+        print("Typen mit Auswahl:", sorted(picks))
+        for tk, aid in picks.items():
+            for suffix in ("", "/details"):
+                path = f"/activity-service/activity/{aid}{suffix}"
+                try:
+                    d = api.get(path)
+                except fg.ApiError as e:
+                    print(f"  {tk}{suffix}: FEHLER {e}")
+                    continue
+                if d is None:
+                    print(f"  {tk}{suffix}: leer (204/404)")
+                    continue
+                found = vo2_keys(d)
+                print(f"  {tk}{suffix}: {len(found)} VO2-Felder")
+                for p, typ, nn in found[:10]:
+                    print(f"    >> {p} ({typ}, gefüllt={nn})")
+    except fg.ApiError as e:
+        print("FEHLER:", e)
     print("\n=== Aktivitäten (VO2-Felder)")
     try:
         res = api.get("/activitylist-service/activities/search/activities",
