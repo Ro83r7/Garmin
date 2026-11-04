@@ -52,7 +52,17 @@ jobs:
             echo "Keine Änderungen."
           else
             git commit -m "Daten aktualisiert ($(date -u +%Y-%m-%d))"
-            git push origin HEAD:main
+            # GitHub antwortet beim Push gelegentlich mit "Internal Server Error": bis zu 4 Versuche mit Wartezeit
+            for i in 1 2 3 4; do
+              if git push origin HEAD:main; then
+                exit 0
+              fi
+              echo "Push fehlgeschlagen (Versuch $i von 4), neuer Versuch in $((i * i * 5)) s"
+              sleep $((i * i * 5))
+              git pull --rebase origin main || git rebase --abort || true
+            done
+            echo "::error::Push nach 4 Versuchen fehlgeschlagen"
+            exit 1
           fi
 
       # Optional: nur nötig, falls Cloudflare Pages nach dem Commit nicht selbst neu veröffentlicht.
