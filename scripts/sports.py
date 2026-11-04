@@ -248,3 +248,59 @@ def build_golf(acts, end, manual_path):
                 "hr": r(mean([x["hr"] for x in rounds]), 0)},
         "manual": sorted(mrows, key=lambda m: m["date"], reverse=True), "scratch": SCRATCH,
     }
+
+
+# ---------------------------------------------------------------- Wochenrückblick
+def build_weeks(rows, acts, end, goal, count=12):
+    """Letzte vollständige Wochen (Mo bis So) mit Kennzahlen, Tageswerten und Highlights. Lücken bleiben None."""
+    by_date = {x["date"]: x for x in rows}
+    cur_monday = end - timedelta(days=end.weekday())
+    weeks = []
+    for i in range(count, 0, -1):
+        mon = cur_monday - timedelta(days=7 * i)
+        days = []
+        for d in range(7):
+            dt = (mon + timedelta(days=d)).isoformat()
+            row = by_date.get(dt, {})
+            day_acts = [a for a in acts if a["start"][:10] == dt]
+            days.append({
+                "date": dt, "steps": row.get("steps"), "sleep_score": row.get("sleep_score"),
+                "sleep_h": r(row["sleep_dur"] / 3600, 1) if row.get("sleep_dur") else None, "rhr": row.get("rhr"),
+                "stress": row.get("stress"), "hrv": row.get("hrv"),
+                "acts": [{"label": a.get("label"), "dist_km": a.get("dist_km"), "dur": a.get("dur")} for a in day_acts],
+            })
+        wacts = [a for a in acts if days[0]["date"] <= a["start"][:10] <= days[6]["date"]]
+        runs = [a for a in wacts if a["type"] in RUN_TYPES]
+        bikes = [a for a in wacts if a["type"] in BIKE_TYPES]
+        rounds = [a for a in wacts if a["type"] == "golf" and (a.get("dur") or 0) <= 36000 and ((a.get("dur") or 0) >= 7200 or (a.get("dist_km") or 0) >= 3)]
+        z45 = [((a["z"][3] or 0) + (a["z"][4] or 0)) / 60 for a in wacts if a.get("z")]
+        steps = [d["steps"] for d in days if d["steps"] is not None]
+        m = {
+            "sleep_score": r(mean([d["sleep_score"] for d in days]), 0), "sleep_h": r(mean([d["sleep_h"] for d in days]), 1),
+            "nights": sum(1 for d in days if d["sleep_h"] is not None), "hrv": r(mean([d["hrv"] for d in days]), 0),
+            "rhr": r(mean([d["rhr"] for d in days]), 0), "stress": r(mean([d["stress"] for d in days]), 0),
+            "steps_avg": r(mean(steps), 0), "steps_days": len(steps),
+            "im": sum(by_date.get(d["date"], {}).get("im") or 0 for d in days) if any(by_date.get(d["date"], {}).get("im") is not None for d in days) else None,
+            "acts": len(wacts), "hours": r(sum(a.get("dur") or 0 for a in wacts) / 3600, 1),
+            "run_km": r(sum(a.get("dist_km") or 0 for a in runs), 1), "runs": len(runs),
+            "bike_km": r(sum(a.get("dist_km") or 0 for a in bikes), 1), "rounds": len(rounds),
+            "z45": r(sum(z45), 0) if z45 else 0,
+        }
+        hl = []
+
+        def best(key, icon, label, unit, digits, reverse=True):
+            cand = [d for d in days if d.get(key) is not None]
+            if cand:
+                d = (max if reverse else min)(cand, key=lambda x: x[key])
+                hl.append({"icon": icon, "label": label, "v": d[key], "unit": unit, "digits": digits, "date": d["date"]})
+        best("sleep_score", "moon", "Beste Nacht (Schlaf-Score)", "", 0)
+        best("steps", "footprints", "Aktivster Tag", "Schritte", 0)
+        best("rhr", "heart", "Niedrigster Ruhepuls", "bpm", 0, reverse=False)
+        if runs:
+            lr = max(runs, key=lambda a: a["dist_km"] or 0)
+            hl.append({"icon": "gauge", "label": "Längster Lauf", "v": lr["dist_km"], "unit": "km", "digits": 1, "date": lr["start"][:10]})
+        if wacts:
+            hl.append({"icon": "target", "label": f"Zone 4/5 (Ziel {goal} min)", "v": m["z45"], "unit": "min", "digits": 0, "date": None, "ok": m["z45"] >= goal})
+        weeks.append({"start": days[0]["date"], "end": days[6]["date"], "m": m, "days": days, "highlights": hl,
+                      "acts": [{"date": a["start"][:10], "label": a.get("label"), "dist_km": a.get("dist_km"), "dur": a.get("dur")} for a in sorted(wacts, key=lambda a: a["start"])]})
+    return weeks

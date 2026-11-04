@@ -81,3 +81,4 @@ tbody tr:hover { background: color-mix(in srgb, var(--accent) 7%, transparent); 
 .dyn .kpi .val { font-size: 1.7rem; }
 .delta .up, .delta .down { color: var(--text); }
 .note { color: var(--muted); font-size: .875rem; }
+.sel { font: inherit; color: var(--text); background: var(--solid); border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; min-height: 44px; }

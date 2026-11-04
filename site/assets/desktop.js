@@ -2,6 +2,7 @@
   'use strict';
   var VIEWS = [
     { id: 'uebersicht', label: 'Übersicht', icon: 'dashboard', area: 'steps', title: 'Übersicht' },
+    { id: 'woche', label: 'Wochenrückblick', icon: 'calendar', area: 'steps', title: 'Wochenrückblick' },
     { id: 'herz', label: 'Herz und Erholung', icon: 'heartpulse', area: 'heart', title: 'Herz und Erholung' },
     { id: 'schlaf', label: 'Schlaf', icon: 'moon', area: 'sleep', title: 'Schlaf' },
     { id: 'training', label: 'Training', icon: 'route', area: 'train', title: 'Training' },
@@ -417,14 +418,61 @@
       { key: 'cal', label: 'kcal', num: 1, text: function (x) { return x.cal == null ? '–' : G.num(x.cal); } }] });
   }
 
+
+  /* ---------- Wochenrückblick ---------- */
+  var weekIdx = null;
+  function weekLabel(w) { return G.fmtDate(w.start) + ' – ' + G.fmtDate(w.end) + w.end.slice(0, 4); }
+  function renderWeek() {
+    var W = D.weekrev;
+    if (weekIdx == null || weekIdx >= W.length) weekIdx = W.length - 1;
+    var w = W[weekIdx], p = weekIdx > 0 ? W[weekIdx - 1] : null, m = w.m;
+    var defs = [
+      ['Schlaf-Score', 'sleep_score', '', 0, 'sleep', 'nights', 'Nächte'], ['Schlafdauer', 'sleep_h', 'h', 1, 'sleep', 'nights', 'Nächte'],
+      ['HRV', 'hrv', 'ms', 0, 'hrv'], ['Ruhepuls', 'rhr', 'bpm', 0, 'heart'], ['Stress', 'stress', '', 0, 'stress'],
+      ['Schritte pro Tag', 'steps_avg', '', 0, 'steps', 'steps_days', 'Tage'], ['Intensitätsminuten', 'im', 'min', 0, 'train'],
+      ['Aktivitäten', 'acts', '', 0, 'train'], ['Laufen', 'run_km', 'km', 1, 'run'], ['Radfahren', 'bike_km', 'km', 1, 'bike'],
+      ['Golf-Runden', 'rounds', '', 0, 'golf'], ['Zone 4/5', 'z45', 'min', 0, 'train']
+    ];
+    var h = '<div class="grid">';
+    h += '<div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><label for="week-sel" class="note">Woche (Mo bis So)</label><select id="week-sel" class="sel">' +
+      W.map(function (x, i) { return '<option value="' + i + '"' + (i === weekIdx ? ' selected' : '') + '>' + weekLabel(x) + '</option>'; }).reverse().join('') + '</select>' +
+      '<span class="note">Vergleich mit der Woche davor. Mittelwerte nur über vorhandene Tage und Nächte.</span></div>';
+    h += '<div class="grid kpis dyn">' + defs.map(function (d) {
+      var cur = m[d[1]], prev = p ? p.m[d[1]] : null, dg = d[3];
+      var diff = cur != null && prev != null ? cur - prev : null;
+      var dt = diff == null ? 'kein Vergleich' : (Math.abs(diff) < Math.pow(10, -dg) / 2 ? '±0' : (diff > 0 ? '+' : '−') + G.num(Math.abs(diff), dg)) + ' <span class="muted">vs. ' + G.num(prev, dg) + '</span>';
+      var note = d[5] ? '<div class="muted" style="font-size:.8125rem">' + m[d[5]] + ' von 7 ' + d[6] + '</div>' : '';
+      return card('kpi c-' + d[4], '<div class="head">' + d[0] + '</div><div class="val">' + (cur == null ? '–' : G.num(cur, dg)) + '<small>' + (cur == null ? '' : d[2]) + '</small></div><div class="delta">' + (diff == null ? G.icon('info') : G.icon(diff > 0 ? 'up' : diff < 0 ? 'down' : 'right')) + '<span><b>' + dt + '</b></span></div>' + note);
+    }).join('') + '</div>';
+    h += card('', head('target', 'steps', 'Highlights der Woche', weekLabel(w)) + (w.highlights.length ? '<ul class="tips">' + w.highlights.map(function (x) {
+      return '<li class="' + (x.ok ? 'good' : 'info') + '">' + G.icon(x.icon) + '<div><b>' + x.label + '</b>' + G.num(x.v, x.digits) + (x.unit ? ' ' + x.unit : '') + (x.date ? ' · ' + G.wd(x.date) + ' ' + G.fmtDate(x.date) : '') + '</div></li>';
+    }).join('') + '</ul>' : '<p class="note" style="margin:0">Keine Daten in dieser Woche.</p>'));
+    h += '<div class="grid cols2">' + card('', head('footprints', 'steps', 'Schritte pro Tag') + area('ch-w-steps')) + card('', head('moon', 'sleep', 'Schlaf-Score pro Nacht', 'Aufwachtag') + area('ch-w-sleep')) + '</div>';
+    h += card('', head('calendar', 'steps', 'Tage im Überblick') + '<div class="table-wrap"><table><thead><tr><th style="padding:10px 12px">Tag</th><th class="num" style="padding:10px 12px">Schritte</th><th class="num" style="padding:10px 12px">Schlaf</th><th class="num" style="padding:10px 12px">Score</th><th class="num" style="padding:10px 12px">Ruhepuls</th><th class="num" style="padding:10px 12px">HRV</th><th class="num" style="padding:10px 12px">Stress</th><th style="padding:10px 12px">Aktivitäten</th></tr></thead><tbody>' + w.days.map(function (d) {
+      var f = function (v, dg) { return v == null ? '–' : G.num(v, dg || 0); };
+      return '<tr><td>' + G.wd(d.date) + ' ' + G.fmtDate(d.date) + '</td><td class="num">' + f(d.steps) + '</td><td class="num">' + (d.sleep_h == null ? '–' : G.num(d.sleep_h, 1) + ' h') + '</td><td class="num">' + f(d.sleep_score) + '</td><td class="num">' + f(d.rhr) + '</td><td class="num">' + f(d.hrv) + '</td><td class="num">' + f(d.stress) + '</td><td>' +
+        (d.acts.length ? d.acts.map(function (a) { return a.label + (a.dist_km ? ' ' + G.num(a.dist_km, 1) + ' km' : ''); }).join(', ') : '–') + '</td></tr>';
+    }).join('') + '</tbody></table></div>');
+    h += '</div>';
+    $('v-woche').innerHTML = h;
+    $('week-sel').addEventListener('change', function (e) { weekIdx = parseInt(e.target.value, 10); renderWeek(); drawWeek(); });
+  }
+  function drawWeek() {
+    var w = D.weekrev[weekIdx], rows = w.days.map(function (d) { return d; });
+    var base = { rows: rows, x0: w.start, x1: w.end, step: 1, height: 220 };
+    G.chart($('ch-w-steps'), Object.assign({}, base, { aria: 'Schritte pro Tag', series: [{ key: 'steps', kind: 'bar', color: C('steps'), label: 'Schritte', fmt: function (v) { return G.num(v); } }] }));
+    G.chart($('ch-w-sleep'), Object.assign({}, base, { aria: 'Schlaf-Score pro Nacht', y: [0, 100], series: [{ key: 'sleep_score', kind: 'bar', color: C('sleep'), label: 'Score', fmt: function (v) { return G.num(v); } }] }));
+  }
+
   /* ---------- Steuerung ---------- */
-  var DRAW = { uebersicht: function () {}, herz: drawHeart, schlaf: drawSleep, training: drawTraining, laufen: drawRun, rad: drawBike, golf: drawGolf, koerper: drawBody };
-  var RENDER = { uebersicht: renderOverview, herz: renderHeart, schlaf: renderSleep, training: renderTraining, laufen: renderRun, rad: renderBike, golf: renderGolf, koerper: renderBody };
+  var DRAW = { uebersicht: function () {}, woche: drawWeek, herz: drawHeart, schlaf: drawSleep, training: drawTraining, laufen: drawRun, rad: drawBike, golf: drawGolf, koerper: drawBody };
+  var RENDER = { uebersicht: renderOverview, woche: renderWeek, herz: renderHeart, schlaf: renderSleep, training: renderTraining, laufen: renderRun, rad: renderBike, golf: renderGolf, koerper: renderBody };
   function show() {
     var v = VIEWS.filter(function (x) { return x.id === state.view; })[0] || VIEWS[0];
     document.querySelectorAll('.view').forEach(function (e) { e.classList.toggle('on', e.id === 'v-' + v.id); });
     document.querySelectorAll('#nav a').forEach(function (a) { if (a.dataset.v === v.id) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
     document.querySelectorAll('#range button').forEach(function (b) { b.setAttribute('aria-pressed', String(parseInt(b.dataset.r, 10) === state.range)); });
+    $('range').hidden = v.id === 'woche';
     $('title').textContent = v.title;
     document.title = v.title + ' · Garmin Dashboard';
     RENDER[v.id](); DRAW[v.id]();
@@ -442,8 +490,8 @@
   window.addEventListener('resize', G.debounce(function () { if (D) { DRAW[state.view](); } }, 150));
 
   G.themeSwitch($('themes'));
-  G.load(['meta', 'daily', 'weeks', 'activities', 'kpi', 'year', 'body', 'running', 'cycling', 'golf']).then(function (d) {
-    D = { meta: d.meta, daily: d.daily, weeks: d.weeks, acts: d.activities, kpi: d.kpi, year: d.year, body: d.body, run: d.running, bike: d.cycling, golf: d.golf };
+  G.load(['meta', 'daily', 'weeks', 'activities', 'kpi', 'year', 'body', 'running', 'cycling', 'golf', 'week']).then(function (d) {
+    D = { meta: d.meta, daily: d.daily, weeks: d.weeks, acts: d.activities, kpi: d.kpi, year: d.year, body: d.body, run: d.running, bike: d.cycling, golf: d.golf, weekrev: d.week };
     var st = G.stand(D.meta);
     $('stand').innerHTML = G.icon('clock') + 'Stand: ' + st.text;
     G.banners($('banners'), D.meta);

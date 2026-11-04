@@ -11,6 +11,10 @@ Privates, täglich aktualisiertes Trainings- und Gesundheits-Dashboard als stati
 Telefone (Breite unter 700 px oder iPhone) werden automatisch auf `/m/` geleitet. In beiden Ansichten
 gibt es einen Umschalt-Link, die Wahl wird im Browser gespeichert.
 
+## Wochenrückblick (Desktop)
+
+Seite „Wochenrückblick“: Auswahl einer der letzten 12 vollständigen Wochen (Mo bis So) mit Kennzahlen im Vergleich zur Vorwoche, Highlights, Tagesdiagrammen und Tagestabelle. Mittelwerte nur über vorhandene Tage und Nächte.
+
 ## Seiten Laufen, Radfahren, Golf (Desktop)
 
 - **Laufen:** Tempo, Herzfrequenz, Effizienz sowie Laufdynamik (Kadenz, Bodenkontaktzeit, vertikale Oszillation,
