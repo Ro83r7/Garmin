@@ -372,6 +372,7 @@ def main():
     acts_list = [a for a in acts_raw.values() if a["start"][:10] <= today_s]
     write("running.json", sports.build_running(acts_list, today))
     write("cycling.json", sports.build_cycling(acts_list, today))
+    write("week.json", sports.build_weeks(rows, acts, today, goal))
     write("golf.json", sports.build_golf(acts_list, today, ROOT / "config" / "golf_runden.json"))
     write("body.json", body)
     print(f"Build: {len(rows)} Tage, {len(weeks)} Wochen, {len(acts)} Aktivitäten, heute={today_s}")
