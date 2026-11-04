@@ -353,7 +353,7 @@
   /* Unauffälliger Design-Umschalter ganz unten; die Wahl bleibt im Browser gespeichert. */
   G.themeSwitch = function (host) {
     if (!window.GTheme) return;
-    var names = { aurora: 'Aurora', sorbet: 'Sorbet', rainbow: 'Rainbow', klassisch: 'Klassisch' };
+    var names = { aurora: 'Aurora', sorbet: 'Sorbet', rainbow: 'Rainbow', hawaii: 'Hawaii', klassisch: 'Klassisch' };
     function draw() {
       var cur = GTheme.get();
       host.innerHTML = 'Design ' + GTheme.list.map(function (t) {

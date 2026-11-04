@@ -109,7 +109,7 @@ def build_running(acts, end):
         add("info", "Wenig Laufdynamik-Daten", f"Nur {summ['with_dyn']} von {len(runs)} Läufen enthalten Bodenkontaktzeit & Co. Dafür braucht es eine kompatible Uhr, einen Brustgurt oder Pod.")
     if c.get("cad") and c["n"] >= 3:
         if c["cad"] < 165:
-            add("info", "Kadenz", f"Deine Kadenz liegt im Schnitt bei {c['cad']:.0f} Schritten/min. Als Richtwert fühlen sich viele Läufer bei etwa 165–180 effizient. Probier zum Test +5 % mit einem Metronom oder einer Musik-Playlist im passenden Takt.")
+            add("info", "Kadenz", f"Deine Kadenz liegt im Schnitt bei {c['cad']:.0f} Schritten/min. Als Richtwert fühlen sich viele Läufer bei etwa 165–180 effizient, bei sehr lockerem Tempo liegt sie natürlich niedriger. Probier zum Test +5 % mit einem Metronom oder einer Musik-Playlist im passenden Takt.")
         elif c.get("cad_prev") and c["cad"] - c["cad_prev"] >= 3:
             add("good", "Kadenz steigt", f"Deine Kadenz ist von {c['cad_prev']:.0f} auf {c['cad']:.0f} Schritte/min gestiegen.")
     if c.get("gct") and c["n"] >= 3:

@@ -119,3 +119,60 @@ html[data-theme="rainbow"] .tabbar { background: rgba(255,255,255,.92); border-t
 html[data-theme="rainbow"] .tabbar a[aria-current="page"] { background: color-mix(in srgb, var(--c) 20%, #fff); }
 html[data-theme="rainbow"] .banner.warn { background: #fff0b8; border-color: #ffd84d; }
 html[data-theme="rainbow"] .banner.sample { background: #efe0ff; border-color: #c8a2ff; }
+
+/* ---------- Hawaii (hell, Wasser-, Sommer- und Strandfarben) ---------- */
+html[data-theme="hawaii"] {
+  --bg: #fff6e6; --card: rgba(255,255,255,.88); --solid: #ffffff; --chip: #e6f8fb;
+  --text: #0b3b4f; --muted: #3f6272; --grid: #d9eef2; --border: #ffffff;
+  --shadow: 0 14px 34px rgba(0,150,170,.16);
+  --accent: #0e7490; --on-accent: #ffffff; --radius: 28px;
+  --heart: #c2305a; --hrv: #7a45d6; --sleep: #2f58d4; --stress: #b25507; --train: #0b8a5c; --steps: #00798f; --fit: #946500; --golf: #587800;
+  --ok: #0b7a50; --warn: #7a4f00; --bad: #b3261e; --info: #0a5fb4;
+  --z1: #7fa0b3; --z2: #19a7d1; --z3: #22b573; --z4: #f5a200; --z5: #f0566a;
+  color-scheme: light;
+}
+html[data-theme="hawaii"] body {
+  background:
+    radial-gradient(420px 420px at 92% 0%, rgba(255,214,64,.65), transparent 70%),
+    radial-gradient(600px 420px at 0% 0%, rgba(255,150,170,.35), transparent 70%),
+    linear-gradient(180deg, #cdf3ff 0%, #e8fbf7 38%, #fff3d6 100%);
+  background-attachment: fixed;
+}
+html[data-theme="hawaii"] body::after {
+  content: ""; position: fixed; left: 0; right: 0; bottom: 0; height: 110px; z-index: -1; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0 60q150-60 300 0t300 0 300 0 300 0V120H0z' fill='%2319b5c9' fill-opacity='.28'/%3E%3Cpath d='M0 80q150-50 300 0t300 0 300 0 300 0V120H0z' fill='%233aa5e8' fill-opacity='.25'/%3E%3Cpath d='M0 100q150-35 300 0t300 0 300 0 300 0V120H0z' fill='%23ffd9a0' fill-opacity='.7'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+}
+html[data-theme="hawaii"] .card { border: 2px solid #ffffff; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+html[data-theme="hawaii"] .card.kpi, html[data-theme="hawaii"] .tile {
+  position: relative; overflow: hidden;
+  background: linear-gradient(150deg, color-mix(in srgb, var(--c) 26%, #ffffff), color-mix(in srgb, var(--c) 9%, #ffffff));
+}
+html[data-theme="hawaii"] .card.kpi::after, html[data-theme="hawaii"] .tile::after {
+  content: ""; position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; pointer-events: none;
+  background: var(--deco, url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='9' fill='white' fill-opacity='.8'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(0 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(45 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(90 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(135 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(180 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(225 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(270 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(315 24 24)'/%3E%3C/svg%3E")) center / contain no-repeat;
+  filter: drop-shadow(0 1px 2px color-mix(in srgb, var(--c) 55%, transparent));
+}
+html[data-theme="hawaii"] .c-heart { --deco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cellipse cx='24' cy='11' rx='7' ry='10' fill='white' fill-opacity='.8' transform='rotate(0 24 24)'/%3E%3Cellipse cx='24' cy='11' rx='7' ry='10' fill='white' fill-opacity='.8' transform='rotate(72 24 24)'/%3E%3Cellipse cx='24' cy='11' rx='7' ry='10' fill='white' fill-opacity='.8' transform='rotate(144 24 24)'/%3E%3Cellipse cx='24' cy='11' rx='7' ry='10' fill='white' fill-opacity='.8' transform='rotate(216 24 24)'/%3E%3Cellipse cx='24' cy='11' rx='7' ry='10' fill='white' fill-opacity='.8' transform='rotate(288 24 24)'/%3E%3Ccircle cx='24' cy='24' r='4' fill='%2523ffd23f'/%3E%3C/svg%3E"); }
+html[data-theme="hawaii"] .c-hrv, html[data-theme="hawaii"] .c-sleep, html[data-theme="hawaii"] .c-bike { --deco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M2 18q5-7 11 0t11 0 11 0 9 0' fill='none' stroke='white' stroke-opacity='.85' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M2 30q5-7 11 0t11 0 11 0 9 0' fill='none' stroke='white' stroke-opacity='.85' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"); }
+html[data-theme="hawaii"] .c-stress { --deco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='9' fill='white' fill-opacity='.8'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(0 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(45 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(90 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(135 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(180 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(225 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(270 24 24)'/%3E%3Crect x='22.5' y='3' width='3' height='9' rx='1.5' fill='white' fill-opacity='.8' transform='rotate(315 24 24)'/%3E%3C/svg%3E"); }
+html[data-theme="hawaii"] .c-steps { --deco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 44C8 38 4 20 12 12q12-8 24 0c8 8 4 26-12 32z' fill='white' fill-opacity='.8'/%3E%3Cpath d='M24 44V14M24 44L12 18M24 44l12-26' stroke='%2523ffffff' stroke-opacity='.0' fill='none'/%3E%3C/svg%3E"); }
+html[data-theme="hawaii"] .c-fit, html[data-theme="hawaii"] .c-golf { --deco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 3l6 14 15 2-11 10 3 15-13-8-13 8 3-15L3 19l15-2z' fill='white' fill-opacity='.8'/%3E%3C/svg%3E"); }
+html[data-theme="hawaii"] .c-train, html[data-theme="hawaii"] .c-run { --deco: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 44q-2-14 0-22' stroke='white' stroke-opacity='.85' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Cpath d='M24 22q-10-10-20-2 10-2 20 2zM24 22q10-10 20-2-10-2-20 2zM24 22q-6-14-18-14 10 4 18 14zM24 22q6-14 18-14-10 4-18 14z' fill='white' fill-opacity='.8'/%3E%3C/svg%3E"); }
+html[data-theme="hawaii"] .chip-icon { background: var(--c, var(--accent)); color: #fff; border-radius: 50%; box-shadow: 0 4px 10px color-mix(in srgb, var(--c, #0e7490) 35%, transparent); }
+html[data-theme="hawaii"] .brand .chip-icon { background: linear-gradient(135deg, #ff8a5c, #ffd23f); color: #7a3a00; }
+html[data-theme="hawaii"] .kpi .head, html[data-theme="hawaii"] .tile .l { color: var(--text); }
+html[data-theme="hawaii"] .side { background: rgba(255,255,255,.78); border-right: 2px solid #ffffff; }
+html[data-theme="hawaii"] .side nav a[aria-current="page"] { background: color-mix(in srgb, var(--c) 20%, #ffffff); }
+html[data-theme="hawaii"] .pill { background: rgba(255,255,255,.85); }
+html[data-theme="hawaii"] .seg { background: rgba(255,255,255,.9); border: 2px solid #bfeaf0; }
+html[data-theme="hawaii"] .seg button[aria-pressed="true"] { background: #0e7490; color: #fff; }
+html[data-theme="hawaii"] .night-card { background: linear-gradient(135deg, #ffe9a8, #ffc9d4 60%, #bfeaf0); }
+html[data-theme="hawaii"] .night-card .night .it { background: rgba(255,255,255,.7); }
+html[data-theme="hawaii"] .tabbar { background: rgba(255,255,255,.9); }
+html[data-theme="hawaii"] .tabbar a[aria-current="page"] { background: color-mix(in srgb, var(--c) 20%, #ffffff); }
+html[data-theme="hawaii"] .banner.warn { background: #fff0b8; border-color: #ffd84d; }
+html[data-theme="hawaii"] .banner.sample { background: #e6dcff; border-color: #bda6ff; }
+html[data-theme="hawaii"] #title::after { content: " · Aloha"; font-weight: 600; font-size: .6em; color: #0e7490; }
+html[data-theme="hawaii"] .tips li { background: #e6f8fb; }
+html[data-theme="hawaii"] .card.kpi .head, html[data-theme="hawaii"] .tile .l { padding-right: 40px; }
+html[data-theme="hawaii"] .card.kpi::after, html[data-theme="hawaii"] .tile::after { width: 34px; height: 34px; top: 14px; right: 14px; }
