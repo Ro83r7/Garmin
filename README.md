@@ -32,7 +32,7 @@ Wird GitHub später pünktlicher, die Zeiten entsprechend anpassen (Alternative:
 
 ## Designs
 
-Ganz unten auf jeder Seite steht klein „Design: Aurora · Sorbet · Rainbow · Klassisch“. Die Wahl wird im Browser gespeichert
+Ganz unten auf jeder Seite steht klein „Design: Aurora · Sorbet · Rainbow · Hawaii · Klassisch“. Die Wahl wird im Browser gespeichert
 (`localStorage`, gilt für Desktop und Mobil) und bleibt bis zur nächsten Umstellung. Standard ist Aurora.
 Die Farben der Designs stehen in `site/assets/themes.css`, die Wahl in `site/assets/theme.js`.
 
