@@ -2156,10 +2156,17 @@
   "stress": 47
  },
  "2026-11-07": {
-  "im_mod": 11,
-  "im_vig": 1,
+  "im_mod": 96,
+  "im_vig": 14,
   "rhr": 58,
-  "steps": 2506,
-  "stress": 29
+  "steps": 17660,
+  "stress": 35
+ },
+ "2026-11-08": {
+  "im_mod": 0,
+  "im_vig": 0,
+  "rhr": 53,
+  "steps": null,
+  "stress": 14
  }
 }
