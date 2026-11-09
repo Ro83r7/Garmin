@@ -3,20 +3,26 @@
 -- einen langen geheimen Code. Die Tabellen liegen im Schema "garmin", das die REST-API nicht ausliefert.
 --
 -- Schritt 1: dieses Skript ausführen.
--- Schritt 2: einen eigenen, langen Zugangscode wählen (mindestens 24 Zeichen, z. B. aus einem Passwortmanager) und
---            EINMAL diese Zeile mit deinem Code ausführen (Code nicht in Dateien oder Chats speichern):
+-- Schritt 2: zwei eigene, lange Zugangscodes wählen (je mindestens 24 Zeichen, z. B. aus einem Passwortmanager) und
+--            EINMAL diese zwei Zeilen mit deinen Codes ausführen (Codes nicht in Dateien oder Chats speichern):
 --
---   insert into garmin.access(code_hash) values (encode(sha256(convert_to('DEIN-LANGER-GEHEIMER-CODE', 'UTF8')), 'hex'));
+--   -- Schreibcode (nur für den GitHub-Workflow, darf schreiben und lesen):
+--   insert into garmin.access(code_hash, can_write) values (encode(sha256(convert_to('DEIN-SCHREIBCODE', 'UTF8')), 'hex'), true);
+--   -- Lesecode (für andere Apps, darf nur lesen):
+--   insert into garmin.access(code_hash, can_write) values (encode(sha256(convert_to('DEIN-LESECODE', 'UTF8')), 'hex'), false);
 --
--- Der Klartext-Code steht nirgends in der Datenbank, nur sein Hash. Derselbe Code geht als GitHub-Secret
--- SUPABASE_GARMIN_CODE an den Workflow und kann von anderen Apps zum Lesen (garmin_read) benutzt werden.
+-- Der Klartext steht nirgends in der Datenbank, nur der Hash. Der Schreibcode geht als GitHub-Secret SUPABASE_GARMIN_CODE
+-- an den Workflow, der Lesecode an andere Apps (Funktion garmin_read). Einen Code entziehen:
+--   delete from garmin.access where code_hash = encode(sha256(convert_to('DER-CODE', 'UTF8')), 'hex');
 
 create schema if not exists garmin;
 
 create table if not exists garmin.access (
   code_hash text primary key,
+  can_write boolean not null default true,
   created_at timestamptz not null default now()
 );
+alter table garmin.access add column if not exists can_write boolean not null default true;
 
 -- Tageswerte (Datum = Kalendertag, Zeitzone Europe/Berlin)
 create table if not exists garmin.daily (
@@ -108,10 +114,12 @@ alter table garmin.fitness_age enable row level security;
 revoke all on schema garmin from public, anon, authenticated;
 revoke all on all tables in schema garmin from public, anon, authenticated;
 
-create or replace function garmin.check_code(p_code text)
+drop function if exists garmin.check_code(text);
+create or replace function garmin.check_code(p_code text, p_write boolean default false)
 returns boolean language sql stable security definer set search_path = garmin, public as $$
   select length(coalesce(p_code, '')) >= 24
-     and exists (select 1 from garmin.access where code_hash = encode(sha256(convert_to(p_code, 'UTF8')), 'hex'));
+     and exists (select 1 from garmin.access
+                 where code_hash = encode(sha256(convert_to(p_code, 'UTF8')), 'hex') and (not p_write or can_write));
 $$;
 
 -- Schreiben: p_table = daily | sleep | hrv | activities | weight | fitness_age, p_rows = JSON-Array mit den Spaltennamen
@@ -119,7 +127,7 @@ create or replace function public.garmin_ingest(p_code text, p_table text, p_row
 returns integer language plpgsql security definer set search_path = garmin, public as $$
 declare n integer := 0;
 begin
-  if not garmin.check_code(p_code) then raise exception 'access denied'; end if;
+  if not garmin.check_code(p_code, true) then raise exception 'access denied'; end if;
   if jsonb_typeof(p_rows) <> 'array' then raise exception 'rows must be an array'; end if;
   if octet_length(p_rows::text) > 5000000 then raise exception 'data too large'; end if;
 
