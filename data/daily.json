@@ -2163,10 +2163,17 @@
   "stress": 35
  },
  "2026-11-08": {
-  "im_mod": 0,
+  "im_mod": 5,
   "im_vig": 0,
   "rhr": 53,
-  "steps": 371,
+  "steps": 6046,
+  "stress": 25
+ },
+ "2026-11-09": {
+  "im_mod": 0,
+  "im_vig": 0,
+  "rhr": 60,
+  "steps": null,
   "stress": 24
  }
 }
