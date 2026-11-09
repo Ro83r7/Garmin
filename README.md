@@ -33,22 +33,44 @@ Der Workflow schreibt alle Garmin-Daten zusätzlich in deine Supabase-Datenbank 
 `activities`, `weight`, `fitness_age`), damit andere Apps sie mitnutzen können. Täglich werden die letzten 30 Tage abgeglichen
 (Upsert, mehrfaches Senden ist unschädlich); mit „Komplette Historie“ beim manuellen Start geht alles in einem Rutsch.
 Zugriff wie bei Speed Lab und Fit Lab: kein Direktzugriff auf die Tabellen, nur über die Funktionen `garmin_ingest` (schreiben) und
-`garmin_read` (lesen) mit einem langen geheimen Code. Dessen Hash liegt in der Datenbank, der Klartext nirgends im Repo.
+`garmin_read` (lesen) mit langen geheimen Codes. Deren Hash liegt in der Datenbank, der Klartext nirgends im Repo.
+
+Die Tabellen liegen im eigenen Schema `garmin`, getrennt von den Tabellen von Speed Lab und Fit Lab (`public.speedlab`, `public.fitlab`),
+im selben Supabase-Projekt. Es gibt zwei Codes: einen **Schreibcode** (nur der GitHub-Workflow) und einen **Lesecode** (andere Apps, nur lesen).
 
 Einrichtung:
 
 1. [SQL-Editor deines Supabase-Projekts](https://supabase.com/dashboard/project/njipzdfnzpiremmbimty/sql/new) öffnen,
    den Inhalt von `supabase/garmin.sql` einfügen und ausführen.
-2. Einen eigenen, langen Code wählen (mindestens 24 Zeichen) und im selben Editor ausführen:
-   `insert into garmin.access(code_hash) values (encode(sha256(convert_to('DEIN-CODE', 'UTF8')), 'hex'));`
+2. Zwei eigene, lange Codes wählen (je mindestens 24 Zeichen) und im selben Editor ausführen:
+   `insert into garmin.access(code_hash, can_write) values (encode(sha256(convert_to('DEIN-SCHREIBCODE', 'UTF8')), 'hex'), true);` und
+   `insert into garmin.access(code_hash, can_write) values (encode(sha256(convert_to('DEIN-LESECODE', 'UTF8')), 'hex'), false);`
 3. Im Repo unter [Actions-Secrets](https://github.com/Ro83r7/Garmin/settings/secrets/actions) drei Secrets anlegen:
    `SUPABASE_URL` (`https://njipzdfnzpiremmbimty.supabase.co`), `SUPABASE_KEY` (der Publishable Key aus Speed Lab, beginnt mit
-   `sb_publishable_`) und `SUPABASE_GARMIN_CODE` (dein Code aus Schritt 2).
-4. [Workflow starten](https://github.com/Ro83r7/Garmin/actions/workflows/daily.yml) mit Branch `main` und Haken „Komplette Historie“.
+   `sb_publishable_`) und `SUPABASE_GARMIN_CODE` (dein **Schreibcode**).
+4. Workflow einmal mit der kompletten Historie starten: [Actions → Tägliches Update](https://github.com/Ro83r7/Garmin/actions/workflows/daily.yml),
+   Knopf *Run workflow*, Branch `main`, Haken „Komplette Historie neu holen“ (sonst lässt Claude ihn für dich laufen).
 
-Lesen aus anderen Apps: `POST {SUPABASE_URL}/rest/v1/rpc/garmin_read` mit Header `apikey: <Publishable Key>` und Body
-`{"p_code": "<Code>", "p_table": "activities", "p_since": "2026-01-01"}`; `p_table` ist eine der sechs Tabellen. Im Supabase-Dashboard
-kannst du die Tabellen im Schema `garmin` direkt abfragen.
+### Daten in anderen Apps lesen
+
+Mit dem **Lesecode** und dem Publishable Key (beide dürfen in der jeweiligen App liegen wie bei Speed Lab, der Lesecode gehört aber nicht ins Repo):
+
+```js
+const SB = 'https://njipzdfnzpiremmbimty.supabase.co', KEY = 'sb_publishable_…', READ_CODE = '…';
+async function garmin(table, since) {   // table: daily | sleep | hrv | activities | weight | fitness_age
+  const r = await fetch(SB + '/rest/v1/rpc/garmin_read', {
+    method: 'POST', headers: { 'Content-Type': 'application/json', apikey: KEY },
+    body: JSON.stringify({ p_code: READ_CODE, p_table: table, p_since: since || null })
+  });
+  if (!r.ok) throw new Error(r.status + ' ' + await r.text());
+  return r.json();   // Array von Zeilen
+}
+// Beispiel: alle Läufe seit Januar
+const laeufe = (await garmin('activities', '2026-01-01')).filter(a => a.type === 'running');
+```
+
+Im Supabase-Dashboard (Table Editor oder SQL-Editor) kannst du die Tabellen im Schema `garmin` jederzeit direkt abfragen.
+Soll eine App auch schreiben, bekommt sie einen eigenen Schreibcode.
 
 ## Zeitplan
 
