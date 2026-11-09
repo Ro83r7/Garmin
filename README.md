@@ -27,6 +27,29 @@ Seite „Wochenrückblick“: Auswahl einer der letzten 12 vollständigen Wochen
   (Putts 29,9, GIR 59 %, Fairways 51 %, grobe Mittelwerte aus Arccos-Auswertungen von Golf Monthly).
 - Neue Felder (Laufdynamik, Platzname) erscheinen nach einem Workflow-Lauf mit „Komplette Historie“.
 
+## Supabase (zentrale Datenbank)
+
+Der Workflow schreibt alle Garmin-Daten zusätzlich in deine Supabase-Datenbank (Schema `garmin`: `daily`, `sleep`, `hrv`,
+`activities`, `weight`, `fitness_age`), damit andere Apps sie mitnutzen können. Täglich werden die letzten 30 Tage abgeglichen
+(Upsert, mehrfaches Senden ist unschädlich); mit „Komplette Historie“ beim manuellen Start geht alles in einem Rutsch.
+Zugriff wie bei Speed Lab und Fit Lab: kein Direktzugriff auf die Tabellen, nur über die Funktionen `garmin_ingest` (schreiben) und
+`garmin_read` (lesen) mit einem langen geheimen Code. Dessen Hash liegt in der Datenbank, der Klartext nirgends im Repo.
+
+Einrichtung:
+
+1. [SQL-Editor deines Supabase-Projekts](https://supabase.com/dashboard/project/njipzdfnzpiremmbimty/sql/new) öffnen,
+   den Inhalt von `supabase/garmin.sql` einfügen und ausführen.
+2. Einen eigenen, langen Code wählen (mindestens 24 Zeichen) und im selben Editor ausführen:
+   `insert into garmin.access(code_hash) values (encode(sha256(convert_to('DEIN-CODE', 'UTF8')), 'hex'));`
+3. Im Repo unter [Actions-Secrets](https://github.com/Ro83r7/Garmin/settings/secrets/actions) drei Secrets anlegen:
+   `SUPABASE_URL` (`https://njipzdfnzpiremmbimty.supabase.co`), `SUPABASE_KEY` (der Publishable Key aus Speed Lab, beginnt mit
+   `sb_publishable_`) und `SUPABASE_GARMIN_CODE` (dein Code aus Schritt 2).
+4. [Workflow starten](https://github.com/Ro83r7/Garmin/actions/workflows/daily.yml) mit Branch `main` und Haken „Komplette Historie“.
+
+Lesen aus anderen Apps: `POST {SUPABASE_URL}/rest/v1/rpc/garmin_read` mit Header `apikey: <Publishable Key>` und Body
+`{"p_code": "<Code>", "p_table": "activities", "p_since": "2026-01-01"}`; `p_table` ist eine der sechs Tabellen. Im Supabase-Dashboard
+kannst du die Tabellen im Schema `garmin` direkt abfragen.
+
 ## Zeitplan
 
 GitHub startet Zeitpläne in diesem Repo erfahrungsgemäß 6 bis 9 Stunden verspätet. Die Einträge in

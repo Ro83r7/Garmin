@@ -43,6 +43,14 @@ jobs:
       - name: Website-Daten berechnen
         run: python scripts/build.py
 
+      - name: Daten in Supabase schreiben
+        continue-on-error: true   # ein Supabase-Problem darf das Update der Website nicht verhindern
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+          SUPABASE_GARMIN_CODE: ${{ secrets.SUPABASE_GARMIN_CODE }}
+        run: python scripts/sync_supabase.py ${{ inputs.full && '--all' || '' }}
+
       - name: Geänderte Daten committen
         run: |
           git config user.name "github-actions[bot]"
