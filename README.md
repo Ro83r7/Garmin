@@ -74,10 +74,14 @@ Soll eine App auch schreiben, bekommt sie einen eigenen Schreibcode.
 
 ## Zeitplan
 
-GitHub startet Zeitpläne in diesem Repo erfahrungsgemäß 6 bis 9 Stunden verspätet. Die Einträge in
-`.github/workflows/daily.yml` liegen deshalb bewusst nachts (22:30, 00:30, 02:00 und 03:30 UTC), damit die Läufe
-mit der Verspätung am Morgen deutscher Zeit ankommen. Der Abruf ist idempotent, mehrere Läufe schaden nicht.
-Wird GitHub später pünktlicher, die Zeiten entsprechend anpassen (Alternative: Auslöser über Cloudflare).
+Der Workflow läuft alle 30 Minuten in der Nacht und am Vormittag (UTC 22:00 bis 08:30, das sind im Winter 23:00 bis 09:30 und im
+Sommer 00:00 bis 10:30 deutscher Zeit), tagsüber und abends nicht. GitHub startet Zeitpläne erfahrungsgemäß verspätet; viele Einträge
+sorgen dafür, dass trotzdem kurz nach dem Aufstehen ein Lauf kommt. Ob die Uhrdaten schon bei Garmin liegen, hängt zusätzlich davon ab,
+wann die Uhr mit dem Handy synchronisiert hat.
+
+Die Website wird nur neu veröffentlicht, wenn sich Werte geändert haben oder der letzte Commit älter als 3 Stunden ist (dann wird der
+„Stand“ aufgefrischt). Supabase wird bei jedem Lauf abgeglichen. Das Fitness-Alter holt der Abruf nur für die letzten 3 Tage, die komplette
+Historie nur mit „Komplette Historie“. Alternative bei Bedarf: Auslöser über Cloudflare mit festen Uhrzeiten.
 
 ## Designs
 
