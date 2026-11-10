@@ -75,7 +75,7 @@ Soll eine App auch schreiben, bekommt sie einen eigenen Schreibcode.
 ## Zeitplan
 
 Der Workflow läuft alle 30 Minuten in der Nacht und am Vormittag (UTC 22:00 bis 08:30, das sind im Winter 23:00 bis 09:30 und im
-Sommer 00:00 bis 10:30 deutscher Zeit), tagsüber und abends nicht. GitHub startet Zeitpläne erfahrungsgemäß verspätet; viele Einträge
+Sommer 00:00 bis 10:30 deutscher Zeit) und sonst alle 2 Stunden (UTC 09, 11, 13, 15, 17, 19 und 21 Uhr). GitHub startet Zeitpläne erfahrungsgemäß verspätet; viele Einträge
 sorgen dafür, dass trotzdem kurz nach dem Aufstehen ein Lauf kommt. Ob die Uhrdaten schon bei Garmin liegen, hängt zusätzlich davon ab,
 wann die Uhr mit dem Handy synchronisiert hat.
 
