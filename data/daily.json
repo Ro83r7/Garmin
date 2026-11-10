@@ -2177,10 +2177,10 @@
   "stress": 23
  },
  "2026-11-10": {
-  "im_mod": 0,
-  "im_vig": 0,
+  "im_mod": 12,
+  "im_vig": 3,
   "rhr": 54,
-  "steps": 346,
-  "stress": 20
+  "steps": 6896,
+  "stress": 21
  }
 }
