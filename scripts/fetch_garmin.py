@@ -353,7 +353,10 @@ def main():
         state["activities"] = {k: v for k, v in state["activities"].items() if v["start"][:10] < lo}
         state["activities"].update(r)
     span = (today - start).days
-    fdates = [start + timedelta(days=i) for i in range(0, span + 1, 1 if span <= RECENT_DAYS else 7)]
+    if first_run:
+        fdates = [start + timedelta(days=i) for i in range(0, span + 1, 7)]
+    else:
+        fdates = [today - timedelta(days=i) for i in (2, 1, 0)]  # ändert sich langsam: bei häufigen Läufen nur die letzten Tage
     if fdates[-1] != today:
         fdates.append(today)
     r = run("Fitness-Alter", fetch_fitnessage, api, fdates)
