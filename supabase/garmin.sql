@@ -85,7 +85,6 @@ create table if not exists garmin.activities (
   updated_at timestamptz not null default now()
 );
 create index if not exists activities_start_idx on garmin.activities (start_local);
-create index if not exists activities_type_idx on garmin.activities (type);
 
 create table if not exists garmin.weight (
   date date primary key,
@@ -115,12 +114,19 @@ revoke all on schema garmin from public, anon, authenticated;
 revoke all on all tables in schema garmin from public, anon, authenticated;
 
 drop function if exists garmin.check_code(text);
+drop function if exists garmin.check_code(text, boolean);
+-- Bei falschem Code 1 Sekunde Wartezeit: Raten wird dadurch sehr langsam, ein richtiger Code läuft ohne Verzögerung
 create or replace function garmin.check_code(p_code text, p_write boolean default false)
-returns boolean language sql stable security definer set search_path = garmin, public as $$
-  select length(coalesce(p_code, '')) >= 24
-     and exists (select 1 from garmin.access
-                 where code_hash = encode(sha256(convert_to(p_code, 'UTF8')), 'hex') and (not p_write or can_write));
-$$;
+returns boolean language plpgsql security definer set search_path = garmin, public as $$
+declare ok boolean;
+begin
+  ok := length(coalesce(p_code, '')) >= 24
+        and exists (select 1 from garmin.access
+                    where code_hash = encode(sha256(convert_to(p_code, 'UTF8')), 'hex') and (not p_write or can_write));
+  if not ok then perform pg_sleep(1); end if;
+  return ok;
+end $$;
+revoke all on function garmin.check_code(text, boolean) from public, anon, authenticated;
 
 -- Schreiben: p_table = daily | sleep | hrv | activities | weight | fitness_age, p_rows = JSON-Array mit den Spaltennamen
 create or replace function public.garmin_ingest(p_code text, p_table text, p_rows jsonb)
