@@ -2186,8 +2186,8 @@
  "2026-11-11": {
   "im_mod": 0,
   "im_vig": 0,
-  "rhr": 57,
-  "steps": null,
-  "stress": 20
+  "rhr": 53,
+  "steps": 2732,
+  "stress": 19
  }
 }
