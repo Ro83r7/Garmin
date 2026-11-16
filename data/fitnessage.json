@@ -2651,7 +2651,7 @@
     "priority": 2,
     "stale": false,
     "targetValue": 3,
-    "value": 0.5
+    "value": 0.6
    },
    "vigorousMinutesAvg": {
     "numOfWeeksForIm": 6,
