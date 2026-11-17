@@ -8,6 +8,10 @@
   var WD = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'];
 
   /* ---------- Formate ---------- */
+  /* Texte aus Garmin-Daten (Aktivitätstyp, Ort …) nie ungefiltert als HTML einsetzen */
+  G.esc = function (v) {
+    return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; });
+  };
   G.fmtDate = function (d) { return d ? d.slice(8, 10) + '.' + d.slice(5, 7) + '.' : '–'; };
   G.fmtDateY = function (d) { return d ? G.fmtDate(d) + d.slice(0, 4) : '–'; };
   G.wd = function (d) { return WD[new Date(d + 'T12:00:00Z').getUTCDay()]; };
@@ -103,11 +107,11 @@
     var st = G.stand(meta), h = '';
     if (meta.sample) h += '<div class="banner sample" role="status">' + G.icon('info') + '<div><b>BEISPIELDATEN</b> – Diese Werte sind erfunden. Echte Daten erscheinen nach dem ersten erfolgreichen Abruf.</div></div>';
     if (st.stale) h += '<div class="banner warn" role="status">' + G.icon('alert') + '<div>Die Daten sind älter als 36 Stunden (Stand: ' + st.text + '). Prüfe den Workflow „Tägliches Update“ in GitHub Actions.</div></div>';
-    if (meta.partial_failures && meta.partial_failures.length) h += '<div class="banner warn" role="status">' + G.icon('alert') + '<div>Beim letzten Abruf fehlten: ' + meta.partial_failures.join(', ') + '.</div></div>';
+    if (meta.partial_failures && meta.partial_failures.length) h += '<div class="banner warn" role="status">' + G.icon('alert') + '<div>Beim letzten Abruf fehlten: ' + G.esc(meta.partial_failures.join(', ')) + '.</div></div>';
     host.innerHTML = h;
   };
   G.inRange = function (rows, start) { return rows.filter(function (r) { return r.date >= start; }); };
-  G.err = function (host, e) { host.innerHTML = '<div class="banner warn">' + G.icon('alert') + '<div>Daten konnten nicht geladen werden (' + String(e.message || e) + ').</div></div>'; };
+  G.err = function (host, e) { host.innerHTML = '<div class="banner warn">' + G.icon('alert') + '<div>Daten konnten nicht geladen werden (' + G.esc(e.message || e) + ').</div></div>'; };
 
   /* ---------- SVG-Charts ---------- */
   var NS = 'http://www.w3.org/2000/svg';
@@ -336,7 +340,7 @@
         var cur = c.key === state.key;
         return '<th scope="col" aria-sort="' + (cur ? (state.dir > 0 ? 'ascending' : 'descending') : 'none') + '"' + (c.num ? ' class="num"' : '') + '><button type="button" data-k="' + c.key + '">' + c.label + (cur ? (state.dir > 0 ? ' ▲' : ' ▼') : '') + '</button></th>';
       }).join('') + '</tr></thead><tbody>' + list.map(function (r) {
-        return '<tr>' + o.cols.map(function (c) { return '<td' + (c.num ? ' class="num"' : '') + '>' + (c.html ? c.html(r) : (c.text ? c.text(r) : (r[c.key] == null ? '–' : r[c.key]))) + '</td>'; }).join('') + '</tr>';
+        return '<tr>' + o.cols.map(function (c) { return '<td' + (c.num ? ' class="num"' : '') + '>' + (c.html ? c.html(r) : G.esc(c.text ? c.text(r) : (r[c.key] == null ? '–' : r[c.key]))) + '</td>'; }).join('') + '</tr>';
       }).join('') + '</tbody></table>';
       wrap.innerHTML = list.length ? html : '<div class="empty">Keine Einträge</div>';
       info.textContent = list.length + ' von ' + rows.length + ' Einträgen';
@@ -368,6 +372,11 @@
     });
     draw();
   };
+
+  /* Offline-Fähigkeit: Service Worker (Netz zuerst, ohne Netz der zuletzt geladene Stand) */
+  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
+  }
 
   G.debounce = function (fn, ms) { var t; return function () { clearTimeout(t); t = setTimeout(fn, ms); }; };
 })();

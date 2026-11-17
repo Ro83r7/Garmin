@@ -87,6 +87,8 @@ class Api:
             raise ApiError(f"Token-Abruf fehlgeschlagen ({e.reason})") from None
         if not tok:
             raise ApiError("Token-Antwort war leer")
+        if tok.count(".") != 2 or len(tok) > 8192 or any(c.isspace() for c in tok):
+            raise ApiError("Token-Antwort hat ein unerwartetes Format")  # z. B. HTML-Fehlerseite statt JWT
         self.token = tok
 
     def get(self, path, params=None):

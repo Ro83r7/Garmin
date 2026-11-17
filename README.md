@@ -72,6 +72,17 @@ const laeufe = (await garmin('activities', '2026-01-01')).filter(a => a.type ===
 Im Supabase-Dashboard (Table Editor oder SQL-Editor) kannst du die Tabellen im Schema `garmin` jederzeit direkt abfragen.
 Soll eine App auch schreiben, bekommt sie einen eigenen Schreibcode.
 
+## Sicherheit und Robustheit
+
+- **Strenge Sicherheits-Header** (`site/_headers`): Content-Security-Policy ohne fremde Quellen und ohne Inline-Skripte,
+  kein Einbetten in fremde Seiten, HSTS, Permissions-Policy. Texte aus Garmin-Daten (Aktivitätstyp, Ort) werden vor der Anzeige
+  maskiert.
+- **Offline lesbar**: Ein Service Worker (`site/sw.js`) holt immer zuerst frische Daten und zeigt ohne Netz den zuletzt geladenen Stand.
+  Weiterleitungen (etwa die Anmeldung über Cloudflare Access) werden nie zwischengespeichert.
+- **Prüfung bei jedem Pull Request** (`.github/workflows/check.yml`): Python-Skripte, Build, JSON-Dateien, JavaScript-Syntax und ein Suchlauf
+  nach versehentlich eingecheckten Schlüsseln. GitHub-Actions sind auf feste Versionen (Commit-SHA) gepinnt.
+- **Supabase**: Falsche Zugangscodes werden pro Versuch 1 Sekunde gebremst.
+
 ## Zeitplan
 
 Der Workflow läuft alle 30 Minuten in der Nacht und am Vormittag (UTC 22:00 bis 08:30, das sind im Winter 23:00 bis 09:30 und im

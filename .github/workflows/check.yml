@@ -1,0 +1,48 @@
+name: Prüfung
+
+# Läuft bei jedem Pull Request: prüft Skripte, Build und Website-Code, bevor etwas nach main kommt.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6.1.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # v6.3.0
+        with:
+          python-version: "3.12"
+
+      - name: Python-Skripte übersetzen
+        run: python -m py_compile scripts/*.py
+
+      - name: Website-Daten aus den vorhandenen Daten bauen
+        run: python scripts/build.py
+
+      - name: JSON-Dateien und Konfiguration prüfen
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          files = [*pathlib.Path("data").glob("*.json"), *pathlib.Path("site/data").glob("*.json"),
+                   *pathlib.Path("config").glob("*.json"), pathlib.Path("site/m/manifest.webmanifest")]
+          for f in files:
+              json.loads(f.read_text(encoding="utf-8"))
+          print(f"{len(files)} JSON-Dateien gültig")
+          PY
+
+      - name: JavaScript-Syntax prüfen
+        run: for f in site/assets/*.js site/sw.js; do node --check "$f"; done
+
+      - name: Keine Geheimnisse im Repo
+        run: |
+          if git grep -nIE 'GCDC_[A-Za-z0-9_-]{8,}|sb_secret_|service_role' -- . ':!.github/workflows/check.yml'; then
+            echo "::error::Möglicher Schlüssel im Repo gefunden"; exit 1
+          fi

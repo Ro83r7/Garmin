@@ -9,18 +9,7 @@
 <meta name="theme-color" content="#f3f5fb" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1220" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/assets/icon-192.png" type="image/png">
-<script>
-/* Telefone zur mobilen Ansicht, außer die Wahl "Desktop" ist gespeichert oder per ?view=desktop gesetzt. */
-(function () {
-  try {
-    var pref = null, q = location.search;
-    try { pref = localStorage.getItem('garmin-view'); } catch (e) {}
-    if (/[?&]view=desktop/.test(q)) { try { localStorage.setItem('garmin-view', 'desktop'); } catch (e) {} return; }
-    var phone = /iPhone/.test(navigator.userAgent) || Math.min(screen.width || 9999, window.innerWidth) < 700;
-    if (pref === 'mobile' || (pref !== 'desktop' && phone)) location.replace('/m/');
-  } catch (e) {}
-})();
-</script>
+<script src="/assets/redirect.js"></script>
 <script src="/assets/theme.js"></script>
 <link rel="stylesheet" href="/assets/base.css">
 <link rel="stylesheet" href="/assets/desktop.css">
