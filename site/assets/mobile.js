@@ -103,7 +103,7 @@
         '<div class="muted" style="font-size:.875rem;margin-bottom:8px">Diese Woche: <b style="color:var(--text)">' + G.num(z.value, 0) + ' min</b></div><div id="m-z45"></div>') +
       card('', head('route', 'train', 'Laufen pro Woche', 'Kilometer') + '<div id="m-km"></div>') +
       card('', head('timer', 'train', 'Letzte Aktivitäten') + '<div class="alist">' + D.acts.slice(0, 8).map(function (a) {
-        return '<div class="a"><b>' + a.label + '</b><span>' + G.dur(a.dur) + '</span><span class="s">' + G.wd(a.date) + ' ' + G.fmtDate(a.date) + ' ' + a.start.slice(11, 16) + '</span><span class="s">' + (a.dist_km ? G.num(a.dist_km, 1) + ' km' : '') + (a.avg_hr ? ' · Ø ' + a.avg_hr : '') + '</span></div>';
+        return '<div class="a"><b>' + G.esc(a.label) + '</b><span>' + G.dur(a.dur) + '</span><span class="s">' + G.wd(a.date) + ' ' + G.fmtDate(a.date) + ' ' + a.start.slice(11, 16) + '</span><span class="s">' + (a.dist_km ? G.num(a.dist_km, 1) + ' km' : '') + (a.avg_hr ? ' · Ø ' + a.avg_hr : '') + '</span></div>';
       }).join('') + '</div>') + '</div>';
   }
   function drawTraining() {

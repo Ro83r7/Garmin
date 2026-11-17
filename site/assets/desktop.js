@@ -65,7 +65,7 @@
       var m = KP[x.key], d = x.delta, dg = x.digits || 0;
       var dtxt = d == null ? 'keine Baseline (zu wenige Werte)' : G.signed(d, dg) + (x.unit ? ' ' + x.unit : '') + ' <span class="muted">vs. Ø ' + G.num(x.base, dg) + '</span>';
       h += card('kpi c-' + m[1],
-        '<div class="head">' + G.chip(m[0], m[1]) + x.label + '</div>' +
+        '<div class="head">' + G.chip(m[0], m[1]) + G.esc(x.label) + '</div>' +
         '<div class="val">' + kpiVal(x) + '<small>' + (x.value == null ? '' : x.unit) + '</small>' + G.altBadge(x) + '</div>' +
         '<div class="delta">' + (d == null ? G.icon('info') : arrow(d, x.good)) + '<span><b>' + dtxt + '</b></span></div>' +
         '<div class="foot2"><span class="muted" style="font-size:.8125rem">' + (x.date ? (x.key === 'im_week' ? 'Woche ab ' : '') + G.fmtDate(x.date) : 'keine Daten') + '</span>' + G.spark(x.spark, 'currentColor') + '</div>');
@@ -80,7 +80,7 @@
       '<div class="fact"><div class="l">Intervall-Zielzone</div><div class="v">' + D.meta.settings.zone.von + '–' + D.meta.settings.zone.bis + ' bpm</div></div></div>');
     var last = D.acts.slice(0, 5);
     h += card('c-train', head('route', 'train', 'Letzte Aktivitäten') + '<div>' + last.map(function (a) {
-      return '<div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--border)"><span><b>' + a.label + '</b> <span class="muted">' + G.wd(a.date) + ' ' + G.fmtDate(a.date) + '</span></span><span>' + (a.dist_km ? G.num(a.dist_km, 1) + ' km · ' : '') + G.dur(a.dur) + '</span></div>';
+      return '<div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--border)"><span><b>' + G.esc(a.label) + '</b> <span class="muted">' + G.wd(a.date) + ' ' + G.fmtDate(a.date) + '</span></span><span>' + (a.dist_km ? G.num(a.dist_km, 1) + ' km · ' : '') + G.dur(a.dur) + '</span></div>';
     }).join('') + '</div>');
     h += '</div>';
     $('v-uebersicht').innerHTML = h;
@@ -192,7 +192,7 @@
         { key: 'cur', kind: 'line', color: C('train'), label: String(y.year), dots: false, width: 2.8, fmt: function (v) { return G.num(v, 0) + ' km'; } }] });
     var rs = start(), acts = D.acts.filter(function (a) { return a.date >= rs; });
     G.table($('tb-act'), { rows: acts, search: true, sortKey: 'start', sortDir: -1, cols: [
-      { key: 'label', label: 'Typ', html: function (a) { return '<b>' + a.label + '</b>'; }, text: function (a) { return a.label; } },
+      { key: 'label', label: 'Typ', html: function (a) { return '<b>' + G.esc(a.label) + '</b>'; }, text: function (a) { return a.label; } },
       { key: 'start', label: 'Datum', text: function (a) { return G.wd(a.date) + ' ' + G.fmtDate(a.date) + ' ' + a.start.slice(11, 16); } },
       { key: 'dur', label: 'Dauer', num: 1, text: function (a) { return G.dur(a.dur); } },
       { key: 'dist_km', label: 'Distanz', num: 1, text: function (a) { return a.dist_km ? G.num(a.dist_km, 1) + ' km' : '–'; } },
@@ -245,7 +245,7 @@
   function mmss(sec) { return sec == null ? '–' : Math.floor(sec / 60) + ':' + String(Math.round(sec % 60)).padStart(2, '0'); }
   function tipList(tips) {
     return '<ul class="tips">' + tips.map(function (t) {
-      return '<li class="' + t.level + '">' + G.icon(t.level === 'good' ? 'check' : t.level === 'warn' ? 'alert' : 'info') + '<div><b>' + t.title + '</b>' + t.text + '</div></li>';
+      return '<li class="' + t.level + '">' + G.icon(t.level === 'good' ? 'check' : t.level === 'warn' ? 'alert' : 'info') + '<div><b>' + G.esc(t.title) + '</b>' + G.esc(t.text) + '</div></li>';
     }).join('') + '</ul><p class="note" style="margin:10px 0 0">Orientierung aus deinen eigenen Daten und groben Richtwerten, keine Trainings- oder medizinische Beratung.</p>';
   }
   /* m: [label, key, unit, digits, lowerBetter, formatter] */
@@ -445,13 +445,13 @@
       return card('kpi c-' + d[4], '<div class="head">' + d[0] + '</div><div class="val">' + (cur == null ? '–' : G.num(cur, dg)) + '<small>' + (cur == null ? '' : d[2]) + '</small></div><div class="delta">' + (diff == null ? G.icon('info') : G.icon(diff > 0 ? 'up' : diff < 0 ? 'down' : 'right')) + '<span><b>' + dt + '</b></span></div>' + note);
     }).join('') + '</div>';
     h += card('', head('target', 'steps', 'Highlights der Woche', weekLabel(w)) + (w.highlights.length ? '<ul class="tips">' + w.highlights.map(function (x) {
-      return '<li class="' + (x.ok ? 'good' : 'info') + '">' + G.icon(x.icon) + '<div><b>' + x.label + '</b>' + G.num(x.v, x.digits) + (x.unit ? ' ' + x.unit : '') + (x.date ? ' · ' + G.wd(x.date) + ' ' + G.fmtDate(x.date) : '') + '</div></li>';
+      return '<li class="' + (x.ok ? 'good' : 'info') + '">' + G.icon(x.icon) + '<div><b>' + G.esc(x.label) + '</b>' + G.num(x.v, x.digits) + (x.unit ? ' ' + x.unit : '') + (x.date ? ' · ' + G.wd(x.date) + ' ' + G.fmtDate(x.date) : '') + '</div></li>';
     }).join('') + '</ul>' : '<p class="note" style="margin:0">Keine Daten in dieser Woche.</p>'));
     h += '<div class="grid cols2">' + card('', head('footprints', 'steps', 'Schritte pro Tag') + area('ch-w-steps')) + card('', head('moon', 'sleep', 'Schlaf-Score pro Nacht', 'Aufwachtag') + area('ch-w-sleep')) + '</div>';
     h += card('', head('calendar', 'steps', 'Tage im Überblick') + '<div class="table-wrap"><table><thead><tr><th style="padding:10px 12px">Tag</th><th class="num" style="padding:10px 12px">Schritte</th><th class="num" style="padding:10px 12px">Schlaf</th><th class="num" style="padding:10px 12px">Score</th><th class="num" style="padding:10px 12px">Ruhepuls</th><th class="num" style="padding:10px 12px">HRV</th><th class="num" style="padding:10px 12px">Stress</th><th style="padding:10px 12px">Aktivitäten</th></tr></thead><tbody>' + w.days.map(function (d) {
       var f = function (v, dg) { return v == null ? '–' : G.num(v, dg || 0); };
       return '<tr><td>' + G.wd(d.date) + ' ' + G.fmtDate(d.date) + '</td><td class="num">' + f(d.steps) + '</td><td class="num">' + (d.sleep_h == null ? '–' : G.num(d.sleep_h, 1) + ' h') + '</td><td class="num">' + f(d.sleep_score) + '</td><td class="num">' + f(d.rhr) + '</td><td class="num">' + f(d.hrv) + '</td><td class="num">' + f(d.stress) + '</td><td>' +
-        (d.acts.length ? d.acts.map(function (a) { return a.label + (a.dist_km ? ' ' + G.num(a.dist_km, 1) + ' km' : ''); }).join(', ') : '–') + '</td></tr>';
+        (d.acts.length ? d.acts.map(function (a) { return G.esc(a.label) + (a.dist_km ? ' ' + G.num(a.dist_km, 1) + ' km' : ''); }).join(', ') : '–') + '</td></tr>';
     }).join('') + '</tbody></table></div>');
     h += '</div>';
     $('v-woche').innerHTML = h;

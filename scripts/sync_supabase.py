@@ -97,6 +97,9 @@ def main():
     if not (url and key and code):
         print("Supabase-Sync übersprungen: SUPABASE_URL, SUPABASE_KEY oder SUPABASE_GARMIN_CODE fehlt.")
         return 0
+    if not url.startswith("https://"):
+        print("::warning::Supabase-Sync übersprungen: SUPABASE_URL muss mit https:// beginnen.")
+        return 1
     since = None if args.all else date.today() - timedelta(days=args.days)
     rows = build_rows(since)
     total = 0
