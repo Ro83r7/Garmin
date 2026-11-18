@@ -2665,7 +2665,7 @@
  },
  "2026-11-17": {
   "achievable": 52.467414159960065,
-  "age": 55.14406859864523,
+  "age": 55.021442823844694,
   "chrono": 60,
   "components": {
    "bmi": {
@@ -2679,7 +2679,7 @@
    },
    "rhr": {
     "stale": false,
-    "value": 57
+    "value": 56
    },
    "vigorousDaysAvg": {
     "numOfWeeksForIm": 6,
@@ -2695,7 +2695,43 @@
     "priority": 1,
     "stale": false,
     "targetValue": 75,
-    "value": 15.3
+    "value": 16.3
+   }
+  }
+ },
+ "2026-11-18": {
+  "achievable": 52.467414159960065,
+  "age": 55.021442823844694,
+  "chrono": 60,
+  "components": {
+   "bmi": {
+    "improvementValue": 0.5,
+    "lastMeasurementDate": "2026-09-13",
+    "potentialAge": 55.57848263855873,
+    "priority": 3,
+    "stale": false,
+    "targetValue": 22.0,
+    "value": 22.5
+   },
+   "rhr": {
+    "stale": false,
+    "value": 56
+   },
+   "vigorousDaysAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 53.146490746620984,
+    "priority": 2,
+    "stale": false,
+    "targetValue": 3,
+    "value": 0.6
+   },
+   "vigorousMinutesAvg": {
+    "numOfWeeksForIm": 6,
+    "potentialAge": 53.146490746620984,
+    "priority": 1,
+    "stale": false,
+    "targetValue": 75,
+    "value": 16.3
    }
   }
  }
