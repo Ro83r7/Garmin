@@ -2737,7 +2737,7 @@
  },
  "2026-11-19": {
   "achievable": 52.467414159960065,
-  "age": 55.021442823844694,
+  "age": 54.892968128200955,
   "chrono": 60,
   "components": {
    "bmi": {
@@ -2751,7 +2751,7 @@
    },
    "rhr": {
     "stale": false,
-    "value": 56
+    "value": 55
    },
    "vigorousDaysAvg": {
     "numOfWeeksForIm": 6,
