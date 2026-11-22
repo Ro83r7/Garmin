@@ -2263,8 +2263,8 @@
  "2026-11-22": {
   "im_mod": 0,
   "im_vig": 0,
-  "rhr": 57,
-  "steps": null,
-  "stress": 33
+  "rhr": 49,
+  "steps": 200,
+  "stress": 22
  }
 }
