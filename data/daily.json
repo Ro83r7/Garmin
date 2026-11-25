@@ -2278,7 +2278,14 @@
   "im_mod": 22,
   "im_vig": 13,
   "rhr": 53,
-  "steps": 8870,
-  "stress": 24
+  "steps": 9627,
+  "stress": 27
+ },
+ "2026-11-25": {
+  "im_mod": 0,
+  "im_vig": 0,
+  "rhr": 57,
+  "steps": null,
+  "stress": 20
  }
 }
